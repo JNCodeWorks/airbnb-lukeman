@@ -2,6 +2,7 @@ import React from 'react'
 // import TopNav from '../navigation/topnav'
 import WebNav from '../navigation/webnav'
 import Responsive from '../navigation/responsive'
+import TopNav from '../navigation/topnav'
 // import Footer from '../navigation/footer'
 // import ScrollTop from '../navigation/scrollTop'
 
@@ -10,6 +11,7 @@ export default function Layout({children}) {
    <>
         <header className='fixed w-full top-0 z-40 drop-shadow-md'>
             {/* <TopNav/> */}
+            <TopNav/>
             <WebNav/>
             <Responsive/>
         </header>

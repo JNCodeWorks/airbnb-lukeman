@@ -5,6 +5,7 @@ import Banner from '@/components/views/home/banner'
 import Airbnb from '@/components/views/home/airbnb'
 import Homestays from '@/components/views/home/homestays'
 import Experience from '@/components/views/home/experience'
+import CTA from '@/components/views/home/cta'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Airbnb/>
       <Homestays/>
       <Experience/>
+      <CTA/>
     </Layout>
   )
 }
