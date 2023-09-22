@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "image": "/images/1.jpeg",
+        "name": "Single Rustic Cabin",
+        "guests": "2 guests",
+        "bedrooms": "1 bredroom",
+        "description": "style accompanied by comfort. making your stay memorable.",
+        "price": "$99 per night"
+    },
+    
+    {
+        "id": 2,
+        "image": "/images/pxl1.jpg",
+        "name": "Duo Rustic Cabin",
+        "guests": "4 guests",
+        "bedrooms": "2 bedrooms",
+        "description": "style accompanied by comfort. making your stay memorable.",
+        "price":"$129 per night"
+    },
+
+    {
+        "id": 3,
+        "image": "/images/1.jpeg",
+        "name": "Duplex Rustic Cabin",
+        "guests": "2 guests",
+        "bedrooms": "1 bredroom",
+        "description": "style accompanied by comfort. making your stay memorable.",
+        "price":"$150 per night"
+    }
+]
