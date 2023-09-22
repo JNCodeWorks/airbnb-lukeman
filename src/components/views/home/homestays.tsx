@@ -4,22 +4,22 @@ import Data from '@/pages/data/airbnb-data.json'
 import Image from 'next/image'
 import bed from '../../../../public/images/bed.svg'
 
-export default function Airbnb() {
+export default function Homestays() {
   return (
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
-            explore our airbnb facilities
+            explore our homestay facilities
         </h1>
-        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Browse All</Link>
+        <Link href={'/airbnb'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
       <div className='mt-8 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
           {
                                 Data.map ((Item) => (
 
                     
-                                  <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={Item.id}>
-                                      <div className="flex-shrink-0 relative h-60" id="Header">
+                                  <div className=" mx-3 rounded-sm shadow-md overflow-hidden" key={Item.id}>
+                                      <div className="flex-shrink-0 relative h-60">
                                           <Image src={Item.image} alt={Item.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div>
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
