@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import Link from 'next/link';
 export default function Responsive() {
 
     const router = useRouter ();
+    const [navbar, setNavbar] = useState (false);
     const [show, setShow] = useState(true);
 
     const navigation = {
@@ -45,9 +46,21 @@ export default function Responsive() {
         ]
     }
 
+    const changeBackground = () => {
+        if (window.scrollY >=200) {
+            setNavbar (true)
+        } else {
+            setNavbar (false);
+        }
+    };
+
+        // window.addEventListener ("scroll", changeBackground);
+        useEffect (() => {window.addEventListener ("scroll", changeBackground)})
+
   return (
     <div className='lg:hidden'>
-      <div className='bg-white shadow xl:hidden flex justify-between w-full px-8 py-6 rounded-t-xl items-center border-b border-transparent sm:border-gray-200'>
+      {/* <div className='bg-white shadow xl:hidden flex justify-between w-full px-8 py-6 rounded-t-xl items-center border-b border-transparent sm:border-gray-200'> */}
+      <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 py-4 rounded-t-xl items-center border-b border-transparent sm:border-gray-200' : 'navbar shadow xl:hidden flex justify-between w-full px-8 py-4 rounded-t-xl items-center border-b border-transparent sm:border-gray-200'}>
       <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3">
                 <Link href={'/'} className='flex flex-col items-center'>
                 {/* <Image src={Logo} alt="" width={80} height={50}/> */}
