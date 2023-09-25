@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "image": "/images/2.jpg",
+        "title": "The best weekend of my life",
+        "description": "Lorem ipsum dolor sit amet conse ctetur adipiscing lectus a nunc mauris scelerisque sed egestas dolor sit amet pharetraol quis pharetra arcu pharetra blandit.",
+        "name": "John Curter",
+        "location": "Nairobi, Kenya"
+    },
+    {
+        "id": "2",
+        "image": "/images/1.jpeg",
+        "title": "The best weekend of my life",
+        "description": "Lorem ipsum dolor sit amet conse ctetur adipiscing lectus a nunc mauris scelerisque sed egestas dolor sit amet pharetraol quis pharetra arcu pharetra blandit.",
+        "name": "John Curter",
+        "location": "Nairobi, Kenya"
+    },
+    {
+        "id": "2",
+        "image": "/images/pxl1.jpg",
+        "title": "The best weekend of my life",
+        "description": "Lorem ipsum dolor sit amet conse ctetur adipiscing lectus a nunc mauris scelerisque sed egestas dolor sit amet pharetraol quis pharetra arcu pharetra blandit.",
+        "name": "John Curter",
+        "location": "Nairobi, Kenya"
+    }
+]
