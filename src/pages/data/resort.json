@@ -1,0 +1,29 @@
+[
+    {
+        "id": "1",
+        "image":"/images/exp/7.png",
+        "title": "unique experience",
+        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+    },
+
+    {
+        "id": "2",
+        "image":"/images/exp/8.png",
+        "title": "customer first",
+        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+    },
+
+    {
+        "id": "3",
+        "image":"/images/exp/9.png",
+        "title": "eco-friendly",
+        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+    },
+
+    {
+        "id": "4",
+        "image":"/images/exp/10.png",
+        "title": "sustainable",
+        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+    }
+]
