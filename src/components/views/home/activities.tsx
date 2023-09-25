@@ -20,7 +20,7 @@ export default function Activities() {
             {
                 Data.map ((item) => (
                     <>
-                        <div className='rounded-lg hover:shadow'>
+                        <div className='rounded-lg hover:shadow' key={item.id}>
                             <div className='flex-shrink-0 relative rounded-lg h-[420px] bg-neutral-900'>
                                 <Image src={item.image} alt={item.title} className="block w-full h-full rounded-lg opacity-50" fill />
                             </div>

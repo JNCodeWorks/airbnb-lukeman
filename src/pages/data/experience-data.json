@@ -1,41 +1,41 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "image":"/images/exp/1.png",
         "title": "wood fire",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
     },
 
     {
-        "id": 2,
+        "id": "2",
         "image":"/images/exp/2.png",
         "title": "lake padding",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
     },
 
     {
-        "id": 3,
+        "id": "3",
         "image":"/images/exp/3.png",
         "title": "outdoor picnic",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
     },
 
     {
-        "id": 4,
+        "id": "4",
         "image":"/images/exp/4.png",
         "title": "fishing",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
     },
 
     {
-        "id": 5,
+        "id": "5",
         "image":"/images/exp/5.png",
         "title": "game room",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
     },
 
     {
-        "id": 6,
+        "id": "6",
         "image":"/images/exp/6.png",
         "title": "outdoor hot tub",
         "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"

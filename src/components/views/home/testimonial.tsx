@@ -30,7 +30,7 @@ export default function Testimonial() {
                     {
                         Data.map ((items) => (
                             <>
-                                <div className="flex flex-col overflow-hidden shadow-lg" key={items.id}>
+                                <div className="flex flex-col bg-white overflow-hidden shadow-lg" key={items.id}>
                                     <div className='flex flex-col space-y-8 justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7'>
                                         <div className='flex flex-col space-y-2'>
                                             <h1 className='font-semibold text-neutral-700 text-lg'>&quot;{items.title}&quot;</h1>

@@ -60,7 +60,7 @@ export default function WebNav() {
 
   return (
     // <div className='bg-white rounded-full'>
-        <div className={navbar ? 'navbar active w-full rounded-full hidden lg:flex' : 'navbar w-full hidden lg:flex'}>
+        <div className={navbar ? 'navbar active w-full rounded-b-full hidden lg:flex' : 'navbar w-full hidden lg:flex'}>
         <div className='py-4 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
         <div className='items-center'>
                 <Link href={'/'} className='flex flex-col items-center'>

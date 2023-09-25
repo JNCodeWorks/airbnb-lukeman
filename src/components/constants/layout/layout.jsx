@@ -3,7 +3,7 @@ import React from 'react'
 import WebNav from '../navigation/webnav'
 import Responsive from '../navigation/responsive'
 import TopNav from '../navigation/topnav'
-// import Footer from '../navigation/footer'
+import Footer from '../navigation/footer'
 // import ScrollTop from '../navigation/scrollTop'
 
 export default function Layout({children}) {
@@ -23,6 +23,7 @@ export default function Layout({children}) {
 
         <footer>
             {/* <Footer/> */}
+            <Footer/>
         </footer>
    </>
   )
