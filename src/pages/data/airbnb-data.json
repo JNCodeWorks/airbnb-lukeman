@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "image": "/images/1.jpeg",
         "name": "Single Rustic Cabin",
         "guests": "2 guests",
@@ -10,7 +10,7 @@
     },
     
     {
-        "id": 2,
+        "id": "2",
         "image": "/images/pxl1.jpg",
         "name": "Duo Rustic Cabin",
         "guests": "4 guests",
@@ -20,7 +20,7 @@
     },
 
     {
-        "id": 3,
+        "id": "3",
         "image": "/images/1.jpeg",
         "name": "Duplex Rustic Cabin",
         "guests": "2 guests",

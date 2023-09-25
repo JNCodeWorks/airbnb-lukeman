@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image';
@@ -6,6 +7,7 @@ import Image from 'next/image';
 
 export default function WebNav() {
 
+    const [navbar, setNavbar] = useState (false);
     const router = useRouter ();
 
     const navigation = {
@@ -45,9 +47,21 @@ export default function WebNav() {
 
     }
 
+    const changeBackground = () => {
+        if (window.scrollY >=200) {
+            setNavbar (true)
+        } else {
+            setNavbar (false);
+        }
+    };
+
+    // window.addEventListener ("scroll", changeBackground);
+    useEffect (() => {window.addEventListener ("scroll", changeBackground)})
+
   return (
-    <div className='bg-white rounded-full'>
-        <div className='py-6 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
+    // <div className='bg-white rounded-full'>
+        <div className={navbar ? 'navbar active w-full rounded-b-full hidden lg:flex' : 'navbar w-full hidden lg:flex'}>
+        <div className='py-4 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
         <div className='items-center'>
                 <Link href={'/'} className='flex flex-col items-center'>
                     {/* <Image src={Logo} alt="" width={70} height={70}/> */}
