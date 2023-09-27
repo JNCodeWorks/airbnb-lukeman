@@ -47,3 +47,38 @@ body {
   height: 100vh;
   width: 100%;
 }
+
+/* styles/Pagination.module.css */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.centeredPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-item {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-item.active {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.pagination-item:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+

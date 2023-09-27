@@ -6,8 +6,9 @@ const client = createClient({
   environment: 'master',
 });
 
-export async function getBlogPosts() {
-  const entries = await client.getEntries({ content_type: 'homestays' });
+export async function getBlogPosts(page = 1, perPage = 3) {
+  const entries = await client.getEntries({ content_type: 'homestays', skip: (page - 1) * perPage, limit: perPage, });
+  
   return entries.items;
 }
 
