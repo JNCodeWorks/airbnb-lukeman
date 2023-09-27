@@ -26,6 +26,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
 .navbar{
   background: transparent;
   transition: background-color 500ms ease-in-out;
