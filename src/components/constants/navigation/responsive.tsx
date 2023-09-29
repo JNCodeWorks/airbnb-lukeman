@@ -26,7 +26,7 @@ export default function Responsive() {
             {
                 id: 3,
                 name:'homestays',
-                href: '/services'
+                href: '/homestays'
             },
             {
                 id: 4,

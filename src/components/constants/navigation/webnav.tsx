@@ -25,7 +25,7 @@ export default function WebNav() {
             {
                 id: 3,
                 name:'homestays',
-                href: '/services'
+                href: '/homestays'
             },
             {
                 id: 4,
