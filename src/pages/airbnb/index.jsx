@@ -2,7 +2,7 @@ import { getBlogPosts } from "../../../lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/constants/layout/layout"
-import Banner from "../../components/views/homestays/banner"
+import Banner from "../../components/views/airbnb/banner"
 import bed from '../../../public/images/bed.svg'
 
 
@@ -24,7 +24,7 @@ export async function getStaticProps() {
                     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
-            explore our homestays facilities
+            explore our airbnb facilities
         </h1>
       </div>
       <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
