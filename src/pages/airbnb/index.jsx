@@ -2,6 +2,7 @@ import { getBlogPosts } from "../../../lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/constants/layout/layout"
+import Head from "next/head";
 import Banner from "../../components/views/airbnb/banner"
 import bed from '../../../public/images/bed.svg'
 
@@ -18,6 +19,9 @@ export async function getStaticProps() {
     return(
         <>
             <div>
+            <Head>
+            <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>    
+            </Head>
                 <Layout>
                     <Banner/>
                     <div>
