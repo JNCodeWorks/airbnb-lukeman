@@ -8,12 +8,17 @@ import Experience from '@/components/views/home/experience'
 import CTA from '@/components/views/home/cta'
 import Activities from '@/components/views/home/activities'
 import Testimonial from '@/components/views/home/testimonial'
+import Head from 'next/head'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
+    <>
+    <Head>
+      <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>    
+    </Head>
     <Layout>
       <Banner/>
       <Airbnb/>
@@ -23,5 +28,6 @@ export default function Home() {
       <Activities/>
       <Testimonial/>
     </Layout>
+    </>
   )
 }
