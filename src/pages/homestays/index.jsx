@@ -4,6 +4,7 @@ import Link from "next/link";
 import Layout from "../../components/constants/layout/layout"
 import Banner from "../../components/views/homestays/banner"
 import bed from '../../../public/images/bed.svg'
+import Head from "next/head";
 
 
 export async function getStaticProps() {
@@ -18,13 +19,16 @@ export async function getStaticProps() {
     return(
         <>
             <div>
+            <Head>
+            <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>    
+            </Head>
                 <Layout>
                     <Banner/>
                     <div>
                     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
-            explore our airbnb facilities
+            explore our homestays facilities
         </h1>
       </div>
       <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
@@ -38,7 +42,7 @@ export async function getStaticProps() {
                                       </div>
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                              <Link href={'/#'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-red-600 ease-in-out duration-500">
+                                              <Link href={`/homestays/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-red-600 ease-in-out duration-500">
                                                       <h1>{posts.fields.name}</h1>
                                               </Link>
                                               <p className="capitalize text-sm text-gray-600">{posts.fields.description}</p>

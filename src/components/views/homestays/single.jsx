@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import PhotoGallery from './photoGallery'
+import Reservation from './reservation'
 
 export default function Single() {
   return (
@@ -102,7 +103,7 @@ export default function Single() {
             </div>
 
             <div>
-                
+                <Reservation/>
             </div>
 
         </div>
