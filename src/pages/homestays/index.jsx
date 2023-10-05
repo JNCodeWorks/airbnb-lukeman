@@ -64,7 +64,7 @@ export async function getStaticProps() {
                                                   <h4 className="pb-2 text-neutral-700">
                                                       <span className="text-2xl font-bold">$ {posts.fields.price}</span> per night
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#ff3f3f] hover:bg-red-600 ease-in-out duration-500 capitalize text-white">open</button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#ff3f3f] hover:bg-red-600 ease-in-out duration-500 capitalize text-white"><Link href={`/homestays/${posts.fields.slug}`}>view</Link></button>
                                               </div>
                                           </div>
                                       </div>  
