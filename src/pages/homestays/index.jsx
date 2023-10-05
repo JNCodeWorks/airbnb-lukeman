@@ -42,7 +42,7 @@ export async function getStaticProps() {
                                       </div>
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                              <Link href={'/#'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-red-600 ease-in-out duration-500">
+                                              <Link href={`/homestays/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-red-600 ease-in-out duration-500">
                                                       <h1>{posts.fields.name}</h1>
                                               </Link>
                                               <p className="capitalize text-sm text-gray-600">{posts.fields.description}</p>
