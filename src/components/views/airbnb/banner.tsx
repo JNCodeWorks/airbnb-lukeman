@@ -9,7 +9,7 @@ export default function Banner() {
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
                         <div className="xl:text-5xl pt-12 md:text-3xl flex flex-col space-y-12 text-2xl text-center">
                             <h1 className="font-medium capitalize "> our luxurious airbnb </h1>
-                            <p className="lg:text-md text-base capitalize"> In id enim odio. Nunc aliquet diam tortor, at venenatis urna sagittis non. Suspendisse sodales nulla sit amet sem condimentum, ac euismod nibh elementum. Praesent eu urna at sem sodales venenatis. Mauris efficitur dapibus enim in posuere </p>
+                            <p className="lg:text-md text-base capitalize"> Explore our curated collection of Airbnb listings that offer comfort, style, and convenience.</p>
                         </div>
                     </div>
 

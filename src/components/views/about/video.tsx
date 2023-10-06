@@ -19,8 +19,9 @@ export default function Video() {
             </p>
         </div>
         <h1 className='text-4xl font-bold text-neutral-700'>
-            Watch how a day is at one of our resorts
+            Watch how a day unfolds at one of our properties.
         </h1>
+        <p className='text-neutral-600'>Get a glimpse of the unforgettable experiences that await you in Kenya.</p>
       </div>
       <div className='w-full items-center'>
         {showPlayer && <ReactPlayer url="/videos/myvideo.mp4" controls playing autoPlay muted volume={1} loop pip width='100%' height='100%'/>}

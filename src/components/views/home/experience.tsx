@@ -7,11 +7,11 @@ export default function Experience() {
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='text-center max-w-2xl mx-auto pb-8 space-y-4'>
         <h1 className='text-4xl font-bold text-neutral-700'>
-            Come and enjoy a one of a kind experience
+          Experience Unforgettable Adventures
         </h1>
         <div className=' mt-9 pb-4'>
             <p className='text-neutral-600'>
-                Lorem ipsum dolor sit amet consectetur adipiscing elitolmi mauris convallis mauris ultricies dolor viverra.
+              Embark on a one-of-a-kind journey in Kenya. Immerse yourself in our diverse activities that let you reconnect with nature and local culture.
             </p>
         </div>
       </div>

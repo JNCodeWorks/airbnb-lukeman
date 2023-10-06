@@ -9,7 +9,7 @@ export default function Homestays() {
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
-            explore our homestay facilities
+            Discover Our Homestay Listings
         </h1>
         <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>

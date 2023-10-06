@@ -3,27 +3,20 @@
         "id": "1",
         "image":"/images/exp/7.png",
         "title": "unique experience",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "We offer rooms in real Kenyan homes with local hosts. Our accommodations are different because you stay with locals and become part of the local community."
     },
 
     {
         "id": "2",
         "image":"/images/exp/8.png",
         "title": "customer first",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "We don't just offer great prices and good long-term accommodation deals; we provide true value for money by giving you a priceless authentic experience."
     },
 
     {
         "id": "3",
-        "image":"/images/exp/9.png",
-        "title": "eco-friendly",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
-    },
-
-    {
-        "id": "4",
         "image":"/images/exp/10.png",
-        "title": "sustainable",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "title": "sustainable tourism",
+        "decsription": "We promote sustainable local tourism by ensuring your spending stays within local communities, minimizing your environmental impact."
     }
 ]

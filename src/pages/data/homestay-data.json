@@ -2,30 +2,30 @@
     {
         "id": "1",
         "image": "/images/1.jpeg",
-        "name": "Single Safari Cabin",
+        "name": "Single Homestay Retreat",
         "guests": "2 guests",
         "bedrooms": "1 bredroom",
-        "description": "Experience Comfort and Style in the Heart of Kenya's Wildlife.",
+        "description": "Experience the Warmth of Kenyan Hospitality.",
         "price": "$99 per night"
     },
     
     {
         "id": "2",
         "image": "/images/pxl1.jpg",
-        "name": "Duo Safari Cabin",
+        "name": "Duo Homestay Retreat",
         "guests": "4 guests",
         "bedrooms": "2 bedrooms",
-        "description": "A Serene Retreat for Nature Lovers.",
+        "description": "A Home Away from Home in Kenya.",
         "price":"$129 per night"
     },
 
     {
         "id": "3",
         "image": "/images/1.jpeg",
-        "name": "Duplex Safari Cabin",
+        "name": "Duplex Homestay Retreat",
         "guests": "2 guests",
         "bedrooms": "1 bredroom",
-        "description": "Immerse Yourself in Kenya's Natural Beauty.",
+        "description": "Discover Kenyan Culture and Comfort.",
         "price":"$150 per night"
     }
 ]

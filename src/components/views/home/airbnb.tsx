@@ -9,7 +9,7 @@ export default function Airbnb() {
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
-            explore our airbnb facilities
+            Discover Our Airbnb Listings
         </h1>
         <Link href={'/airbnb'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
@@ -34,7 +34,7 @@ export default function Airbnb() {
                                                 <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                                                   </svg>
-                                                  </span>{Item.guests}</p>
+                                                  </span>Ideal for {Item.guests}</p>
                                               <p className="flex flex-row capitalize text-sm text-neutral-700 mb-2">
                                                   <span className="text-red-600 mr-2 text-sm">
                                                       <Image src={bed} alt={'bedrooms'} style={{width: "18px", height: "18px"}}/>
@@ -46,7 +46,7 @@ export default function Airbnb() {
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
                                                       {Item.price}
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#ff3f3f] hover:bg-red-600 ease-in-out duration-500 capitalize text-white">open</button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#ff3f3f] hover:bg-red-600 ease-in-out duration-500 capitalize text-white">view</button>
                                               </div>
                                           </div>
                                       </div>  

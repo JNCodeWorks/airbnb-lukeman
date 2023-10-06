@@ -2,19 +2,19 @@
     {
         "id": "1",
         "image": "/images/1.jpeg",
-        "title": "kayaks",
-        "decription": "Sagittis, facilisis mauris sed vitae habitant dolor sit."
+        "title": "kayaking",
+        "decription": "Paddle through Kenya's crystal-clear waters."
     },
     {
         "id": "2",
         "image": "/images/2.jpg",
         "title": "hiking",
-        "decription": "Sagittis, facilisis mauris sed vitae habitant dolor sit."
+        "decription": " Discover Kenya's scenic trails and breathtaking views."
     },
     {
         "id": "3",
         "image": "/images/pxl1.jpg",
         "title": "mountain biking",
-        "decription": "Sagittis, facilisis mauris sed vitae habitant dolor sit."
+        "decription": " Explore Kenya's terrain on two wheels."
     }
 ]

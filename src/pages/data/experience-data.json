@@ -3,41 +3,41 @@
         "id": "1",
         "image":"/images/exp/1.png",
         "title": "wood fire",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "Gather around the campfire for stories and warmth."
     },
 
     {
         "id": "2",
         "image":"/images/exp/2.png",
         "title": "lake padding",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "Explore Kenya's serene lakes by kayak."
     },
 
     {
         "id": "3",
         "image":"/images/exp/3.png",
         "title": "outdoor picnic",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "Savor Kenyan cuisine in picturesque outdoor settings"
     },
 
     {
         "id": "4",
         "image":"/images/exp/4.png",
         "title": "fishing",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "Test your skills in Kenya's pristine fishing spots."
     },
 
     {
         "id": "5",
         "image":"/images/exp/5.png",
         "title": "game room",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": " Enjoy indoor games and entertainment."
     },
 
     {
         "id": "6",
         "image":"/images/exp/6.png",
         "title": "outdoor hot tub",
-        "decsription": "Sagittis, facilisis mauris sed vitae habitant dolor sit"
+        "decsription": "Relax and unwind under the stars."
     }
 ]
