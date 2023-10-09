@@ -6,6 +6,8 @@ const client = createClient({
   environment: 'master',
 });
 
+export default client;
+
 export async function getBlogPosts() {
   const entries = await client.getEntries({ content_type: 'homestays' });
   return entries.items;

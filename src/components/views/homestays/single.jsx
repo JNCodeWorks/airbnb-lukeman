@@ -97,7 +97,7 @@ export default function Single() {
                         <li>parking</li>
                         <li>full kitchen</li>
                         <li>game room</li>
-                        <li>refrigirator</li>
+                        <li>refrigerator</li>
                     </ul>
                 </div>
             </div>

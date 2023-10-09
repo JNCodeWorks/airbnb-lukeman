@@ -1,10 +1,13 @@
 import { getBlogPostBySlug } from "../../../lib/contentful";
 import { getBlogPosts } from "../../../lib/contentful";
+import client from "../../../lib/contentful"
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
+import { useEffect, useState } from "react";
+import ModalImage from "react-modal-image";
 
 export async function getStaticPaths () {
     const blogPosts = await getBlogPosts ();
@@ -25,6 +28,7 @@ export async function getStaticProps ({ params }) {
 
 
 export default function BlogPost ({ blogPost }) {
+
     return (
         <>
         <div>
@@ -80,13 +84,53 @@ export default function BlogPost ({ blogPost }) {
                         </div>
 
                         <div className='space-y-6'>
-                            <h1 className='capitalize text-neutral-800 font-bold text-[32px]'>about the cabin</h1>
+                            <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>about the cabin</h1>
                             <ReactMarkdown className="text-neutral-600 prose prose-neutral"> 
                                 {blogPost.fields.body}
                             </ReactMarkdown>
                         </div>
+
+                        <div class="border-b border-neutral-500"></div>
+
+                        <div className='space-y-6'>
+                            <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>amenities</h1>
+                            <ul className='grid lg:grid-cols-3 gap-4 list-disc list-inside space-y-3 text-neutral-700 capitalize'>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        
                     </div>
                 </div>
+
+            <div className='py-16'>
+            <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
+            <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
+                gallery
+            </h1>
+            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Book now</Link>
+            </div>
+            <div>
+                {/* <PhotoGallery/> */}
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 py-16 gap-8">
+                    {blogPost.fields.gallery.map((image) => (
+                        <ModalImage
+                        className="rounded-lg"
+                        key={image.sys.id}
+                        small={image.fields.file.url}
+                        medium={image.fields.file.url}
+                        large={image.fields.file.url}
+                        alt={image.title}
+                        hideDownload={true}
+                        hideZoom={true}
+                        hideRotate={true}
+                        />
+                    ))}
+                </div>
+            </div>
+            </div>
             </div>
             </Layout>
         </div>
