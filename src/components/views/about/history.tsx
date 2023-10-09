@@ -9,7 +9,7 @@ export default function History() {
                 how we started    
             </h2>  
             <p className='text-neutral-600 leading-8'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    
+              Our journey started with a simple idea: to provide travelers with more than just a place to stay. We envisioned a platform that would allow visitors to immerse themselves in the local culture, experience the warmth of Kenyan hospitality, and create memories that last a lifetime.
             </p>  
         </div>
 
@@ -18,7 +18,7 @@ export default function History() {
                 our story
             </h2>
             <p className='text-neutral-600 leading-8'>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Since our inception, we have been committed to making travel experiences meaningful. We&apos;ve partnered with local hosts who open their homes and hearts to travelers, ensuring that every stay is a unique and enriching experience. We believe that the true essence of travel lies in connecting with people, places, and cultures.
             </p>
         </div>
       </div>

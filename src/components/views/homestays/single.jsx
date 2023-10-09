@@ -97,7 +97,7 @@ export default function Single() {
                         <li>parking</li>
                         <li>full kitchen</li>
                         <li>game room</li>
-                        <li>refrigirator</li>
+                        <li>refrigerator</li>
                     </ul>
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default function Single() {
             <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
                 gallery
             </h1>
-            <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Book now</Link>
+            <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Book now</Link>
             </div>
             <div>
                 <PhotoGallery/>

@@ -1,10 +1,13 @@
 import { getBlogPostBySlug } from "../../../lib/contentful";
 import { getBlogPosts } from "../../../lib/contentful";
+import client from "../../../lib/contentful"
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
+import { useEffect, useState } from "react";
+import ModalImage from "react-modal-image";
 
 export async function getStaticPaths () {
     const blogPosts = await getBlogPosts ();
@@ -25,6 +28,7 @@ export async function getStaticProps ({ params }) {
 
 
 export default function BlogPost ({ blogPost }) {
+
     return (
         <>
         <div>
@@ -47,8 +51,8 @@ export default function BlogPost ({ blogPost }) {
                 <div className='grid lg:grid-cols-3 gap-6'>
                     <div className='col-span-2 space-y-8'>
 
-                        <div className='grid lg:grid-cols-2 gap-4'>
-                        <button className='border justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <div className='grid lg:grid-cols-3 gap-4'>
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
@@ -57,7 +61,7 @@ export default function BlogPost ({ blogPost }) {
                         <span>{blogPost.fields.guests} Guest(s)</span>
                         </button>
 
-                        <button className='border justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
                         <g clip-path="url(#clip0_1610_32377)">
@@ -77,16 +81,60 @@ export default function BlogPost ({ blogPost }) {
                         <span>{blogPost.fields.bedrooms} Bedroom(s)</span>
                         </button>
 
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                            <span className="text-2xl font-bold">$ {blogPost.fields.price}&nbsp;</span> per night
+                        </button>
+
                         </div>
 
                         <div className='space-y-6'>
-                            <h1 className='capitalize text-neutral-800 font-bold text-[32px]'>about the cabin</h1>
+                            <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>about the cabin</h1>
                             <ReactMarkdown className="text-neutral-600 prose prose-neutral"> 
                                 {blogPost.fields.body}
                             </ReactMarkdown>
                         </div>
+
+                        <div class="border-b border-neutral-500"></div>
+
+                        <div className='space-y-6'>
+                            <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>amenities</h1>
+                            <ul className='grid lg:grid-cols-3 gap-4 list-disc list-inside space-y-3 text-neutral-700 capitalize'>
+                                
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        
                     </div>
                 </div>
+
+            <div className='py-16'>
+            <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
+            <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
+                gallery
+            </h1>
+            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Book now</Link>
+            </div>
+            <div>
+                {/* <PhotoGallery/> */}
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 py-16 gap-8">
+                    {blogPost.fields.gallery.map((image) => (
+                        <ModalImage
+                        className="rounded-lg"
+                        key={image.sys.id}
+                        small={image.fields.file.url}
+                        medium={image.fields.file.url}
+                        large={image.fields.file.url}
+                        alt={image.title}
+                        hideDownload={true}
+                        hideZoom={true}
+                        hideRotate={true}
+                        />
+                    ))}
+                </div>
+            </div>
+            </div>
             </div>
             </Layout>
         </div>
