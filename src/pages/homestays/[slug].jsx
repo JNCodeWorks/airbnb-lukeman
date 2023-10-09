@@ -51,8 +51,8 @@ export default function BlogPost ({ blogPost }) {
                 <div className='grid lg:grid-cols-3 gap-6'>
                     <div className='col-span-2 space-y-8'>
 
-                        <div className='grid lg:grid-cols-2 gap-4'>
-                        <button className='border justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <div className='grid lg:grid-cols-3 gap-4'>
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
@@ -61,7 +61,7 @@ export default function BlogPost ({ blogPost }) {
                         <span>{blogPost.fields.guests} Guest(s)</span>
                         </button>
 
-                        <button className='border justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
                         <g clip-path="url(#clip0_1610_32377)">
@@ -79,6 +79,10 @@ export default function BlogPost ({ blogPost }) {
                         </svg>
                         </span>
                         <span>{blogPost.fields.bedrooms} Bedroom(s)</span>
+                        </button>
+
+                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                            <span className="text-2xl font-bold">$ {blogPost.fields.price}&nbsp;</span> per night
                         </button>
 
                         </div>
@@ -110,7 +114,7 @@ export default function BlogPost ({ blogPost }) {
             <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
                 gallery
             </h1>
-            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-red-600 ease-in-out duration-500 font-medium'}>Book now</Link>
+            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Book now</Link>
             </div>
             <div>
                 {/* <PhotoGallery/> */}

@@ -72,10 +72,10 @@ export default function ContactForm() {
                 <div className="xl:w-2/5 lg:w-2/5 bg-white py-16 xl:rounded-bl rounded-tl rounded-tr xl:rounded-tr-none ">
                     <div className="xl:w-5/6 xl:px-0 px-8 mx-auto">
                         <h1 className="xl:text-4xl text-3xl pb-4 text-neutral-700 font-bold">Get in Touch</h1>
-                        <p className="text-lg text-neutral-600 pb-8 leading-relaxed font-normal lg:pr-4">Got a question about us? Are you interested in partnering with us? Have some suggestions or just want to say Hi? Just contact us. We are here to assist you.</p>
+                        <p className="text-[17px] text-neutral-600 pb-8 leading-relaxed font-normal lg:pr-4">Have questions or need assistance? Our dedicated team is here to help. Reach out to us via the contact form, and we will get back to you promptly. You can also find our contact details and location information for additional inquiries and support.</p>
                         <div className="flex pb-4 items-center">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff3f3f" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#53afe5" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
                                     <path d="M15 7a2 2 0 0 1 2 2" />
@@ -86,7 +86,7 @@ export default function ContactForm() {
                         </div>
                         <div className="flex items-center pb-4">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff3f3f" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#53afe5" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <rect x={3} y={5} width={18} height={14} rx={2} />
                                     <polyline points="3 7 12 13 21 7" />
@@ -97,7 +97,7 @@ export default function ContactForm() {
 
                         <div className="flex items-center pb-4">
                             <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ff3f3f" className="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#53afe5" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
                             </svg>
 
@@ -115,7 +115,7 @@ export default function ContactForm() {
                         </div>
                         <div className={'flex items-center space-x-4'}>
                             {Links.social.map((item) => (
-                                <Link href={item.href} target={'_blank'} key={item.id} className={'h-10 w-10 bg-white rounded-full text-[#ff3f3f] flex items-center justify-center hover:bg-[#ff3f3f] hover:text-white ease-in-out duration-300'}>
+                                <Link href={item.href} target={'_blank'} key={item.id} className={'h-10 w-10 bg-white rounded-full text-[#53afe5] flex items-center justify-center hover:bg-[#53afe5] hover:text-white ease-in-out duration-300'}>
                                     <item.icon className={'h-8 w-8'} aria-hidden={'true'}/>
                             </Link>
                             ))}
@@ -170,7 +170,7 @@ export default function ContactForm() {
                                 </label>
                                 <textarea placeholder  name="message" className="border-gray-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-[#0067DA]" rows={8} id="message" defaultValue={""} />
                             </div>
-                            <button type="submit" className="focus:outline-none border-2 border-stone-500 text-stone-500 hover:bg-white ease-in-out duration-300 hover:text-[#ff3f3f] hover:border-[#ff3f3f] rounded px-8 py-3 text-sm leading-6">
+                            <button type="submit" className="focus:outline-none border-2 border-stone-500 text-stone-500 hover:bg-white ease-in-out duration-300 hover:text-[#53afe5] hover:border-[#53afe5] rounded px-8 py-3 text-sm leading-6">
                                 Send a Message
                             </button>
                         </div>

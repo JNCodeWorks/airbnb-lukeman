@@ -6,7 +6,7 @@
         "guests": "2 guests",
         "bedrooms": "1 bredroom",
         "description": "Experience Comfort and Style in the Heart of Kenya's Wildlife.",
-        "price": "$99 per night"
+        "price": "99"
     },
     
     {
@@ -16,7 +16,7 @@
         "guests": "4 guests",
         "bedrooms": "2 bedrooms",
         "description": "A Serene Retreat for Nature Lovers.",
-        "price":"$129 per night"
+        "price":"129"
     },
 
     {
@@ -26,6 +26,6 @@
         "guests": "2 guests",
         "bedrooms": "1 bredroom",
         "description": "Immerse Yourself in Kenya's Natural Beauty.",
-        "price":"$150 per night"
+        "price":"150"
     }
 ]

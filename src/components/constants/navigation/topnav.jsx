@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function TopNav() {
   return (
-    <div className="relative bg-[#ff3f3f] text-sm xl:text-base lg:text-base">
+    <div className="relative bg-[#53afe5] text-sm xl:text-base lg:text-base">
       <div className="xl:max-w-7xl mx-auto py-2 px-6 w-full">
         <div className="text-center sm:px-16 flex items-center justify-center space-x-6">
         <p className='text-white'>

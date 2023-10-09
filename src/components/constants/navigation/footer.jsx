@@ -108,7 +108,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">site links</h2>
                     {
                         navigation.links.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#ff3f3f] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
@@ -118,7 +118,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">Support</h2>
                     {
                         navigation.legal.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#ff3f3f] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
