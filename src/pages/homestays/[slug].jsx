@@ -28,8 +28,69 @@ export async function getStaticProps ({ params }) {
 
 
 export default function BlogPost ({ blogPost }) {
+    
+    const [formData, setFormData] = useState({
+        visitor_name: '',
+        visitor_email: '',
+        visitor_phone: '',
+        total_adults: 1,
+        total_children: 0,
+        checkin: '',
+        checkout: '',
+        room_preference: '',
+        visitor_message: '',
+      });
+    
+      const [totalPrice, setTotalPrice] = useState(0);
+      const [showPopup, setShowPopup] = useState(false);
+    
+      const handleFormChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+    
+        // Calculate total price when check-in or check-out dates change
+        if (name === 'checkin' || name === 'checkout') {
+          calculateTotalPrice();
+        }
+      };
+    
+      const calculateTotalPrice = () => {
+        const checkinDate = new Date(formData.checkin);
+        const checkoutDate = new Date(formData.checkout);
+    
+        if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
+          const oneDay = 24 * 60 * 60 * 1000;
+          const nights = Math.round((checkoutDate - checkinDate) / oneDay);
+          const nightlyRate = 100; // Replace with your pricing logic
+    
+          const total = nights * nightlyRate;
+          setTotalPrice(total);
+        } else {
+          // Handle invalid dates (e.g., display an error message or set the total price to 0)
+          setTotalPrice(0);
+        }
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        // Calculate the total price when the form is submitted
+        calculateTotalPrice();
+    
+        // Show the pop-up banner
+        setShowPopup(true);
+      };
+    
+      const closePopup = () => {
+        // Close the pop-up banner
+        setShowPopup(false);
+      };
+    
 
-    return (
+return (
         <>
         <div>
             <Head>
@@ -48,8 +109,8 @@ export default function BlogPost ({ blogPost }) {
             </div>
 
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
-                <div className='grid lg:grid-cols-3 gap-6'>
-                    <div className='col-span-2 space-y-8'>
+                <div className='grid lg:grid-cols-2 gap-8'>
+                    <div className=' space-y-8'>
 
                         <div className='grid lg:grid-cols-3 gap-4'>
                         <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
@@ -106,6 +167,124 @@ export default function BlogPost ({ blogPost }) {
 
                     <div>
                         
+      <main className="bg-white p-6 rounded-lg shadow-lg">
+        <form className="booking-form" action="#" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="visitor_name"
+              placeholder="John Doe"
+              pattern="[A-Za-z\s]{3,20}"
+              required
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block font-semibold text-neutral-700">Your E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="visitor_email"
+              placeholder="john.doe@email.com"
+              required
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="phone" className="block font-semibold text-neutral-700">Your Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="visitor_phone"
+              placeholder="498-348-3872"
+              pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
+              required
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+            />
+          </div>
+          <hr className="my-4" />
+          <div className="mb-4">
+            <div className="w-full py-3">
+              <label htmlFor="adult" className="block font-semibold text-neutral-700">Adults</label>
+              <input
+                type="number"
+                id="adult"
+                name="total_adults"
+                placeholder="2"
+                min="1"
+                required
+                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+              />
+            </div>
+            <div className="w-full py-3">
+              <label htmlFor="child" className="block font-semibold text-neutral-700">Children</label>
+              <input
+                type="number"
+                id="child"
+                name="total_children"
+                placeholder="2"
+                min="0"
+                required
+                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+              />
+            </div>
+            <div className="w-full py-3">
+            <label htmlFor="checkin" className="block font-semibold text-gray-700">Check-in Date</label>
+            <input
+              type="date"
+              id="checkin"
+              name="checkin"
+              value={formData.checkin}
+              onChange={handleFormChange}
+              required
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
+          <div className="w-full py-3">
+            <label htmlFor="checkout" className="block font-semibold text-gray-700">Check-out Date</label>
+            <input
+              type="date"
+              id="checkout"
+              name="checkout"
+              value={formData.checkout}
+              onChange={handleFormChange}
+              required
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
+          </div>
+          <div className="w-full py-3">
+            <label htmlFor="totalPrice" className="block font-semibold text-gray-700">Total Price</label>
+            <input
+              type="text"
+              id="totalPrice"
+              name="totalPrice"
+              value={`$${totalPrice.toFixed(2)}`}
+              readOnly
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+            />
+          </div>
+          <hr className="my-4" />
+          <div className="mb-4">
+            <label htmlFor="message" className="block font-semibold text-neutral-700">Anything Else?</label>
+            <textarea
+              id="message"
+              name="visitor_message"
+              placeholder="Tell us anything else that might be important."
+              required
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-[#53afe5] ease-in-out duration-300 text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+          >
+            Book The Rooms
+          </button>
+        </form>
+      </main>
                     </div>
                 </div>
 
