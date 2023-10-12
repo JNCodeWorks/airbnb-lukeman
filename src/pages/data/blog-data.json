@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "image": "/images/1.jpeg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "environmental impact",
+        "description": "After one of our church fellowships, beneficiaries were selecting clothes during our cloth donation event."
+    },
+    {
+        "id": 2,
+        "image": "/images/2.jpg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "construction industry myths",
+        "description": "A lunch session with some of the community members that participated in the food donation activty."
+    },
+    {
+        "id": 3,
+        "image": "/images/3.jpg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "architecture news",
+        "description": "During the activity a lot of foood was given out to the community especially those that needed were dangerously low on food rations."
+    },
+    {
+        "id": 4,
+        "image": "/images/4.jpg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "working environment",
+        "description": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life"
+    },
+    {
+        "id": 5,
+        "image": "/images/5.jpg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "our goals",
+        "description": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life"
+    },
+    {
+        "id": 6,
+        "image": "/images/6.jpg",
+        "date": "Sept 10, 2018",
+        "publisher": "admin",
+        "title": "clean water for urban area",
+        "description": "Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life"
+    }
+]

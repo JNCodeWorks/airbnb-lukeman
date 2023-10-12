@@ -35,8 +35,8 @@ export default function Responsive() {
             },
             {
                 id: 5,
-                name: 'blog',
-                href: '/blog'
+                name: 'news & updates',
+                href: '/news'
             },
             {
                 id: 6,
@@ -91,9 +91,9 @@ export default function Responsive() {
             <div id="Main" className={`${show ? "-translate-x-full" : "-translate-x-0"} bg-[#53afe5] space-y-2 transform  xl:translate-x-0 shadow xl:rounded-r fixed h-screen top-22 sm:z-20  ease-in-out transition duration-700 flex justify-start items-start w-full sm:w-64 flex-col `}>
                 {navigation.links.map((item)=>(
                     // <button className="text-stone-700 rounded py-3 px-8 items-start text-left space-x-6 w-full" key={item.id} >
-                    //     <Link href={item.href} className={router.pathname == item.href ? "text-[#53afe5] capitalize font-medium" : "hover:text-[#53afe5] text-[#202B5D] capitalize w-full font-medium"}>{item.name}</Link>
+                    //     <Link href={item.href} className={router.pathname == item.href ? "text-[#53afe5] capitalize font-medium" : "hover:text-[#53afe5] text-neutral-600 capitalize w-full font-medium"}>{item.name}</Link>
                     // </button>
-                    <Link href={item.href} key={item.id} className="text-left items-start text-[#202B5D] rounded py-2.5 px-8 text-left space-x-6 w-full"><button className={router.pathname == item.href ? "text-white capitalize font-medium" : "hover:text-white capitalize font-medium"}>{item.name}</button></Link>
+                    <Link href={item.href} key={item.id} className="text-left items-start text-neutral-600 rounded py-2.5 px-8 text-left space-x-6 w-full"><button className={router.pathname == item.href ? "text-white capitalize font-medium" : "hover:text-white capitalize font-medium"}>{item.name}</button></Link>
                 ))}
             </div>
     </div>
