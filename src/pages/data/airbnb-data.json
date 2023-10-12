@@ -1,31 +1,31 @@
 [
     {
         "id": "1",
-        "image": "/images/1.jpeg",
-        "name": "Single Safari Cabin",
+        "image": "/images/7.jpg",
+        "name": "studio apartment",
         "guests": "2 guests",
-        "bedrooms": "1 bredroom",
-        "description": "Experience Comfort and Style in the Heart of Kenya's Wildlife.",
+        "bedrooms": "1 bredroom(s)",
+        "description": "Studio Serenity: Your Stylish Retreat",
         "price": "99"
     },
     
     {
         "id": "2",
-        "image": "/images/pxl1.jpg",
-        "name": "Duo Safari Cabin",
-        "guests": "4 guests",
-        "bedrooms": "2 bedrooms",
-        "description": "A Serene Retreat for Nature Lovers.",
+        "image": "/images/6.jpg",
+        "name": "Cozy Apartment",
+        "guests": "5 guests",
+        "bedrooms": "1 bedroom(s)",
+        "description": "Your Cozy Escape: A 1-Bedroom Haven.",
         "price":"129"
     },
 
     {
         "id": "3",
-        "image": "/images/1.jpeg",
-        "name": "Duplex Safari Cabin",
+        "image": "/images/7.jpg",
+        "name": "Studio Apartment",
         "guests": "2 guests",
-        "bedrooms": "1 bredroom",
-        "description": "Immerse Yourself in Kenya's Natural Beauty.",
+        "bedrooms": "1 bredroom(s)",
+        "description": "Studio Serenity: Your Stylish Retreat",
         "price":"150"
     }
 ]

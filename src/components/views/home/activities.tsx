@@ -7,11 +7,11 @@ export default function Activities() {
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='text-center max-w-2xl mx-auto pb-8 space-y-4'>
       <h1 className='text-4xl font-bold text-neutral-700'>
-            Explore our activities
+            Explore our Activities
         </h1>
         <div className=' mt-9 pb-4'>
             <p className='text-neutral-600'>
-                Lorem ipsum dolor sit amet consectetur adipiscing elitolmi mauris convallis mauris ultricies dolor viverra.
+                Experience the Magic of Kenya within Our Unique Homestays and AirBnBs.
             </p>
         </div>
       </div>

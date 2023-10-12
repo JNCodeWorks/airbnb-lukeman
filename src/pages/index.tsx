@@ -11,7 +11,10 @@ import Testimonial from '@/components/views/home/testimonial'
 import Head from 'next/head'
 
 
+
 const inter = Inter({ subsets: ['latin'] })
+
+
 
 export default function Home() {
   return (
