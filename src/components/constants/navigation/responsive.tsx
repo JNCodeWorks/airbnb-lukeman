@@ -36,7 +36,7 @@ export default function Responsive() {
             {
                 id: 5,
                 name: 'news & updates',
-                href: '/news'
+                href: '/blog'
             },
             {
                 id: 6,
