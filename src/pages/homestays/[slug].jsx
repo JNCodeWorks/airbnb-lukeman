@@ -109,8 +109,8 @@ return (
             </div>
 
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
-                <div className='grid lg:grid-cols-2 gap-8'>
-                    <div className=' space-y-8'>
+                <div className='grid lg:grid-cols-3 gap-8'>
+                    <div className='lg:col-span-2 space-y-8'>
 
                         <div className='grid lg:grid-cols-3 gap-4'>
                         <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
@@ -169,7 +169,7 @@ return (
                         
       <main className="bg-white p-6 rounded-lg shadow-lg">
         <form className="booking-form" action="#" onSubmit={handleSubmit}>
-        <p className="py-6">{blogPost.fields.name} Reservation Form</p>
+        <p className="py-6 capitalize text-neutral-700 font-bold">{blogPost.fields.name} Reservation Form</p>
           <div className="mb-4">
             <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
             <input
