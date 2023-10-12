@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Data from '@/pages/data/airbnb-data.json'
+import Data from '@/pages/data/homestay-data.json'
 import Image from 'next/image'
-import bed from '../../../../public/images/bed.svg'
+
+
 
 export default function Homestays() {
   return (

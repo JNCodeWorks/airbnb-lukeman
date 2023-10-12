@@ -17,7 +17,7 @@ export default function Testimonial() {
         </h1>
         <div className=' mt-9 pb-4'>
             <p className='text-neutral-600'>
-                Lorem ipsum dolor sit amet consectetur adipiscing elitolmi mauris convallis mauris ultricies dolor viverra.
+                We pride ourselves in putting our customers first and going out of our way to fulfill our customer&apos;s requirements.
             </p>
         </div>
       </div>

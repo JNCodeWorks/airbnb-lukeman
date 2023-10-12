@@ -35,7 +35,7 @@ export default function WebNav() {
             },
             {
                 id: 5,
-                name: 'blog',
+                name: 'news & updates',
                 href: '/blog'
             },
             {
@@ -74,7 +74,7 @@ export default function WebNav() {
             <div>
                 <nav className='flex items-center space-x-8 items-center'>
                     {navigation.links.map((item)=>(
-                        <Link href={item.href} key={item.id} className={router.pathname == item.href ? "text-white capitalize font-medium" : "hover:text-white ease-in-out duration-300 text-[#202B5D] capitalize font-medium"}>{item.name}</Link>
+                        <Link href={item.href} key={item.id} className={router.pathname == item.href ? "text-white capitalize font-medium" : "hover:text-white ease-in-out duration-300 text-neutral-600 capitalize font-medium"}>{item.name}</Link>
                     ))}
                 </nav>
             </div>

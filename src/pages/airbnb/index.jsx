@@ -31,7 +31,7 @@ export async function getStaticProps() {
             explore our AirBnB facilities
         </h1>
       </div>
-      <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
+      <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-2 md:grid-cols-2 lg:max-w-none'>
           {
                                 blogPosts.map ((posts) => (
 
@@ -77,7 +77,7 @@ export async function getStaticProps() {
                                                   <h4 className="pb-2 text-neutral-700">
                                                       <span className="text-2xl font-bold">$ {posts.fields.price}</span> per night
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={`/homestays/${posts.fields.slug}`}>view</Link></button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={`/airbnb/${posts.fields.slug}`}>view</Link></button>
                                               </div>
                                           </div>
                                       </div>  

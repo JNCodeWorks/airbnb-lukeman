@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/constants/layout/layout'
-import Single from '../components/views/homestays/single'
 import Head from 'next/head'
+import Banner from '../components/views/blog/banner'
+import BlogSection from '../components/views/blog/blog'
 
 export default function Blog() {
   return (
@@ -10,7 +11,8 @@ export default function Blog() {
         <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>    
       </Head>
       <Layout>
-        <Single/>
+        <Banner/>
+        <BlogSection/>
       </Layout>
     </div>
   )
