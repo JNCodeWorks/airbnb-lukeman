@@ -1,5 +1,5 @@
-import { getBlogPostBySlug } from "../../../lib/contentful";
-import { getBlogPosts } from "../../../lib/contentful";
+import { getBlogPostBySlug } from "../../../lib/AirBnB";
+import { getBlogPosts } from "../../../lib/AirBnB";
 import client from "../../../lib/contentful"
 import Head from "next/head";
 import Link from "next/link";
@@ -104,13 +104,36 @@ return (
                 <h1 className="font-medium capitalize "> {blogPost.fields.name} </h1>
                 <p className='text-base max-w-prose capitalize'> {blogPost.fields.description} </p>
             </div>
+            <div className={'lg:flex  text-[14px]  flex-col justify-between items-start py-4'}>
+                        <div className={'block box-border'}>
+                            <ul className={'flex flex-row space-x-4 items-center  text-white'}>
+                                <li className='capitalize hover:text-[#f8a72a] ease-in-out duration-300'>
+                                    <Link href={'/'}> home </Link>
+                                </li>
+                                <li className=''>
+                                    <svg className='h-4 w-4' fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                                    </svg>
+                                </li>
+                                <li className='capitalize hover:text-[#f8a72a] ease-in-out duration-300'>
+                                    <Link href={'/airbnb'}> airbnb </Link> 
+                                </li>
+                                <li className=''>
+                                    <svg className='h-4 w-4' fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                                    </svg>
+                                </li>
+                                <li className='capitalize'>{blogPost.fields.name}</li>
+                            </ul>
+                        </div>
+                    </div>
             </div>
             </div>
             </div>
 
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
-                <div className='grid lg:grid-cols-2 gap-8'>
-                    <div className=' space-y-8'>
+                <div className='grid lg:grid-cols-3 gap-8'>
+                    <div className='col-span-2 space-y-8'>
 
                         <div className='grid lg:grid-cols-3 gap-4'>
                         <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
@@ -150,7 +173,7 @@ return (
 
                         <div className='space-y-6'>
                             <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>about the apartment</h1>
-                            <ReactMarkdown className="text-neutral-600 prose prose-neutral"> 
+                            <ReactMarkdown className="text-neutral-600 prose prose-neutral-700"> 
                                 {blogPost.fields.body}
                             </ReactMarkdown>
                         </div>
@@ -160,7 +183,9 @@ return (
                         <div className='space-y-6'>
                             <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>amenities</h1>
                             <ul className='grid lg:grid-cols-3 gap-4 list-disc list-inside space-y-3 text-neutral-700 capitalize'>
-                                
+                            <ReactMarkdown className="text-neutral-600 prose prose-neutral-700">
+                              {blogPost.fields.amenities}
+                            </ReactMarkdown>
                             </ul>
                         </div>
                     </div>
@@ -168,8 +193,8 @@ return (
                     <div>
                         
       <main className="bg-white p-6 rounded-lg shadow-lg">
-        <form className="booking-form" action="#" onSubmit={handleSubmit}>
-        <p className="py-6">{blogPost.fields.name} Reservation Form</p>
+        <form className="booking-form z-0" action="#" onSubmit={handleSubmit}>
+          <p className="py-6">{blogPost.fields.name} Reservation Form</p>
           <div className="mb-4">
             <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
             <input
@@ -189,7 +214,6 @@ return (
               id="email"
               name="visitor_email"
               placeholder="john.doe@email.com"
-              required
               className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
             />
           </div>
@@ -299,7 +323,7 @@ return (
             </div>
             <div>
                 {/* <PhotoGallery/> */}
-                <div className="grid lg:grid-cols-4 md:grid-cols-2 py-16 gap-8">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 py-16 gap-8">
                     {blogPost.fields.gallery.map((image) => (
                         <ModalImage
                         className="rounded-lg"

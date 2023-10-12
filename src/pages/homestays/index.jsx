@@ -45,7 +45,7 @@ export async function getStaticProps() {
                                               <Link href={`/homestays/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#f8a72a] ease-in-out duration-500">
                                                       <h1>{posts.fields.name}</h1>
                                               </Link>
-                                              <p className="capitalize text-sm text-gray-600">{posts.fields.description}</p>
+                                              <p className="capitalize text-sm text-neutral-600">{posts.fields.description}</p>
                                           </div>
                                           <div className=" flex flex-row justify-between py-8">
                                               <p className="flex flex-row capitalize text-sm text-neutral-700 mb-2"> <span className="text-[#f8a72a] mr-2 text-sm">
@@ -71,7 +71,7 @@ export async function getStaticProps() {
                                                 </svg>
                                                   </span>{posts.fields.bedrooms} bedrooms</p>
                                           </div>
-                                          <div className="mt-2 border-t w-full border-gray-600 pt-8 md:flex md:items-center md:justify-between"></div>
+                                          <div className="mt-2 border-t w-full border-neutral-600 pt-8 md:flex md:items-center md:justify-between"></div>
                                           <div className="flex-1 -mt-2">
                                               <div className="flex flex-row items-center justify-between">
                                                   <h4 className="pb-2 text-neutral-700">

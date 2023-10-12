@@ -59,8 +59,8 @@ export default function Responsive() {
 
   return (
     <div className='lg:hidden'>
-      {/* <div className='bg-white shadow xl:hidden flex justify-between w-full px-8 py-6 rounded-t-xl items-center border-b border-transparent sm:border-gray-200'> */}
-      <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 items-center border-b-2 sm:border-gray-200' : 'navbar xl:hidden flex justify-between w-full px-8 items-center border-b border-transparent sm:border-gray-200'}>
+      {/* <div className='bg-white shadow xl:hidden flex justify-between w-full px-8 py-6 rounded-t-xl items-center border-b border-transparent sm:border-neutral-200'> */}
+      <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 items-center border-b-2 sm:border-neutral-200' : 'navbar xl:hidden flex justify-between w-full px-8 items-center border-b border-transparent sm:border-neutral-200'}>
       <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3">
                 <Link href={'/'} className='flex flex-col items-center'>
                     <div>
