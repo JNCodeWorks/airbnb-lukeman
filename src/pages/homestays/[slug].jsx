@@ -29,6 +29,17 @@ export async function getStaticProps ({ params }) {
     };
 }
 
+const isValidEmail = (email) => {
+  // Use a regular expression to validate the email format
+  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+  return emailRegex.test(email);
+};
+
+const isValidPhone = (phone) => {
+  const phoneRegex = /^(\+[0-9]{1,3})?[0-9]{10}$/; // Replace with your phone format regex
+  return phoneRegex.test(phone);
+};
+
 
 export default function BlogPost ({ blogPost }) {
     
@@ -46,6 +57,16 @@ export default function BlogPost ({ blogPost }) {
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [phoneError, setPhoneError] = useState('');
+
+
+  const handlePhoneChange = (phone) => {
+    setFormData({
+      ...formData,
+      visitor_phone: phone,
+    });
+  };
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -54,12 +75,13 @@ export default function BlogPost ({ blogPost }) {
       [name]: value,
     });
 
-    const handlePhoneChange = (phone) => {
-      setFormData({
-        ...formData,
-        visitor_phone: phone,
-      });
-    };
+      // Clear the phone error when the phone input changes
+  if (name === 'visitor_phone') {
+    setPhoneError('');
+  }
+
+    setFormErrors({ ...formErrors, [name]: '' });
+
 
     if (name === 'checkin' || name === 'checkout') {
       calculateTotalPrice();
@@ -85,13 +107,71 @@ export default function BlogPost ({ blogPost }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    calculateTotalPrice();
-    setShowPopup(true);
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length === 0) {
+      calculateTotalPrice();
+      setShowPopup(true);
+    } else {
+      setFormErrors(validationErrors);
+    }
   };
 
   const closePopup = () => {
     setShowPopup(false);
   };
+
+  const validateForm = () => {
+    let isValid = true;
+    const errors = {};
+
+    // Validate name
+    if (formData.visitor_name.trim() === '') {
+      errors.visitor_name = 'Name is required';
+      isValid = false;
+    }
+
+    // Validate phone
+    if (formData.visitor_phone.trim() === '') {
+    errors.visitor_phone = 'Phone number is required';
+    } else if (!isValidPhone(formData.visitor_phone)) {
+    errors.visitor_phone = 'Invalid phone number format';
+    }
+
+    // Validate email
+    if (formData.visitor_email.trim() === '') {
+      errors.visitor_email = 'Email is required';
+      isValid = false;
+    } else if (!isValidEmail(formData.visitor_email)) {
+      errors.visitor_email = 'Invalid email format';
+      isValid = false;
+    }
+
+    // Validate number of adults and children
+    if (formData.total_adults < 1) {
+      errors.total_adults = 'At least 1 adult is required';
+      isValid = false;
+    }
+
+    if (formData.total_children < 0) {
+      errors.total_children = 'Number of children cannot be negative';
+      isValid = false;
+    }
+
+    // Validate check-in and checkout dates
+    const checkinDate = new Date(formData.checkin);
+    const checkoutDate = new Date(formData.checkout);
+
+    if (isNaN(checkinDate.getTime()) || isNaN(checkoutDate.getTime()) || checkinDate >= checkoutDate) {
+      errors.checkin = 'Check-in and checkout dates are invalid';
+      isValid = false;
+    }
+
+    // Add more validation for other fields as needed
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
     
 
 return (
@@ -184,9 +264,12 @@ return (
                                 onChange={handleFormChange}
                                 placeholder="John Doe"
                                 pattern="[A-Za-z\s]{3,20}"
-                                required
+                                // required
                                 className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
                               />
+                              {formErrors.visitor_name && (
+                                <p className="text-red-500 text-xs font-semibold">{formErrors.visitor_name}</p>
+                              )}
                             </div>
                             <div className="mb-4">
                               <label htmlFor="email" className="block font-semibold text-neutral-700">Your E-mail</label>
@@ -197,9 +280,12 @@ return (
                                 value={formData.visitor_email}
                                 onChange={handleFormChange}
                                 placeholder="john.doe@email.com"
-                                required
+                                // required
                                 className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
                               />
+                              {formErrors.visitor_email && (
+                                <p className="text-red-500 text-xs font-semibold">{formErrors.visitor_email}</p>
+                              )}
                             </div>
                             <div className="mb-4">
                               <label htmlFor="phone" className="block font-semibold text-neutral-700">Your Phone</label>
@@ -212,6 +298,7 @@ return (
                                 className: 'w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]',
                               }}
                               />
+                              {phoneError && <p className="text-red-500 text-xs font-semibold">{phoneError}</p>}
                             </div>
                             <hr className="my-4" />
                             <div className="mb-4">
@@ -225,9 +312,12 @@ return (
                                   onChange={handleFormChange}
                                   placeholder="2"
                                   min="1"
-                                  required
+                                  // required
                                   className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
                                 />
+                                {formErrors.total_adults && (
+                                  <p className="text-red-500 text-xs font-semibold">{formErrors.total_adults}</p>
+                                )}
                               </div>
                               <div className="w-full py-3">
                                 <label htmlFor="child" className="block font-semibold text-neutral-700">Children</label>
@@ -239,9 +329,12 @@ return (
                                   onChange={handleFormChange}
                                   placeholder="2"
                                   min="0"
-                                  required
+                                  // required
                                   className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
                                 />
+                                {formErrors.total_children && (
+                                  <p className="text-red-500 text-xs font-semibold">{formErrors.total_children}</p>
+                                )}
                               </div>
                               <div className="w-full py-3">
                               <label htmlFor="checkin" className="block font-semibold text-gray-700">Check-in Date</label>
@@ -251,9 +344,12 @@ return (
                                 name="checkin"
                                 value={formData.checkin}
                                 onChange={handleFormChange}
-                                required
+                                // required
                                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
                               />
+                              {formErrors.checkin && (
+                                <p className="text-red-500 text-xs font-semibold">{formErrors.checkin}</p>
+                              )}
                             </div>
                             <div className="w-full py-3">
                               <label htmlFor="checkout" className="block font-semibold text-gray-700">Check-out Date</label>
@@ -263,9 +359,12 @@ return (
                                 name="checkout"
                                 value={formData.checkout}
                                 onChange={handleFormChange}
-                                required
+                                // required
                                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
                               />
+                              {formErrors.checkout && (
+                                <p className="text-red-500 text-xs font-semibold">{formErrors.checkout}</p>
+                              )}
                             </div>
                             </div>
                             <div className="w-full py-3">
@@ -299,38 +398,43 @@ return (
                             </button>
                             <p className="py-6 text-neutral-500 text-center text-sm font-medium">You won&apos;t be charged yet</p>
                         </form>
-                        {showPopup && (
+                        {Object.keys(formErrors).length === 0 && showPopup && (
                         <div className="fixed inset-0 flex items-center justify-center z-50">
-                          <div className="fixed inset-0 bg-black opacity-50"></div>
-                          <div className="relative bg-white rounded-lg p-6 shadow-lg z-10">
-                            <h2 className="text-2xl font-semibold mb-4">Booking Details</h2>
-                            <p className="text-lg">Name: {formData.visitor_name}</p>
-                            <p className="text-lg">Email: {formData.visitor_email}</p>
-                            <p className="text-lg">Phone: {formData.visitor_phone}</p>
-                            <p className="text-lg">Adults: {formData.total_adults}</p>
-                            <p className="text-lg">Children: {formData.total_children}</p>
-                            <p className="text-lg">Check-in Date: {formData.checkin}</p>
-                            <p className="text-lg">Check-out Date: {formData.checkout}</p>
-                            {/* Add more fields as needed */}
-                            <p className="text-lg">Total Price: ${totalPrice.toFixed(2)}</p>
-                            <div className="flex flex-row items-center text-center justify-between">
-                            <button
-                              onClick={closePopup}
-                              className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-                            >
-                              Close
-                            </button>
-                            <button
-                              onClick={() => sendEmail(formData)}
-                              className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-                            >
-                              Send Email
-                            </button>
-                            </div>
+                        <div className="fixed inset-0 bg-black opacity-50"></div>
+                        <div className="relative bg-white rounded-lg p-6 shadow-lg z-10">
+                          <h2 className="text-2xl font-semibold mb-4">Booking Details</h2>
+                          <p className="text-lg">Name: {formData.visitor_name}</p>
+                          <p className="text-lg">Email: {formData.visitor_email}</p>
+                          <p className="text-lg">Phone: {formData.visitor_phone}</p>
+                          <p className="text-lg">Adults: {formData.total_adults}</p>
+                          <p className="text-lg">Children: {formData.total_children}</p>
+                          <p className="text-lg">Check-in Date: {formData.checkin}</p>
+                          <p className="text-lg">Check-out Date: {formData.checkout}</p>
+                          <p className="text-lg">Total Price: ${totalPrice.toFixed(2)}</p>
+                          <div className="flex flex-row items-center text-center justify-between">
+                          <button
+                            onClick={closePopup}
+                            className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+                          >
+                            Close
+                          </button>
+                          <button
+                            onClick={() => sendEmail(formData)}
+                            className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+                          >
+                            Send Email
+                          </button>
                           </div>
                         </div>
-                        )}
+                      </div>
+                      )}
                       </main>
+                      <div className="error-messages">
+                      {/* Display error messages here based on formErrors */}
+                      {Object.keys(formErrors).map((field) => (
+                      <p key={field}>{formErrors[field]}</p>
+                      ))}
+                      </div>
                     </div>
                 </div>
 
