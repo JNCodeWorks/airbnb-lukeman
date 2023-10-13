@@ -8,7 +8,8 @@ export default function Blog() {
   return (
     <div>
       <Head>
-        <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>    
+        <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/> 
+        <link rel="icon" href="/images/logo.png" />   
       </Head>
       <Layout>
         <Banner/>

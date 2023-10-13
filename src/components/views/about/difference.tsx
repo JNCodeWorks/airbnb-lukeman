@@ -18,7 +18,7 @@ export default function Difference() {
                     &quot;Empowering Kenyan Journeys, One Stay at a Time&quot;
                 </p>
                 <p className='text-neutral-600 leading-7'>
-                    At Lukeman Airbnb & Homestay, our mission is to enrich the lives of travelers by connecting them with the heart and soul of Kenya. We are dedicated to curating extraordinary travel experiences that immerse you in the authentic beauty, culture, and warmth of our nation. With each stay, we aim to create lasting memories and foster meaningful connections, one journey at a time.
+                    At Lukeman Homestays & Airbnb, our mission is to enrich the lives of travelers by connecting them with the heart and soul of Kenya. We are dedicated to curating extraordinary travel experiences that immerse you in the authentic beauty, culture, and warmth of our nation. With each stay, we aim to create lasting memories and foster meaningful connections, one journey at a time.
                 </p>
             </div>
             <div className='border-b-2 border-neutral-300'></div>
