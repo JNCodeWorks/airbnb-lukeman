@@ -6,8 +6,11 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
+import { PhoneInput } from "react-international-phone";
+import 'react-international-phone/style.css';
 import { useEffect, useState } from "react";
 import ModalImage from "react-modal-image";
+
 
 export async function getStaticPaths () {
     const blogPosts = await getBlogPosts ();
@@ -29,65 +32,66 @@ export async function getStaticProps ({ params }) {
 
 export default function BlogPost ({ blogPost }) {
     
-    const [formData, setFormData] = useState({
-        visitor_name: '',
-        visitor_email: '',
-        visitor_phone: '',
-        total_adults: 1,
-        total_children: 0,
-        checkin: '',
-        checkout: '',
-        room_preference: '',
-        visitor_message: '',
+  const [formData, setFormData] = useState({
+    visitor_name: '',
+    visitor_email: '',
+    visitor_phone: '',
+    total_adults: '',
+    total_children: '',
+    checkin: '',
+    checkout: '',
+    room_preference: '',
+    visitor_message: '',
+  });
+
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    const handlePhoneChange = (phone) => {
+      setFormData({
+        ...formData,
+        visitor_phone: phone,
       });
-    
-      const [totalPrice, setTotalPrice] = useState(0);
-      const [showPopup, setShowPopup] = useState(false);
-    
-      const handleFormChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value,
-        });
-    
-        // Calculate total price when check-in or check-out dates change
-        if (name === 'checkin' || name === 'checkout') {
-          calculateTotalPrice();
-        }
-      };
-    
-      const calculateTotalPrice = () => {
-        const checkinDate = new Date(formData.checkin);
-        const checkoutDate = new Date(formData.checkout);
-    
-        if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
-          const oneDay = 24 * 60 * 60 * 1000;
-          const nights = Math.round((checkoutDate - checkinDate) / oneDay);
-          const nightlyRate = 100; // Replace with your pricing logic
-    
-          const total = nights * nightlyRate;
-          setTotalPrice(total);
-        } else {
-          // Handle invalid dates (e.g., display an error message or set the total price to 0)
-          setTotalPrice(0);
-        }
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        // Calculate the total price when the form is submitted
-        calculateTotalPrice();
-    
-        // Show the pop-up banner
-        setShowPopup(true);
-      };
-    
-      const closePopup = () => {
-        // Close the pop-up banner
-        setShowPopup(false);
-      };
+    };
+
+    if (name === 'checkin' || name === 'checkout') {
+      calculateTotalPrice();
+    }
+  };
+
+  const calculateTotalPrice = () => {
+    const checkinDate = new Date(formData.checkin);
+    const checkoutDate = new Date(formData.checkout);
+
+    if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
+      const oneDay = 24 * 60 * 60 * 1000;
+      const nights = Math.round((checkoutDate - checkinDate) / oneDay);
+      const nightlyRate = blogPost.fields.price; // Replace with your pricing logic
+
+      const total = nights * nightlyRate;
+      setTotalPrice(total);
+    } else {
+      // Handle invalid dates (e.g., display an error message or set the total price to 0)
+      setTotalPrice(0);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    calculateTotalPrice();
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
     
 
 return (
@@ -95,6 +99,7 @@ return (
         <div>
             <Head>
                 <title>{blogPost.fields.name}</title>
+                <link rel="icon" href="/images/logo.png" />
             </Head>
             <Layout>
             <div className='w-full single bg-cover bg-center'>
@@ -165,128 +170,167 @@ return (
                         </div>
                     </div>
 
-                    <div>
-                        
-      <main className="bg-white p-6 rounded-lg shadow-lg">
-        <form className="booking-form" action="#" onSubmit={handleSubmit}>
-        <p className="py-6 capitalize text-neutral-700 font-bold">{blogPost.fields.name} Reservation Form</p>
-          <div className="mb-4">
-            <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              name="visitor_name"
-              placeholder="John Doe"
-              pattern="[A-Za-z\s]{3,20}"
-              required
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block font-semibold text-neutral-700">Your E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="visitor_email"
-              placeholder="john.doe@email.com"
-              required
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="phone" className="block font-semibold text-neutral-700">Your Phone</label>
-            <input
-              type="tel"
-              id="phone"
-              name="visitor_phone"
-              placeholder="498-348-3872"
-              pattern="(\d{3})-?\s?(\d{3})-?\s?(\d{4})"
-              required
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-            />
-          </div>
-          <hr className="my-4" />
-          <div className="mb-4">
-            <div className="w-full py-3">
-              <label htmlFor="adult" className="block font-semibold text-neutral-700">Adults</label>
-              <input
-                type="number"
-                id="adult"
-                name="total_adults"
-                placeholder="2"
-                min="1"
-                required
-                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-              />
-            </div>
-            <div className="w-full py-3">
-              <label htmlFor="child" className="block font-semibold text-neutral-700">Children</label>
-              <input
-                type="number"
-                id="child"
-                name="total_children"
-                placeholder="2"
-                min="0"
-                required
-                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-              />
-            </div>
-            <div className="w-full py-3">
-            <label htmlFor="checkin" className="block font-semibold text-gray-700">Check-in Date</label>
-            <input
-              type="date"
-              id="checkin"
-              name="checkin"
-              value={formData.checkin}
-              onChange={handleFormChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-            />
-          </div>
-          <div className="w-full py-3">
-            <label htmlFor="checkout" className="block font-semibold text-gray-700">Check-out Date</label>
-            <input
-              type="date"
-              id="checkout"
-              name="checkout"
-              value={formData.checkout}
-              onChange={handleFormChange}
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-            />
-          </div>
-          </div>
-          <div className="w-full py-3">
-            <label htmlFor="totalPrice" className="block font-semibold text-gray-700">Total Price</label>
-            <input
-              type="text"
-              id="totalPrice"
-              name="totalPrice"
-              value={`$${totalPrice.toFixed(2)}`}
-              readOnly
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-            />
-          </div>
-          <hr className="my-4" />
-          <div className="mb-4">
-            <label htmlFor="message" className="block font-semibold text-neutral-700">Anything Else?</label>
-            <textarea
-              id="message"
-              name="visitor_message"
-              placeholder="Tell us anything else that might be important."
-              required
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-[#53afe5] ease-in-out duration-300 text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-          >
-            Reserve
-          </button>
-          <p className="py-6 text-neutral-500 text-center text-sm font-medium">You won&apos;t be charged yet</p>
-        </form>
-      </main>
+                    <div>      
+                      <main className="bg-white p-6 rounded-lg shadow-lg">
+                        <form className="booking-form" action="#" onSubmit={handleSubmit}>
+                          <p className="py-6 capitalize text-neutral-700 font-bold">{blogPost.fields.name} Reservation Form</p>
+                            <div className="mb-4">
+                              <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
+                              <input
+                                type="text"
+                                id="name"
+                                name="visitor_name"
+                                value={formData.visitor_name}
+                                onChange={handleFormChange}
+                                placeholder="John Doe"
+                                pattern="[A-Za-z\s]{3,20}"
+                                required
+                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+                              />
+                            </div>
+                            <div className="mb-4">
+                              <label htmlFor="email" className="block font-semibold text-neutral-700">Your E-mail</label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="visitor_email"
+                                value={formData.visitor_email}
+                                onChange={handleFormChange}
+                                placeholder="john.doe@email.com"
+                                required
+                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+                              />
+                            </div>
+                            <div className="mb-4">
+                              <label htmlFor="phone" className="block font-semibold text-neutral-700">Your Phone</label>
+                              <PhoneInput
+                              className="items-center"
+                              defaultCountry="bw"
+                              value={formData.visitor_phone}
+                              onChange={(phone) => handleFormChange({ target: { name: 'visitor_phone', value: phone } })}
+                              inputProps={{
+                                className: 'w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]',
+                              }}
+                              />
+                            </div>
+                            <hr className="my-4" />
+                            <div className="mb-4">
+                              <div className="w-full py-3">
+                                <label htmlFor="adult" className="block font-semibold text-neutral-700">Adults</label>
+                                <input
+                                  type="number"
+                                  id="adult"
+                                  name="total_adults"
+                                  value={formData.total_adults}
+                                  onChange={handleFormChange}
+                                  placeholder="2"
+                                  min="1"
+                                  required
+                                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+                                />
+                              </div>
+                              <div className="w-full py-3">
+                                <label htmlFor="child" className="block font-semibold text-neutral-700">Children</label>
+                                <input
+                                  type="number"
+                                  id="child"
+                                  name="total_children"
+                                  value={formData.total_children}
+                                  onChange={handleFormChange}
+                                  placeholder="2"
+                                  min="0"
+                                  required
+                                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+                                />
+                              </div>
+                              <div className="w-full py-3">
+                              <label htmlFor="checkin" className="block font-semibold text-gray-700">Check-in Date</label>
+                              <input
+                                type="date"
+                                id="checkin"
+                                name="checkin"
+                                value={formData.checkin}
+                                onChange={handleFormChange}
+                                required
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+                              />
+                            </div>
+                            <div className="w-full py-3">
+                              <label htmlFor="checkout" className="block font-semibold text-gray-700">Check-out Date</label>
+                              <input
+                                type="date"
+                                id="checkout"
+                                name="checkout"
+                                value={formData.checkout}
+                                onChange={handleFormChange}
+                                required
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+                              />
+                            </div>
+                            </div>
+                            <div className="w-full py-3">
+                              <label htmlFor="totalPrice" className="block font-semibold text-gray-700">Total Price</label>
+                              <input
+                                type="text"
+                                id="totalPrice"
+                                name="totalPrice"
+                                value={`$${totalPrice.toFixed(2)}`}
+                                readOnly
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+                              />
+                            </div>
+                            <hr className="my-4" />
+                            <div className="mb-4">
+                              <label htmlFor="message" className="block font-semibold text-neutral-700">Anything Else?</label>
+                              <textarea
+                                id="message"
+                                name="visitor_message"
+                                value={formData.visitor_message}
+                                onChange={handleFormChange}
+                                placeholder="Tell us anything else that might be important."
+                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
+                              ></textarea>
+                            </div>
+                            <button
+                              type="submit"
+                              className="w-full bg-[#53afe5] ease-in-out duration-300 text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+                            >
+                              Reserve
+                            </button>
+                            <p className="py-6 text-neutral-500 text-center text-sm font-medium">You won&apos;t be charged yet</p>
+                        </form>
+                        {showPopup && (
+                        <div className="fixed inset-0 flex items-center justify-center z-50">
+                          <div className="fixed inset-0 bg-black opacity-50"></div>
+                          <div className="relative bg-white rounded-lg p-6 shadow-lg z-10">
+                            <h2 className="text-2xl font-semibold mb-4">Booking Details</h2>
+                            <p className="text-lg">Name: {formData.visitor_name}</p>
+                            <p className="text-lg">Email: {formData.visitor_email}</p>
+                            <p className="text-lg">Phone: {formData.visitor_phone}</p>
+                            <p className="text-lg">Adults: {formData.total_adults}</p>
+                            <p className="text-lg">Children: {formData.total_children}</p>
+                            <p className="text-lg">Check-in Date: {formData.checkin}</p>
+                            <p className="text-lg">Check-out Date: {formData.checkout}</p>
+                            {/* Add more fields as needed */}
+                            <p className="text-lg">Total Price: ${totalPrice.toFixed(2)}</p>
+                            <div className="flex flex-row items-center text-center justify-between">
+                            <button
+                              onClick={closePopup}
+                              className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+                            >
+                              Close
+                            </button>
+                            <button
+                              onClick={() => sendEmail(formData)}
+                              className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
+                            >
+                              Send Email
+                            </button>
+                            </div>
+                          </div>
+                        </div>
+                        )}
+                      </main>
                     </div>
                 </div>
 
