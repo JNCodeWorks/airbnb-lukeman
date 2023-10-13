@@ -60,8 +60,8 @@ export default function WebNav() {
     useEffect (() => {window.addEventListener ("scroll", changeBackground)})
 
   return (
-    // <div className='bg-white rounded-full'>
-        <div className={navbar ? 'navbar active w-full hidden rounded-full lg:flex' : 'navbar w-full hidden rounded-full lg:flex'}>
+    <div className='bg-[#53afe5] rounded-b-xl'>
+        {/* <div className={navbar ? 'navbar active w-full hidden rounded-full lg:flex' : 'navbar w-full hidden rounded-full lg:flex'}> */}
         <div className='py-4 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
         <div className='items-center'>
                 <Link href={'/'} className='flex flex-col items-center'>

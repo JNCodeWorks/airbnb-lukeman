@@ -55,10 +55,10 @@ export default function Testimonial() {
         </div>
         <div className='flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-y-0 py-12 justify-center md:space-x-8'>
                             <button className='bg-[#53afe5] py-4 px-8 capitalize rounded-full text-white text-base font-semibold hover:bg-[#f8a72a] ease-in-out duration-500 hover:text-white'>
-                                <Link href={'#'}>explore airbnb</Link>
+                                <Link href={'/airbnb'}>explore airbnb</Link>
                             </button>
                             <button className='bg-white capitalize rounded-full py-4 px-8 text-neutral-600 text-base font-semibold hover:bg-[#53afe5] ease-in-out duration-500 hover:text-white'>
-                                <Link href={'#'}>explore homestays</Link>
+                                <Link href={'/homestays'}>explore homestays</Link>
                             </button>
                         </div>
     </div>
