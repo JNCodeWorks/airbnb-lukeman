@@ -10,6 +10,8 @@ import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
 import { useEffect, useState } from "react";
 import ModalImage from "react-modal-image";
+import axios from "axios";
+
 
 
 export async function getStaticPaths () {
@@ -36,7 +38,7 @@ const isValidEmail = (email) => {
 };
 
 const isValidPhone = (phone) => {
-  const phoneRegex = /^(\+[0-9]{1,3})?[0-9]{10}$/; // Replace with your phone format regex
+  const phoneRegex = /[0-9]{9,15}$/; // Replace with your phone format regex
   return phoneRegex.test(phone);
 };
 
@@ -51,7 +53,6 @@ export default function BlogPost ({ blogPost }) {
     total_children: '',
     checkin: '',
     checkout: '',
-    room_preference: '',
     visitor_message: '',
   });
 
@@ -59,6 +60,7 @@ export default function BlogPost ({ blogPost }) {
   const [showPopup, setShowPopup] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [phoneError, setPhoneError] = useState('');
+  
 
 
   const handlePhoneChange = (phone) => {
@@ -116,6 +118,49 @@ export default function BlogPost ({ blogPost }) {
     }
   };
 
+  const sendEmail = async (formData) => {
+
+    const checkinDate = new Date(formData.checkin);
+    const checkoutDate = new Date(formData.checkout);
+  
+    let totalPrice = 0;
+    if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
+      const oneDay = 24 * 60 * 60 * 1000;
+      const nights = Math.round((checkoutDate - checkinDate) / oneDay);
+      const nightlyRate = blogPost.fields.price; // Replace with your pricing logic
+  
+      totalPrice = nights * nightlyRate;
+    }
+    const emailContent = `
+    Apartment: ${blogPost.fields.name}
+    Name: ${formData.visitor_name}
+    Email: ${formData.visitor_email}
+    Phone: ${formData.visitor_phone}
+    Adults: ${formData.total_adults}
+    Children: ${formData.total_children}
+    Check-in Date: ${formData.checkin}
+    Check-out Date: ${formData.checkout}
+    Total Price: $${totalPrice.toFixed(2)}
+    Message: ${formData.visitor_message || 'No additional message provided'}
+  `;
+    try {
+      const response = await axios.post('https://formspree.io/f/myyvojak', { emailContent });
+  
+      if (response.status === 200) {
+        // Email sent successfully
+        console.log('Email sent successfully');
+        // You can display a success message to the user here if needed.
+      } else {
+        // Handle email sending error
+        console.error('Email sending error');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+    }
+  };
+  
+  
+
   const closePopup = () => {
     setShowPopup(false);
   };
@@ -172,6 +217,7 @@ export default function BlogPost ({ blogPost }) {
     return isValid;
   };
 
+  const currentDate = new Date().toISOString().substr(0, 10);
     
 
 return (
@@ -343,6 +389,7 @@ return (
                                 id="checkin"
                                 name="checkin"
                                 value={formData.checkin}
+                                min={currentDate} // Set the min attribute to the current date
                                 onChange={handleFormChange}
                                 // required
                                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
@@ -418,8 +465,13 @@ return (
                           >
                             Close
                           </button>
-                          <button
-                            onClick={() => sendEmail(formData)}
+                          <button type="submit"
+                                onClick={(e) => {
+                                  handleSubmit(e); // Call the submit function to validate the form
+                                  if (Object.keys(formErrors).length === 0) {
+                                    sendEmail(formData); // Send the email when there are no errors
+                                  }
+                                }}
                             className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
                           >
                             Send Email
@@ -432,7 +484,7 @@ return (
                       <div className="error-messages">
                       {/* Display error messages here based on formErrors */}
                       {Object.keys(formErrors).map((field) => (
-                      <p key={field}>{formErrors[field]}</p>
+                      <p className="text-xs text-red-500 font-semibold" key={field}>{formErrors[field]}</p>
                       ))}
                       </div>
                     </div>
