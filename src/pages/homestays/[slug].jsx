@@ -6,11 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
-import { PhoneInput } from "react-international-phone";
-import 'react-international-phone/style.css';
 import { useEffect, useState } from "react";
 import ModalImage from "react-modal-image";
-import axios from "axios";
 
 
 
@@ -31,20 +28,9 @@ export async function getStaticProps ({ params }) {
     };
 }
 
-const isValidEmail = (email) => {
-  // Use a regular expression to validate the email format
-  const emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-  return emailRegex.test(email);
-};
-
-const isValidPhone = (phone) => {
-  const phoneRegex = /[0-9]{9,15}$/; // Replace with your phone format regex
-  return phoneRegex.test(phone);
-};
-
 
 export default function BlogPost ({ blogPost }) {
-    
+  
   const [formData, setFormData] = useState({
     visitor_name: '',
     visitor_email: '',
@@ -54,172 +40,60 @@ export default function BlogPost ({ blogPost }) {
     checkin: '',
     checkout: '',
     visitor_message: '',
+    subject:blogPost.fields.name
   });
 
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [showPopup, setShowPopup] = useState(false);
-  const [formErrors, setFormErrors] = useState({});
-  const [phoneError, setPhoneError] = useState('');
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-
-  const handlePhoneChange = (phone) => {
-    setFormData({
-      ...formData,
-      visitor_phone: phone,
-    });
-  };
-
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-      // Clear the phone error when the phone input changes
-  if (name === 'visitor_phone') {
-    setPhoneError('');
-  }
-
-    setFormErrors({ ...formErrors, [name]: '' });
-
-
-    if (name === 'checkin' || name === 'checkout') {
-      calculateTotalPrice();
-    }
-  };
-
-  const calculateTotalPrice = () => {
-    const checkinDate = new Date(formData.checkin);
-    const checkoutDate = new Date(formData.checkout);
-
-    if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
-      const oneDay = 24 * 60 * 60 * 1000;
-      const nights = Math.round((checkoutDate - checkinDate) / oneDay);
-      const nightlyRate = blogPost.fields.price; // Replace with your pricing logic
-
-      const total = nights * nightlyRate;
-      setTotalPrice(total);
-    } else {
-      // Handle invalid dates (e.g., display an error message or set the total price to 0)
-      setTotalPrice(0);
-    }
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length === 0) {
-      calculateTotalPrice();
-      setShowPopup(true);
-    } else {
-      setFormErrors(validationErrors);
-    }
-  };
+    setIsLoading(true);
 
-  const sendEmail = async (formData) => {
-
-    const checkinDate = new Date(formData.checkin);
-    const checkoutDate = new Date(formData.checkout);
-  
-    let totalPrice = 0;
-    if (!isNaN(checkinDate.getTime()) && !isNaN(checkoutDate.getTime())) {
-      const oneDay = 24 * 60 * 60 * 1000;
-      const nights = Math.round((checkoutDate - checkinDate) / oneDay);
-      const nightlyRate = blogPost.fields.price; // Replace with your pricing logic
-  
-      totalPrice = nights * nightlyRate;
-    }
-    const emailContent = `
-    Apartment: ${blogPost.fields.name}
-    Name: ${formData.visitor_name}
-    Email: ${formData.visitor_email}
-    Phone: ${formData.visitor_phone}
-    Adults: ${formData.total_adults}
-    Children: ${formData.total_children}
-    Check-in Date: ${formData.checkin}
-    Check-out Date: ${formData.checkout}
-    Total Price: $${totalPrice.toFixed(2)}
-    Message: ${formData.visitor_message || 'No additional message provided'}
-  `;
     try {
-      const response = await axios.post('https://formspree.io/f/myyvojak', { emailContent });
-  
+      const response = await fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
       if (response.status === 200) {
-        // Email sent successfully
-        console.log('Email sent successfully');
-        // You can display a success message to the user here if needed.
+        setIsSuccess(true);
+        setFormData({
+          visitor_name: '',
+          visitor_email: '',
+          visitor_phone: '',
+          total_adults: '',
+          total_children: '',
+          checkin: '',
+          checkout: '',
+          visitor_message: '',
+          subject:blogPost.fields.name
+        });
       } else {
-        // Handle email sending error
-        console.error('Email sending error');
+        const data = await response.json();
+        setErrorMessage(data.error);
       }
     } catch (error) {
-      console.error('Network error:', error);
+      console.error('Error:', error);
+      setErrorMessage('An error occurred while sending the message.');
+    } finally {
+      setIsLoading(false);
     }
   };
-  
-  
 
-  const closePopup = () => {
-    setShowPopup(false);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const errors = {};
 
-    // Validate name
-    if (formData.visitor_name.trim() === '') {
-      errors.visitor_name = 'Name is required';
-      isValid = false;
-    }
-
-    // Validate phone
-    if (formData.visitor_phone.trim() === '') {
-    errors.visitor_phone = 'Phone number is required';
-    } else if (!isValidPhone(formData.visitor_phone)) {
-    errors.visitor_phone = 'Invalid phone number format';
-    }
-
-    // Validate email
-    if (formData.visitor_email.trim() === '') {
-      errors.visitor_email = 'Email is required';
-      isValid = false;
-    } else if (!isValidEmail(formData.visitor_email)) {
-      errors.visitor_email = 'Invalid email format';
-      isValid = false;
-    }
-
-    // Validate number of adults and children
-    if (formData.total_adults < 1) {
-      errors.total_adults = 'At least 1 adult is required';
-      isValid = false;
-    }
-
-    if (formData.total_children < 0) {
-      errors.total_children = 'Number of children cannot be negative';
-      isValid = false;
-    }
-
-    // Validate check-in and checkout dates
-    const checkinDate = new Date(formData.checkin);
-    const checkoutDate = new Date(formData.checkout);
-
-    if (isNaN(checkinDate.getTime()) || isNaN(checkoutDate.getTime()) || checkinDate >= checkoutDate) {
-      errors.checkin = 'Check-in and checkout dates are invalid';
-      isValid = false;
-    }
-
-    // Add more validation for other fields as needed
-
-    setFormErrors(errors);
-    return isValid;
-  };
-
-  const currentDate = new Date().toISOString().substr(0, 10);
-    
-
+        
 return (
         <>
         <div>
@@ -297,196 +171,149 @@ return (
                     </div>
 
                     <div>      
-                      <main className="bg-white p-6 rounded-lg shadow-lg">
-                        <form className="booking-form" action="#" onSubmit={handleSubmit}>
-                          <p className="py-6 capitalize text-neutral-700 font-bold">{blogPost.fields.name} Reservation Form</p>
-                            <div className="mb-4">
-                              <label htmlFor="name" className="block font-semibold text-neutral-700">Your Name</label>
-                              <input
-                                type="text"
-                                id="name"
-                                name="visitor_name"
-                                value={formData.visitor_name}
-                                onChange={handleFormChange}
-                                placeholder="John Doe"
-                                pattern="[A-Za-z\s]{3,20}"
-                                // required
-                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-                              />
-                              {formErrors.visitor_name && (
-                                <p className="text-red-500 text-xs font-semibold">{formErrors.visitor_name}</p>
-                              )}
-                            </div>
-                            <div className="mb-4">
-                              <label htmlFor="email" className="block font-semibold text-neutral-700">Your E-mail</label>
-                              <input
-                                type="email"
-                                id="email"
-                                name="visitor_email"
-                                value={formData.visitor_email}
-                                onChange={handleFormChange}
-                                placeholder="john.doe@email.com"
-                                // required
-                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-                              />
-                              {formErrors.visitor_email && (
-                                <p className="text-red-500 text-xs font-semibold">{formErrors.visitor_email}</p>
-                              )}
-                            </div>
-                            <div className="mb-4">
-                              <label htmlFor="phone" className="block font-semibold text-neutral-700">Your Phone</label>
-                              <PhoneInput
-                              className="items-center"
-                              defaultCountry="bw"
-                              value={formData.visitor_phone}
-                              onChange={(phone) => handleFormChange({ target: { name: 'visitor_phone', value: phone } })}
-                              inputProps={{
-                                className: 'w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]',
-                              }}
-                              />
-                              {phoneError && <p className="text-red-500 text-xs font-semibold">{phoneError}</p>}
-                            </div>
-                            <hr className="my-4" />
-                            <div className="mb-4">
-                              <div className="w-full py-3">
-                                <label htmlFor="adult" className="block font-semibold text-neutral-700">Adults</label>
-                                <input
-                                  type="number"
-                                  id="adult"
-                                  name="total_adults"
-                                  value={formData.total_adults}
-                                  onChange={handleFormChange}
-                                  placeholder="2"
-                                  min="1"
-                                  // required
-                                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-                                />
-                                {formErrors.total_adults && (
-                                  <p className="text-red-500 text-xs font-semibold">{formErrors.total_adults}</p>
-                                )}
-                              </div>
-                              <div className="w-full py-3">
-                                <label htmlFor="child" className="block font-semibold text-neutral-700">Children</label>
-                                <input
-                                  type="number"
-                                  id="child"
-                                  name="total_children"
-                                  value={formData.total_children}
-                                  onChange={handleFormChange}
-                                  placeholder="2"
-                                  min="0"
-                                  // required
-                                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-                                />
-                                {formErrors.total_children && (
-                                  <p className="text-red-500 text-xs font-semibold">{formErrors.total_children}</p>
-                                )}
-                              </div>
-                              <div className="w-full py-3">
-                              <label htmlFor="checkin" className="block font-semibold text-gray-700">Check-in Date</label>
-                              <input
-                                type="date"
-                                id="checkin"
-                                name="checkin"
-                                value={formData.checkin}
-                                min={currentDate} // Set the min attribute to the current date
-                                onChange={handleFormChange}
-                                // required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-                              />
-                              {formErrors.checkin && (
-                                <p className="text-red-500 text-xs font-semibold">{formErrors.checkin}</p>
-                              )}
-                            </div>
-                            <div className="w-full py-3">
-                              <label htmlFor="checkout" className="block font-semibold text-gray-700">Check-out Date</label>
-                              <input
-                                type="date"
-                                id="checkout"
-                                name="checkout"
-                                value={formData.checkout}
-                                onChange={handleFormChange}
-                                // required
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-                              />
-                              {formErrors.checkout && (
-                                <p className="text-red-500 text-xs font-semibold">{formErrors.checkout}</p>
-                              )}
-                            </div>
-                            </div>
-                            <div className="w-full py-3">
-                              <label htmlFor="totalPrice" className="block font-semibold text-gray-700">Total Price</label>
-                              <input
-                                type="text"
-                                id="totalPrice"
-                                name="totalPrice"
-                                value={`$${totalPrice.toFixed(2)}`}
-                                readOnly
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
-                              />
-                            </div>
-                            <hr className="my-4" />
-                            <div className="mb-4">
-                              <label htmlFor="message" className="block font-semibold text-neutral-700">Anything Else?</label>
-                              <textarea
-                                id="message"
-                                name="visitor_message"
-                                value={formData.visitor_message}
-                                onChange={handleFormChange}
-                                placeholder="Tell us anything else that might be important."
-                                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring focus:border-[#53afe5]"
-                              ></textarea>
-                            </div>
-                            <button
-                              type="submit"
-                              className="w-full bg-[#53afe5] ease-in-out duration-300 text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-                            >
-                              Reserve
-                            </button>
-                            <p className="py-6 text-neutral-500 text-center text-sm font-medium">You won&apos;t be charged yet</p>
-                        </form>
-                        {Object.keys(formErrors).length === 0 && showPopup && (
-                        <div className="fixed inset-0 flex items-center justify-center z-50">
-                        <div className="fixed inset-0 bg-black opacity-50"></div>
-                        <div className="relative bg-white rounded-lg p-6 shadow-lg z-10">
-                          <h2 className="text-2xl font-semibold mb-4">Booking Details</h2>
-                          <p className="text-lg">Name: {formData.visitor_name}</p>
-                          <p className="text-lg">Email: {formData.visitor_email}</p>
-                          <p className="text-lg">Phone: {formData.visitor_phone}</p>
-                          <p className="text-lg">Adults: {formData.total_adults}</p>
-                          <p className="text-lg">Children: {formData.total_children}</p>
-                          <p className="text-lg">Check-in Date: {formData.checkin}</p>
-                          <p className="text-lg">Check-out Date: {formData.checkout}</p>
-                          <p className="text-lg">Total Price: ${totalPrice.toFixed(2)}</p>
-                          <div className="flex flex-row items-center text-center justify-between">
-                          <button
-                            onClick={closePopup}
-                            className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-                          >
-                            Close
-                          </button>
-                          <button type="submit"
-                                onClick={(e) => {
-                                  handleSubmit(e); // Call the submit function to validate the form
-                                  if (Object.keys(formErrors).length === 0) {
-                                    sendEmail(formData); // Send the email when there are no errors
-                                  }
-                                }}
-                            className="bg-[#53afe5] text-white py-2 px-4 rounded-lg mt-4 hover:bg-[#f8a72a] focus:outline-none focus:ring focus:border-[#53afe5]"
-                          >
-                            Send Email
-                          </button>
+                    <div className="">
+                    {isLoading ? (
+                    <p className='text-[24px] justify-center items-center text-center font-bold text-[#53afe5]'>Sending...</p>
+                    ) : isSuccess ? (
+                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
+                    ) : errorMessage ? (
+                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-red-600'>Error: {errorMessage}</p>
+                    ) : (  
+                      <form className="bg-white mx-auto p-6 rounded-lg max-w-md" onSubmit={handleSubmit}>
+                        <div className="mb-4">
+                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="name">
+                            Your Name
+                          </label>
+                          <input
+                            type="text"
+                            id="name"
+                            name="visitor_name"
+                            placeholder="John Doe"
+                            value={formData.visitor_name} onChange={handleChange}
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                            pattern="[A-Za-z\s]{3,20}"
+                            required
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="email">
+                            Your E-mail
+                          </label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="visitor_email"
+                            value={formData.visitor_email} onChange={handleChange}
+                            placeholder="john.doe@email.com"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                            required
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="phone">
+                            Your Phone
+                          </label>
+                          <input
+                            type="tel"
+                            id="phone"
+                            name="visitor_phone"
+                            value={formData.visitor_phone} onChange={handleChange}
+                            placeholder="498-348-3872"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                            pattern="(\d{3})-?(\d{3})-?(\d{4})"
+                            required
+                          />
+                        </div>
+                        <hr className="border-dotted border-gray-300 my-6" />
+                        <div className="py-2">
+                          <div className="w-full py-1">
+                            <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="adult">
+                              Adults
+                            </label>
+                            <input
+                              type="number"
+                              id="adult"
+                              name="total_adults"
+                              placeholder="2"
+                              value={formData.total_adults} onChange={handleChange}
+                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                              min="1"
+                              required
+                            />
+                          </div>
+                          <div className="w-full py-1">
+                            <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="child">
+                              Children
+                            </label>
+                            <input
+                              type="number"
+                              id="child"
+                              name="total_children"
+                              value={formData.total_children} onChange={handleChange}
+                              placeholder="2"
+                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                              min="0"
+                              required
+                            />
                           </div>
                         </div>
-                      </div>
-                      )}
-                      </main>
-                      <div className="error-messages">
-                      {/* Display error messages here based on formErrors */}
-                      {Object.keys(formErrors).map((field) => (
-                      <p className="text-xs text-red-500 font-semibold" key={field}>{formErrors[field]}</p>
-                      ))}
-                      </div>
+                        <div className="py-2">
+                          <div className="w-full py-1">
+                            <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkin-date">
+                              Check-in Date
+                            </label>
+                            <input
+                              type="date"
+                              id="checkin-date"
+                              name="checkin"
+                              value={formData.checkin} onChange={handleChange}
+                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                              required
+                            />
+                          </div>
+                          <div className="w-full py-1">
+                            <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkout-date">
+                              Check-out Date
+                            </label>
+                            <input
+                              type="date"
+                              id="checkout-date"
+                              value={formData.checkout} onChange={handleChange}
+                              name="checkout"
+                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="mb-4">
+                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="room-selection">
+                            Select Room Preference
+                          </label>
+                        </div>
+                        <hr className="border-dotted border-gray-300 my-6" />
+                        <div className="mb-4">
+                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="message">
+                            Anything Else?
+                          </label>
+                          <textarea
+                            id="message"
+                            name="visitor_message"
+                            value={formData.visitor_message} onChange={handleChange}
+                            placeholder="Tell us anything else that might be important."
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                            required
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="w-full bg-[#53afe5] text-white font-semibold text-base py-2 rounded hover:bg-[#f8a72a] ease-in-out duration-500"
+                        >
+                          Make a Reservation
+                        </button>
+                        <p className=" text-center py-2 font-semibold text-sm text-neutral-600">You won&apos;t be charged yet</p>
+                      </form>
+                    )}
+                    </div>
                     </div>
                 </div>
 
