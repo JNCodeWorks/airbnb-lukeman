@@ -35,7 +35,7 @@ export default function WebNav() {
             },
             {
                 id: 5,
-                name: 'news & updates',
+                name: 'blog',
                 href: '/blog'
             },
             {

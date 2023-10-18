@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useState } from 'react';
 // import clue from '../../../../src/pages/api' 
 
 export default function ContactForm() {
@@ -61,6 +61,59 @@ export default function ContactForm() {
             },
         ]
     }
+
+    const [formData, setFormData] = useState({
+        full_name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      });
+
+      const [isLoading, setIsLoading] = useState(false);
+      const [isSuccess, setIsSuccess] = useState(false);
+      const [errorMessage, setErrorMessage] = useState('');
+    
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsLoading(true);
+    
+        try {
+            const response = await fetch('/api/contact', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(formData),
+            });
+      
+            if (response.status === 200) {
+              setIsSuccess(true);
+              setFormData({
+                full_name: '',
+                email: '',
+                phone: '',
+                subject: '',
+                message: '',
+              });
+            } else {
+              const data = await response.json();
+              setErrorMessage(data.error);
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            setErrorMessage('An error occurred while sending the message.');
+          } finally {
+            setIsLoading(false);
+          }
+        };
+    
+      const handleChange = (e) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
 
 
   return (
@@ -125,7 +178,15 @@ export default function ContactForm() {
                     </div>
                 </div>
                 <div className="xl:w-3/5 lg:w-3/5 bg-white shadow-lg h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
-                    <form action='/' id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
+                <div className='py-24'>
+                    {isLoading ? (
+                    <p className='text-[24px] justify-center items-center text-center font-bold text-[#53afe5]'>Sending...</p>
+                    ) : isSuccess ? (
+                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
+                    ) : errorMessage ? (
+                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-red-600'>Error: {errorMessage}</p>
+                    ) : (    
+                    <form onSubmit={handleSubmit} id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
                         <h1 className="text-2xl text-neutral-600 font-bold mb-6">Leave your Message</h1>
                         <div className="block xl:flex w-full flex-wrap justify-between mb-6">
                             <div className="w-2/4 max-w-xs mb-6 xl:mb-0">
@@ -133,7 +194,7 @@ export default function ContactForm() {
                                     <label htmlFor="full_name" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Full Name
                                     </label>
-                                    <input required id="full_name" name="full_name" type="text" className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
+                                    <input required id="full_name" value={formData.full_name} onChange={handleChange} name="full_name" type="text" className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
                                 </div>
                             </div>
                             <div className="w-2/4 max-w-xs xl:flex xl:justify-end">
@@ -141,7 +202,7 @@ export default function ContactForm() {
                                     <label htmlFor="email" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Email
                                     </label>
-                                    <input required id="email" name="email" type="email" className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
+                                    <input required id="email" name="email" type="email" value={formData.email} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
                                 </div>
                             </div>
                         </div>
@@ -151,7 +212,7 @@ export default function ContactForm() {
                                     <label htmlFor="phone" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Phone
                                     </label>
-                                    <input required id="phone" name="phone" type="tel" className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
+                                    <input required id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
                                 </div>
                             </div>
                             <div className="w-2/4 max-w-xs xl:flex xl:justify-end">
@@ -159,7 +220,7 @@ export default function ContactForm() {
                                     <label htmlFor="subject" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Subject
                                     </label>
-                                    <input required id="subject" name="subject" type="text" className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder/>
+                                    <input required id="subject" name="subject" type="text" value={formData.subject} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder/>
                                 </div>
                             </div>
                         </div>
@@ -168,13 +229,15 @@ export default function ContactForm() {
                                 <label className="text-sm font-semibold text-neutral-600 mb-2" htmlFor="message">
                                     Message
                                 </label>
-                                <textarea placeholder  name="message" className="border-neutral-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-[#0067DA]" rows={8} id="message" defaultValue={""} />
+                                <textarea placeholder  name="message" value={formData.message} onChange={handleChange} className="border-neutral-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-[#0067DA]" rows={8} id="message" defaultValue={""} />
                             </div>
                             <button type="submit" className="focus:outline-none border-2 border-stone-500 text-stone-500 hover:bg-white ease-in-out duration-300 hover:text-[#53afe5] hover:border-[#53afe5] rounded px-8 py-3 text-sm leading-6">
                                 Send a Message
                             </button>
                         </div>
                     </form>
+                    )}
+                </div>
                 </div>
             </div>
         </div>
