@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-export default async (req, res) => {
+const Contact = async (req, res) => {
   if (req.method === 'POST') {
     const { full_name, email, phone, subject, message } = req.body;
 
@@ -15,7 +15,7 @@ export default async (req, res) => {
 
     // Create email data
     const mailData = {
-      from:email,
+      from: email,
       to: 'jlloris077@gmail.com',
       subject: subject,
       html: `
@@ -37,3 +37,5 @@ export default async (req, res) => {
     res.status(405).end();
   }
 };
+
+export default Contact;

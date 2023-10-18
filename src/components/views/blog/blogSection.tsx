@@ -9,7 +9,7 @@ export default function BlogSection() {
         <div className='lg:w-10/12 mx-auto px-6 py-16'>
         <div className="">
             <h1 className="lg:text-4xl text-3xl font-semibold leading-9 text-gray-800">Join Our Blog Community</h1>
-            <p className="md:w-1/2 text-base leading-normal mt-4 sm:pr-10 text-gray-600">If you're looking for random paragraphs, you've come to the right place.</p>
+            <p className="md:w-1/2 text-base leading-normal mt-4 sm:pr-10 text-gray-600">If you are looking for random paragraphs, you have come to the right place.</p>
             <div className="grid lg:grid-cols-2 gap-8">
                     <div>
                         <div className="relative">
