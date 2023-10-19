@@ -19,6 +19,7 @@ const Mail = async (req, res) => {
       to: 'jlloris077@gmail.com',
       subject: subject,
       html: `
+      <p>I would like to make a reservtion request for the <strong>${subject}</strong>. Here are the details:</p>
       <p><strong>Name:</strong> ${visitor_name}</p>
       <p><strong>Email:</strong> ${visitor_email}</p>
       <p><strong>Phone:</strong> ${visitor_phone}</p>

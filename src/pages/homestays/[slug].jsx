@@ -51,6 +51,12 @@ export default function BlogPost ({ blogPost }) {
     e.preventDefault();
     setIsLoading(true);
 
+         // Check if the visitor_message is empty
+  if (formData.visitor_message.trim() === '') {
+    // Set a default message
+    formData.visitor_message = 'No additional message provided.';
+  } 
+
     try {
       const response = await fetch('/api/mail', {
         method: 'POST',
@@ -301,7 +307,6 @@ return (
                             value={formData.visitor_message} onChange={handleChange}
                             placeholder="Tell us anything else that might be important."
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
-                            required
                           />
                         </div>
                         <button

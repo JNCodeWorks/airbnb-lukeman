@@ -6,6 +6,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
 import { useEffect, useState } from "react";
+import { FadeLoader } from "react-spinners";
 import ModalImage from "react-modal-image";
 
 
@@ -49,6 +50,12 @@ export default function BlogPost ({ blogPost }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+      // Check if the visitor_message is empty
+  if (formData.visitor_message.trim() === '') {
+    // Set a default message
+    formData.visitor_message = 'No additional message provided.';
+  }
 
     try {
       const response = await fetch('/api/mail', {
@@ -172,7 +179,10 @@ return (
                     <div>      
                     <div className="">
                     {isLoading ? (
-                    <p className='text-[24px] justify-center items-center text-center font-bold text-[#53afe5]'>Sending...</p>
+                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-[#53afe5]'>
+                      <span><FadeLoader height={20} color="#53afe5"/></span>
+                      <span>Sending...</span>
+                    </p>
                     ) : isSuccess ? (
                     <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
                     ) : errorMessage ? (
@@ -300,7 +310,6 @@ return (
                             value={formData.visitor_message} onChange={handleChange}
                             placeholder="Tell us anything else that might be important."
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
-                            required
                           />
                         </div>
                         <button
