@@ -43,22 +43,18 @@ export default function Footer () {
             {
                 id:1,
                 name: 'legal policy',
-                href:'#'
+                href:'legal'
             },
+    
             {
                 id:2,
-                name: 'status policy',
-                href:'#'
+                name: 'privacy policy',
+                href:'/privacy'
             },
             {
                 id:3,
-                name: 'privacy policy',
-                href:'#'
-            },
-            {
-                id:4,
-                name: 'terms of service',
-                href:'#'
+                name: 'terms & conditions',
+                href:'tos'
             }
         ]
     }
