@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 const Mail = async (req, res) => {
   if (req.method === 'POST') {
-    const { subject, visitor_name, visitor_email, visitor_phone, total_adults, total_children, checkin, checkout, visitor_message } = req.body;
+    const { subject, visitor_name, visitor_email, visitor_phone, total_adults, total_children, checkin, checkout, total_price, visitor_message } = req.body;
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -27,6 +27,7 @@ const Mail = async (req, res) => {
       <p><strong>Children:</strong> ${total_children}</p>
       <p><strong>Check-in Date:</strong> ${checkin}</p>
       <p><strong>Check-out Date:</strong> ${checkout}</p>
+      <p><strong>Total Price:</strong>$ ${total_price}</p>
       <p><strong>Message:</strong> ${visitor_message}</p>
     `,
     };

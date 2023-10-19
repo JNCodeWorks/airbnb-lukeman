@@ -28,6 +28,16 @@ export async function getStaticProps ({ params }) {
     };
 }
 
+function calculateNumberOfNights(checkin, checkout) {
+  const checkinDate = new Date(checkin);
+  const checkoutDate = new Date(checkout);
+  const timeDifference = checkoutDate - checkinDate;
+  const nights = Math.ceil(timeDifference / (1000 * 3600 * 24)); // 1 day = 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+  return nights;
+}
+
+
+
 
 export default function BlogPost ({ blogPost }) {
   
@@ -46,10 +56,27 @@ export default function BlogPost ({ blogPost }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [minDate, setMinDate] = useState();
+
+  useEffect(() => {
+    // Calculate the minimum date (e.g., one day from now) when the component mounts.
+    const today = new Date();
+    today.setDate(today.getDate() + 0);
+    setMinDate(today.toISOString().split('T')[0]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+        // Calculate the number of nights
+        const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
+
+        // Calculate the total price
+        const totalPrice = numberOfNights * blogPost.fields.price;
+    
+        // Include total price in the form data
+        formData.total_price = totalPrice;
 
       // Check if the visitor_message is empty
   if (formData.visitor_message.trim() === '') {
@@ -98,6 +125,15 @@ export default function BlogPost ({ blogPost }) {
     });
   };
 
+  const calculateTotalPrice = () => {
+    // Calculate the number of nights
+    const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
+
+    // Calculate the total price
+    const totalPrice = numberOfNights * blogPost.fields.price;
+
+    return totalPrice;
+  };
 
         
 return (
@@ -154,7 +190,7 @@ return (
                         </button>
 
                         <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
-                            <span className="text-2xl font-bold">$ {blogPost.fields.price}&nbsp;</span> per night
+                            <span className="text-2xl font-bold">Kshs. {blogPost.fields.price}&nbsp;</span> per night
                         </button>
 
                         </div>
@@ -184,7 +220,14 @@ return (
                       <span>Sending...</span>
                     </p>
                     ) : isSuccess ? (
-                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
+                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-green-600'>
+                      <span>
+                        <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                      </span>
+                      <span>Message sent successfully!</span>
+                    </p>
                     ) : errorMessage ? (
                     <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-red-600'>Error: {errorMessage}</p>
                     ) : (  
@@ -278,6 +321,7 @@ return (
                               value={formData.checkin} onChange={handleChange}
                               className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                               required
+                              min={minDate}
                             />
                           </div>
                           <div className="w-full py-1">
@@ -291,14 +335,23 @@ return (
                               name="checkout"
                               className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                               required
+                              min={minDate}
                             />
                           </div>
                         </div>
                         <div className="mb-4">
-                          <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="room-selection">
-                            Select Room Preference
-                          </label>
-                        </div>
+                      <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="totalPrice">
+                        Total Price
+                      </label>
+                      <input
+                        type="text"
+                        id="totalPrice"
+                        name="total_price"
+                        value={`Kshs. ${calculateTotalPrice()}`}
+                        className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
+                        readOnly
+                      />
+                    </div>
                         <hr className="border-dotted border-gray-300 my-6" />
                         <div className="mb-4">
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="message">
