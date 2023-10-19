@@ -27,7 +27,7 @@ const Mail = async (req, res) => {
       <p><strong>Children:</strong> ${total_children}</p>
       <p><strong>Check-in Date:</strong> ${checkin}</p>
       <p><strong>Check-out Date:</strong> ${checkout}</p>
-      <p><strong>Total Price:</strong>$ ${total_price}</p>
+      <p><strong>Total Price:</strong>Kshs. ${total_price}</p>
       <p><strong>Message:</strong> ${visitor_message}</p>
     `,
     };
