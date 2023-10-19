@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FadeLoader } from "react-spinners";
 // import clue from '../../../../src/pages/api' 
 
 export default function ContactForm() {
@@ -178,9 +179,12 @@ export default function ContactForm() {
                     </div>
                 </div>
                 <div className="xl:w-3/5 lg:w-3/5 bg-white shadow-lg h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
-                <div className='py-24'>
+                <div className='py-24  justify-center text-center items-center'>
                     {isLoading ? (
-                    <p className='text-[24px] justify-center items-center text-center font-bold text-[#53afe5]'>Sending...</p>
+                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-[#53afe5]'>
+                        <span><FadeLoader height={20} color="#53afe5"/></span>
+                        <span>Sending...</span>
+                    </p>
                     ) : isSuccess ? (
                     <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
                     ) : errorMessage ? (
