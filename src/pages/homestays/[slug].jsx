@@ -190,7 +190,7 @@ return (
                         </button>
 
                         <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
-                            <span className="text-2xl font-bold">$ {blogPost.fields.price}&nbsp;</span> per night
+                            <span className="text-2xl font-bold">Kshs. {blogPost.fields.price}&nbsp;</span> per night
                         </button>
 
                         </div>
@@ -229,7 +229,7 @@ return (
                       <span>Message sent successfully!</span>
                     </p>
                     ) : errorMessage ? (
-                    <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
+                      <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
                       <span>
                         <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -354,7 +354,7 @@ return (
                         type="text"
                         id="totalPrice"
                         name="total_price"
-                        value={`$${calculateTotalPrice()}`}
+                        value={`Kshs. ${calculateTotalPrice()}`}
                         className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                         readOnly
                       />

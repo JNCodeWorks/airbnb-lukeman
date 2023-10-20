@@ -76,7 +76,7 @@ export async function getStaticProps() {
                                           <div className="flex-1 -mt-2">
                                               <div className="flex flex-row items-center justify-between">
                                                   <h4 className="pb-2 text-neutral-700">
-                                                      <span className="text-2xl font-bold">$ {posts.fields.price}</span> per night
+                                                      <span className="text-2xl font-bold">Kshs. {posts.fields.price}</span> per night
                                                   </h4>
                                                   <button className="rounded-md px-4 py-2 bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={`/homestays/${posts.fields.slug}`}>view</Link></button>
                                               </div>
