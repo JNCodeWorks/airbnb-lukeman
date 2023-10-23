@@ -40,7 +40,10 @@ export default function Index({blogPosts}) {
                         </div>
                         <div className='bg-white p-4'>
                         <p className="text-sm font-light leading-4 capitalize text-neutral-500 mt-6">by {posts.fields.author}</p>
-                        <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1>
+                        {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
+                        <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#f8a72a] ease-in-out duration-500">
+                            <h1>{posts.fields.title}</h1>
+                        </Link>
                         <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{posts.fields.description}</p>
                         <button className="rounded-md px-4 py-2 mt-6 w-full bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={`/blog/${posts.fields.slug}`}>read more</Link></button>
                         </div>

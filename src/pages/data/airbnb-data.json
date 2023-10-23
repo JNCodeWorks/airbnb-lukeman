@@ -6,7 +6,7 @@
         "guests": "2 guests",
         "bedrooms": "1 bredroom(s)",
         "description": "Studio Serenity: Your Stylish Retreat",
-        "price": "99"
+        "price": "2000"
     },
     
     {
@@ -16,7 +16,7 @@
         "guests": "5 guests",
         "bedrooms": "1 bedroom(s)",
         "description": "Your Cozy Escape: A 1-Bedroom Haven.",
-        "price":"129"
+        "price":"2500"
     },
 
     {
@@ -26,6 +26,6 @@
         "guests": "2 guests",
         "bedrooms": "1 bredroom(s)",
         "description": "Studio Serenity: Your Stylish Retreat",
-        "price":"150"
+        "price":"2000"
     }
 ]

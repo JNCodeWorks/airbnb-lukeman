@@ -34,7 +34,7 @@ export default function Airbnb() {
                                                 <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                                                   </svg>
-                                                  </span>Ideal for {Item.guests}</p>
+                                                  </span>{Item.guests}</p>
                                               <p className="flex flex-row capitalize text-sm text-neutral-700 mb-2">
                                                   <span className="text-[#f8a72a] mr-2 text-sm">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor">
@@ -57,7 +57,7 @@ export default function Airbnb() {
                                           <div className="flex-1 -mt-2">
                                               <div className="flex flex-row items-center justify-between">
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
-                                                    <span className="text-2xl font-bold">$ {Item.price}</span> per night
+                                                    <span className="text-2xl font-bold">Kshs. {Item.price}</span> per night
                                                   </h4>
                                                   <button className="rounded-md px-4 py-2 bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={'/airbnb'}>view</Link></button>
                                               </div>
