@@ -15,7 +15,7 @@ export default function ContactInfo() {
             </div>
 
             <div className='lg:mx-auto'>
-                <Link href={"tel://123235598"} className='flex flex-col space-y-2 text-sm'>
+                <Link href={"tel://+254115600233"} className='flex flex-col space-y-2 text-sm'>
                     <span className='capitalize text-neutral-700 font-medium'>phone:&nbsp;</span><span className='text-[#53afe5]'>+254 115 600 233</span>
                 </Link>
             </div>
