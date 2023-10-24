@@ -1,32 +1,32 @@
 [
     {
         "id": "1",
-        "name": "Revelstoke Mountain",
-        "location": "2950 Camozzi Rd, Revelstoke, BC V0E 2S1, Canada"
+        "image": "/images/8.jpeg",
+        "alt": "pic"
     },
     {
         "id": "2",
-        "name": "Cleveland National Forest",
-        "location": "Co Hwy S7, Santa Ysabel, CA 92070, United States"
+        "image": "/images/6.jpg",
+        "alt": "pic"
     },
     {
         "id": "3",
-        "name": "Plumas National Forest",
-        "location": "Quincy, CA 95971, United States"
+        "image": "/images/1.jpeg",
+        "alt": "pic"
     },
     {
-        "id": "1",
-        "name": "Revelstoke Mountain",
-        "location": "2950 Camozzi Rd, Revelstoke, BC V0E 2S1, Canada"
+        "id": "4",
+        "image": "/images/7.jpg",
+        "alt": "pic"
     },
     {
-        "id": "1",
-        "name": "Revelstoke Mountain",
-        "location": "2950 Camozzi Rd, Revelstoke, BC V0E 2S1, Canada"
+        "id": "5",
+        "image": "/images/9.jpeg",
+        "alt": "pic"
     },
     {
-        "id": "1",
-        "name": "Revelstoke Mountain",
-        "location": "2950 Camozzi Rd, Revelstoke, BC V0E 2S1, Canada"
+        "id": "6",
+        "image": "/images/10.jpeg",
+        "alt": "pic"
     }
 ]

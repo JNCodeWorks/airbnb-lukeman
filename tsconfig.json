@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/constants/layout/layout.jsx", "src/components/constants/navigation/topnav.jsx", "src/components/views/about/gallery.jsx", "src/pages/index.tsx", "src/components/views/home/airbnb.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/constants/layout/layout.jsx", "src/components/constants/navigation/topnav.jsx", "src/components/views/about/gallery.jsx", "src/pages/index.tsx", "src/components/views/home/airbnb.tsx", "src/components/views/about/locations.jsx"],
   "exclude": ["node_modules"]
 }
