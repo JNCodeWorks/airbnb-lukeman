@@ -23,7 +23,7 @@ export async function getStaticProps() {
             <NextSeo
                 title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
-      canonical="https://www.lukemanbnb.com"
+      canonical="https://www.canonical.ie/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
         title: 'Lukeman Homestays & Airbnb',
@@ -55,7 +55,7 @@ export async function getStaticProps() {
                 // }}
             />
             <Head>
-            <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/> 
+            <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/> 
             <link rel="icon" href="/images/logo.png" />   
             </Head>
                 <Layout>

@@ -9,7 +9,7 @@ export default function Privacy() {
                   <NextSeo
                 title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
-      canonical="https://www.lukemanbnb.com"
+      canonical="https://www.canonical.ie/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
         title: 'Lukeman Homestays & Airbnb',

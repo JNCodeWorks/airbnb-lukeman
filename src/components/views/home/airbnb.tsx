@@ -30,12 +30,12 @@ export default function Airbnb() {
                                               <p className="capitalize text-sm text-neutral-600">{Item.description}</p>
                                           </div>
                                           <div className=" flex flex-row justify-between py-8">
-                                              <p className="flex flex-row capitalize text-sm text-neutral-700 mb-2"> <span className="text-[#f8a72a] mr-2 text-sm">
+                                              <p className="flex flex-row text-sm text-neutral-700 mb-2"> <span className="text-[#f8a72a] mr-2 text-sm">
                                                 <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                                                   </svg>
                                                   </span>{Item.guests}</p>
-                                              <p className="flex flex-row capitalize text-sm text-neutral-700 mb-2">
+                                              <p className="flex flex-row text-sm text-neutral-700 mb-2">
                                                   <span className="text-[#f8a72a] mr-2 text-sm">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor">
                                                 <g clip-path="url(#clip0_1610_32377)">

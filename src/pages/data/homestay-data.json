@@ -3,8 +3,8 @@
         "id": "1",
         "image": "/images/1.jpeg",
         "name": "Single Homestay Retreat",
-        "guests": "2 guests",
-        "bedrooms": "1 bredroom",
+        "guests": "2 Guest(s)",
+        "bedrooms": "1 Bedroom(s)",
         "description": "Experience the Warmth of Kenyan Hospitality.",
         "price": "99"
     },
@@ -13,8 +13,8 @@
         "id": "2",
         "image": "/images/pxl1.jpg",
         "name": "Duo Homestay Retreat",
-        "guests": "4 guests",
-        "bedrooms": "2 bedrooms",
+        "guests": "4 Guest(s)",
+        "bedrooms": "2 Bedroom(s)",
         "description": "A Home Away from Home in Kenya.",
         "price":"129"
     },
@@ -23,8 +23,8 @@
         "id": "3",
         "image": "/images/1.jpeg",
         "name": "Duplex Homestay Retreat",
-        "guests": "2 guests",
-        "bedrooms": "1 bredroom",
+        "guests": "2 Guest(s)",
+        "bedrooms": "1 Bedroom(s)",
         "description": "Discover Kenyan Culture and Comfort.",
         "price":"150"
     }
