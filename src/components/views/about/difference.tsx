@@ -15,10 +15,10 @@ export default function Difference() {
                     Mission
                 </h2>
                 <p className='text-neutral-700 font-bold italic'>
-                    &quot;Empowering Kenyan Journeys, One Stay at a Time&quot;
+                    &quot;Our Commitment to Hospitality Excellence&quot;
                 </p>
                 <p className='text-neutral-600 leading-7'>
-                    At Lukeman Homestays & Airbnb, our mission is to enrich the lives of travelers by connecting them with the heart and soul of Kenya. We are dedicated to curating extraordinary travel experiences that immerse you in the authentic beauty, culture, and warmth of our nation. With each stay, we aim to create lasting memories and foster meaningful connections, one journey at a time.
+                At Lukeman Homestays & Airbnb, our mission is to provide guests with an unforgettable and comfortable home-away-from-home experience. We are dedicated to delivering exceptional hospitality, creating lasting memories, and ensuring the well-being of every guest who walks through our doors. We believe in personalized service, attention to detail, and fostering a welcoming environment where travelers can connect with local culture, forging a genuine connection that goes beyond a mere stay.
                 </p>
             </div>
             <div className='border-b-2 border-neutral-300'></div>
@@ -27,17 +27,17 @@ export default function Difference() {
                     vision
                 </h2>
                 <p className='text-neutral-700 font-bold italic'>
-                    &quot;Inspiring Boundless Adventures in Kenya&quot;
+                    &quot;Reimagining Hospitality, One Stay at a Time&quot;
                 </p>
                 <p className='text-neutral-600 leading-7'>
-                    Our vision is to be the catalyst for unforgettable adventures in Kenya. We envision a world where every traveler discovers the wonders of our diverse landscapes, connects with our vibrant communities, and leaves with a deep appreciation for Kenya&apos;s natural beauty and cultural richness. We aspire to be your trusted companion on your journey of discovery.
+                Our vision at Lukeman Homestay & Airbnb is to be the leading name in accommodations, redefining the future of travel by seamlessly blending comfort, authenticity, and community. We aspire to expand our reach, building a network of accommodations that captivate travelers with unique and enriching experiences. We strive to be at the forefront of innovation in the hospitality industry, consistently exceeding expectations while promoting sustainable and responsible tourism practices.
                 </p>
             </div>
            
         </div>
         <div className='grid grid-cols-2 gap-6'>
             <div className='space-y-6'>
-                <div className='flex-shrink-0 relative rounded-lg h-52'>
+                <div className='flex-shrink-0 relative rounded-lg h-60'>
                     <Image src={pic1} alt='#' className='block w-full h-full rounded-lg' fill/>
                 </div>
                 <div className='flex-shrink-0 relative rounded-lg h-80'>
@@ -49,7 +49,7 @@ export default function Difference() {
                 <div className='flex-shrink-0 relative rounded-lg h-80'>
                     <Image src={pic4} alt='#' className='block w-full h-full rounded-lg' fill/>
                 </div>
-                <div className='flex-shrink-0 relative rounded-lg h-52'>
+                <div className='flex-shrink-0 relative rounded-lg h-60'>
                     <Image src={pic3} alt='#' className='block w-full h-full rounded-lg' fill/>
                 </div>
             </div>
