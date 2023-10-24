@@ -62,7 +62,7 @@ export default function Footer () {
     return (
         <div className="bg-neutral-300">
         <div className="lg:w-10/12 mx-auto container py-16 px-6">
-            <div className="grid lg:grid-cols-4 gap-8">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
                 <div className="flex flex-col flex-shrink-0">
                     <div>
                         {/* <Image src={Logo} alt='' style={{height: "100px", width: "100px"}}/> */}
@@ -120,7 +120,7 @@ export default function Footer () {
                         ))
                     }
                 </div>
-                <div className='mx-auto'>
+                <div className=''>
                     <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">have a question?</h2>
                     <div className='space-y-4 py-4'>
                     <div className='flex space-x-3 items-center'>
