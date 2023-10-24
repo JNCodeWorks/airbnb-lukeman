@@ -68,7 +68,7 @@ export default function Footer () {
                         {/* <Image src={Logo} alt='' style={{height: "100px", width: "100px"}}/> */}
                         <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">about us</h2>
                     </div>
-                    <p className="py-6 text-[15px] text-neutral-700"> We are passionate about creating memorable travel experiences. Our mission is to connect travelers with unique accommodations, from cozy homestays to luxurious Airbnb listings. With expertise in the hospitality industry, we are dedicated to helping you find the perfect place to stay on your next adventure.</p>
+                    <p className="py-6 text-sm text-neutral-700"> We are passionate about creating memorable travel experiences. Our mission is to connect travelers with unique accommodations, from cozy homestays to luxurious Airbnb listings. With expertise in the hospitality industry, we are dedicated to helping you find the perfect place to stay on your next adventure.</p>
                     <div className="flex items-center gap-x-4">
                         <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +104,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">site links</h2>
                     {
                         navigation.links.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
@@ -114,7 +114,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">Support</h2>
                     {
                         navigation.legal.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-3 items-center hover:text-[#53afe5] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
@@ -122,30 +122,35 @@ export default function Footer () {
                 </div>
                 <div className='mx-auto'>
                     <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">have a question?</h2>
-                    <div className='space-y-6'>
-                    <div className='flex space-x-3 items-center py-3'>
-                        <span className='text-neutral-700'>
-                        <svg className="svg-icon w-6 h-6" viewBox="0 0 20 20">
-							<path fill="currentColor" d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
-						</svg>
-                        </span>
-                        <p className=" text-base leading-6 text-neutral-700 ">Maweni Plaza, Voi, Taita-Taveta County, Kenya.</p>
-                    </div>
-                    <div className='flex space-x-3 items-center'>
-                        <span className='text-neutral-700 '>
-                            <svg className='w-6 h-6' fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path>
-                            </svg>
-                        </span>
-                        <p className="text-base leading-6 text-neutral-700">+256 712 345 678</p>
-                    </div>
+                    <div className='space-y-4 py-4'>
                     <div className='flex space-x-3 items-center'>
                         <span className='text-neutral-700'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                        </svg>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                            </svg>
                         </span>
-                    <p className="text-base leading-6 text-neutral-700">info@test.com</p>
+                        <p className=" text-sm leading-6 text-neutral-700 ">Maweni Plaza, Voi, Kenya.</p>
+                    </div>
+                    <div className='flex space-x-3 items-center'>
+                        <span className='text-neutral-700 '>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
+                                    <path d="M15 7a2 2 0 0 1 2 2" />
+                                    <path d="M15 3a6 6 0 0 1 6 6" />
+                                </svg>
+                        </span>
+                        <p className="text-sm leading-6 text-neutral-700">+254 115 600 233</p>
+                    </div>
+                    <div className='flex space-x-3 items-center'>
+                        <span className='text-neutral-700'>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <rect x={3} y={5} width={18} height={14} rx={2} />
+                                    <polyline points="3 7 12 13 21 7" />
+                                </svg>
+                        </span>
+                    <p className="text-sm leading-6 text-neutral-700">info@lukemanbnb.com</p>
                     </div>
                     </div>
                 </div>
