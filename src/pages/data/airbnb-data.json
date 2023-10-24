@@ -3,8 +3,8 @@
         "id": "1",
         "image": "/images/7.jpg",
         "name": "studio apartment",
-        "guests": "2 guests",
-        "bedrooms": "1 bredroom(s)",
+        "guests": "2 Guest(s)",
+        "bedrooms": "1 Bedroom(s)",
         "description": "Studio Serenity: Your Stylish Retreat",
         "price": "2000"
     },
@@ -13,8 +13,8 @@
         "id": "2",
         "image": "/images/6.jpg",
         "name": "Cozy Apartment",
-        "guests": "5 guests",
-        "bedrooms": "1 bedroom(s)",
+        "guests": "4 Guest(s)",
+        "bedrooms": "1 Bedroom(s)",
         "description": "Your Cozy Escape: A 1-Bedroom Haven.",
         "price":"2500"
     },
@@ -23,8 +23,8 @@
         "id": "3",
         "image": "/images/7.jpg",
         "name": "Studio Apartment",
-        "guests": "2 guests",
-        "bedrooms": "1 bredroom(s)",
+        "guests": "2 Guest(s)",
+        "bedrooms": "1 Bredroom(s)",
         "description": "Studio Serenity: Your Stylish Retreat",
         "price":"2000"
     }

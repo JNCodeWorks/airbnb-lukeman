@@ -20,7 +20,7 @@ export async function getStaticProps() {
         <>
             <div>
             <Head>
-            <link href="https://fonts.cdnfonts.com/css/lt-bump-smrd" rel="stylesheet"/>
+            <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
             <link rel="icon" href="/images/logo.png" />    
             </Head>
                 <Layout>
