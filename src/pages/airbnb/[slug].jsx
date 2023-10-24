@@ -242,9 +242,9 @@ return (
 
                         <div className='space-y-6'>
                             <h1 className='capitalize text-neutral-700 font-bold text-[32px]'>amenities</h1>
-                            <ul className='grid lg:grid-cols-3 gap-4 list-disc list-inside space-y-3 text-neutral-700 capitalize'>
-                                
-                            </ul>
+                            <ReactMarkdown className="text-neutral-600 prose prose-neutral"> 
+                                {blogPost.fields.amenities}
+                            </ReactMarkdown>
                         </div>
                     </div>
 
