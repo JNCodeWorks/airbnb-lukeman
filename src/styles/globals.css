@@ -42,7 +42,7 @@ body {
   position: absolute;
   border-radius: 50%;
   animation: pulsOut 1.8s ease-in-out infinite;
-  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+  /* filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75)); */
 }
 .loader:before {
   width: 100%;
