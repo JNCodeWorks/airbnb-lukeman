@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { FadeLoader } from "react-spinners";
 import ModalImage from "react-modal-image";
 import { NextSeo } from "next-seo";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 
 
@@ -113,17 +115,26 @@ export default function BlogPost ({ blogPost }) {
       }
     } catch (error) {
       console.error('Error:', error);
-      setErrorMessage('An error occurred while sending the message.');
+      setErrorMessage('An error occurred while sending the request.');
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    if (e.target) {
+      // For regular input fields
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    } else {
+      // For PhoneInput component
+      setFormData({
+        ...formData,
+        visitor_phone: e, // e is the phone number value
+      });
+    }
   };
 
   const calculateTotalPrice = () => {
@@ -262,7 +273,7 @@ return (
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                       </span>
-                      <span>Message sent successfully!</span>
+                      <span>Reservation request sent successfully!</span>
                     </p>
                     ) : errorMessage ? (
                     <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
@@ -308,16 +319,18 @@ return (
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="phone">
                             Your Phone
                           </label>
-                          <input
+
+                          <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'bw'}/>
+                          {/* <input
                             type="tel"
                             id="phone"
                             name="visitor_phone"
                             value={formData.visitor_phone} onChange={handleChange}
-                            placeholder="498-348-3872"
+                            placeholder="+254 712 345 678"
                             className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                             pattern="(\d{3})-?(\d{3})-?(\d{4})"
                             required
-                          />
+                          /> */}
                         </div>
                         <hr className="border-dotted border-gray-300 my-6" />
                         <div className="py-2">
