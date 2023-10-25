@@ -2,7 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FadeLoader } from "react-spinners";
-// import clue from '../../../../src/pages/api' 
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+
 
 export default function ContactForm() {
 
@@ -109,12 +111,21 @@ export default function ContactForm() {
           }
         };
     
-      const handleChange = (e) => {
-        setFormData({
-          ...formData,
-          [e.target.name]: e.target.value,
-        });
-      };
+        const handleChange = (e) => {
+            if (e.target) {
+              // For regular input fields
+              setFormData({
+                ...formData,
+                [e.target.name]: e.target.value,
+              });
+            } else {
+              // For PhoneInput component
+              setFormData({
+                ...formData,
+                phone: e, // e is the phone number value
+              });
+            }
+          };
 
 
   return (
@@ -186,9 +197,23 @@ export default function ContactForm() {
                         <span>Sending...</span>
                     </p>
                     ) : isSuccess ? (
-                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-green-600'>Message sent successfully!</p>
+                        <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-green-600'>
+                        <span>
+                          <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                        </span>
+                        <span>Message sent successfully!</span>
+                      </p>
                     ) : errorMessage ? (
-                    <p className='text-[24px] capitalize justify-center items-center text-center font-bold text-red-600'>Error: {errorMessage}</p>
+                        <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
+                        <span>
+                          <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                        </span>
+                        <span>Error: {errorMessage}</span>
+                      </p>
                     ) : (    
                     <form onSubmit={handleSubmit} id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
                         <h1 className="text-2xl text-neutral-600 font-bold mb-6">Leave your Message</h1>
@@ -216,7 +241,8 @@ export default function ContactForm() {
                                     <label htmlFor="phone" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Phone
                                     </label>
-                                    <input required id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder />
+                                    <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-12 text-sm border-neutral-300 rounded border"}} value={formData.phone} onChange={handleChange} country={'bw'}/>
+                                    {/* <input required id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder /> */}
                                 </div>
                             </div>
                             <div className="w-2/4 max-w-xs xl:flex xl:justify-end">
