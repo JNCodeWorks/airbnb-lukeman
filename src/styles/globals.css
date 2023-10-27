@@ -7,6 +7,53 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+/* Works on Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #53afe5 transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #53afe5;
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
+
+.icon-position{
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+  margin-right: 15px;
+}
+.icon-style{
+  background-color: #53afe5;
+  border: 2px solid #53afe5;
+  border-radius: 10%;
+  height: 37px;
+  width: 37px;
+  padding: 2px;
+  color: #ffffff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+.icon-style:hover{
+  animation: none;
+  background: #ffffff;
+  color: #53afe5;
+  border: 2px solid #53afe5;
+}
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
