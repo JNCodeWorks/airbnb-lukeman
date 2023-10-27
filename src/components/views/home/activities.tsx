@@ -16,15 +16,15 @@ export default function Activities() {
         </div>
       </div>
 
-      <div className='mt-4 grid lg:grid-cols-3 gap-8 mx-auto md:grid-cols-2 lg:max-w-none mb-6'>
+      <div className='mt-4 grid lg:grid-cols-3 gap-6 mx-auto md:grid-cols-2 lg:max-w-none mb-6'>
             {
                 Data.map ((item) => (
                     <>
                         <div className='rounded-lg hover:shadow' key={item.id}>
-                            <div className='flex-shrink-0 relative rounded-lg h-[420px] bg-neutral-900'>
+                            <div className='flex-shrink-0 relative rounded-lg h-[280px] w-full bg-neutral-900'>
                                 <Image src={item.image} alt={item.title} className="block w-full h-full rounded-lg opacity-50" fill />
                             </div>
-                            <div className='absolute z-10 -mt-32'>
+                            <div className='absolute z-10 -mt-28'>
                                 <div className='flex flex-col w-2/3 mx-4 space-y-2'>
                                     <h1 className='text-white capitalize font-semibold text-2xl'>{item.title}</h1>
                                     <p className='text-white'>{item.decription}</p>
