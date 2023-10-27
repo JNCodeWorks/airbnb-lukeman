@@ -1,20 +1,38 @@
 [
     {
         "id": "1",
-        "image": "/images/1.jpeg",
-        "title": "kayaking",
-        "decription": "Paddle through Kenya's crystal-clear waters."
+        "image": "/images/grey-crane.jpg",
+        "title": "Bird Watching",
+        "decription": "Discover Nature's Artistry: Bird Watching in Tsavo East"
     },
     {
         "id": "2",
-        "image": "/images/2.jpg",
+        "image": "/images/kenya.jpeg",
         "title": "hiking",
-        "decription": " Discover Kenya's scenic trails and breathtaking views."
+        "decription": "Trailblazing Adventures: Hiking Lion Hill and Mnarani!"
     },
     {
         "id": "3",
-        "image": "/images/pxl1.jpg",
-        "title": "mountain biking",
-        "decription": " Explore Kenya's terrain on two wheels."
+        "image": "/images/game-view.jpg",
+        "title": "game viewing",
+        "decription": "Unlock the Wild: Game Viewing at Voi Wildlife."
+    },
+    {
+        "id":"4",
+        "image": "/images/Tsavo.jpg",
+        "title": "game drive",
+        "decription": "Roam with the Wild: Game Drives in Tsavo East."
+    },
+    {
+        "id":"5",
+        "image": "/images/voi2.jpg",
+        "title": "evening walks",
+        "decription": "Stroll into Twilight: Evening Walks in Voi Town."
+    },
+    {
+        "id":"6",
+        "image": "/images/sunset.jpg",
+        "title": "sunset views",
+        "decription": "Chasing the Horizon: Sunset Views from Lion Hill to Mnarani."
     }
 ]
