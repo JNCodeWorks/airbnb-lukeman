@@ -7,7 +7,7 @@ import Footer from '../navigation/footer'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import LoadingSpinner from '../navigation/LoadingSpinner';
-import ScrollTop from '../navigation/scrollTop'
+import ScrollTop from '../navigation/scrolltop'
 
 
 export default function Layout({children}) {
