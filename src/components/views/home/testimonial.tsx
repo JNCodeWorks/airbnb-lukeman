@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Phone from '../../../public/images/phone.jpg'
 import Data from '@/pages/data/feedback.json'
 
+
 export default function Testimonial() {
   return (
     <>
@@ -25,7 +26,6 @@ export default function Testimonial() {
                 <div className="absolute -inset-x-1 inset-y-16 md:-inset-x-2 md:-inset-y-6">
                     <div className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter" id='testimonial'></div>
                 </div>
-
                 <div className="relative grid max-w-lg gap-6 mx-auto md:max-w-none lg:gap-10 lg:grid-cols-3">
                     {
                         Data.map ((items) => (
