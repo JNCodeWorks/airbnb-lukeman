@@ -62,7 +62,6 @@ export default function BlogPost ({blogPost}) {
                 // }}
             />
         <Head>
-            {/* <title>{blogPost.fields.title}</title> */}
             <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
             <link rel="icon" href="/images/logo.png" />
         </Head>
@@ -72,8 +71,7 @@ export default function BlogPost ({blogPost}) {
             <div className="lg:w-10/12 mx-auto px-6 w-full">
             <div className="xl:text-4xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
                 <h1 className="font-medium capitalize "> {blogPost.fields.title} </h1>
-                <p className='text-white font-semiblod capitalize text-sm italic'> ~ by: {blogPost.fields.author}</p>
-                {/* <p className='text-base max-w-prose capitalize'> {blogPost.fields.description} </p> */}
+                <p className='text-white font-semiblod capitalize text-sm italic'> ~ by: {blogPost.fields.author}</p>  
             </div>
             </div>
             </div>
