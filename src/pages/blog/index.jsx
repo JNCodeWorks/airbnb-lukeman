@@ -61,11 +61,11 @@ export default function Index({blogPosts}) {
         {/* <BlogSection/> */}
         <div>
         <div className='lg:w-10/12 mx-auto px-6 py-16'>
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 ">
             {
                 blogPosts.map ((posts) => (
                     <div key={posts.sys.id}>
-                        <div className='mx-3 bg-white rounded-sm shadow-md overflow-hidden'>
+                        <div className='mx-3 bg-white rounded-sm shadow-sm overflow-hidden'>
                         <div className="relative flex-shrink-o h-72">
                             <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                             <div className="bg-white absolute top-0 left-0">
@@ -73,13 +73,15 @@ export default function Index({blogPosts}) {
                             </div>
                         </div>
                         <div className='bg-white p-4'>
-                        <p className="text-sm font-light leading-4 capitalize text-neutral-500 mt-6">by {posts.fields.author}</p>
+                        <p className="text-sm font-light leading-4 capitalize text-neutral-500 py-3 italic">by {posts.fields.author}</p>
                         {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
                         <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#f8a72a] ease-in-out duration-500">
                             <h1>{posts.fields.title}</h1>
                         </Link>
                         <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{posts.fields.description}</p>
-                        <button className="rounded-md px-4 py-2 mt-6 w-full bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={`/blog/${posts.fields.slug}`}>read more</Link></button>
+                        <div className='mt-4 w-full py-4'>
+                          <Link href={`/blog/${posts.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white">read more</Link>
+                        </div>
                         </div>
                     </div>
                     </div>

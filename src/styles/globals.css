@@ -167,3 +167,44 @@ body {
   height: 580px;
   width: 100%;
 }
+
+/* Add this to your CSS or use a CSS-in-JS solution like styled-components */
+
+/* CSS */
+.testimonial-slide {
+  position: relative;
+  display: none;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateX(100%);
+  height: auto; /* Ensure variable slide heights */
+}
+
+.testimonial-slide.active {
+  display: block;
+  transform: translateX(0);
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px; /* Adjust the margin as needed */
+}
+
+.prev-button,
+.next-button {
+  color: #53afe5;
+  /* color: white; */
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  transition: 0.3s ease-in-out;
+  color: #f8a72a;
+}
+
