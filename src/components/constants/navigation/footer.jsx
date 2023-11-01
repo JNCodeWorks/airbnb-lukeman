@@ -140,7 +140,7 @@ export default function Footer () {
                                     <path d="M15 3a6 6 0 0 1 6 6" />
                                 </svg>
                         </span>
-                        <p className="text-sm leading-6 text-neutral-700">+254 115 600 233</p>
+                        <Link href={"tel://+254115600233"} className="text-sm leading-6 text-neutral-700">+254 115 600 233</Link>
                     </div>
                     <div className='flex space-x-3 items-center'>
                         <span className='text-neutral-700'>
@@ -150,7 +150,7 @@ export default function Footer () {
                                     <polyline points="3 7 12 13 21 7" />
                                 </svg>
                         </span>
-                    <p className="text-sm leading-6 text-neutral-700">info@lukemanbnb.com</p>
+                    <Link href={"mailto:info@lukemanbnb.com"}  className="text-sm leading-6 text-neutral-700">info@lukemanbnb.com</Link>
                     </div>
                     </div>
                 </div>

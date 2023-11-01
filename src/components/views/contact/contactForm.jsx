@@ -147,7 +147,7 @@ export default function ContactForm() {
                                     <path d="M15 3a6 6 0 0 1 6 6" />
                                 </svg>
                             </div>
-                            <p className="pl-4 text-neutral-600 text-base">+254 115 600 233</p>
+                            <Link href={"tel://+254115600233"}  className="pl-4 text-neutral-600 text-base">+254 115 600 233</Link>
                         </div>
                         <div className="flex items-center pb-4">
                             <div>
@@ -157,7 +157,7 @@ export default function ContactForm() {
                                     <polyline points="3 7 12 13 21 7" />
                                 </svg>
                             </div>
-                            <p className="pl-4 text-neutral-600 text-base">info@lukemanbnb.com</p>
+                            <Link href={"mailto:info@lukemanbnb.com"} className="pl-4 text-neutral-600 text-base">info@lukemanbnb.com</Link>
                         </div>
 
                         <div className="flex items-center pb-4">
