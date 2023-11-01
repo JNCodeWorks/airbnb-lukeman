@@ -198,6 +198,29 @@ return (
                 <h1 className="font-medium capitalize "> {blogPost.fields.name} </h1>
                 <p className='text-base max-w-prose capitalize'> {blogPost.fields.description} </p>
             </div>
+            <div className={'lg:flex  flex-col justify-between py-6'}>
+                        <div className={'block box-border'}>
+                            <ul className={'flex flex-row space-x-4 items-center  text-white'}>
+                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                    <Link href={'/'}> home </Link>
+                                </li>
+                                <li className=''>
+                                    <svg className='h-4 w-4' fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                                    </svg>
+                                </li>
+                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                    <Link href={'/airbnb'}> airbnb </Link> 
+                                </li>
+                                <li className=''>
+                                    <svg className='h-4 w-4' fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                                    </svg>
+                                </li>
+                                <li className='capitalize'>{blogPost.fields.name}</li>
+                            </ul>
+                        </div>
+                    </div>
             </div>
             </div>
             </div>

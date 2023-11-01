@@ -21,7 +21,7 @@ export default function ContactInfo() {
             </div>
 
             <div className='lg:mx-auto'>
-                <Link href={"mailto:info@heartofhelp.org"} className='flex flex-col space-y-2 text-sm'>
+                <Link href={"mailto:info@lukemanbnb.com"} className='flex flex-col space-y-2 text-sm'>
                     <span className='capitalize text-neutral-700 font-medium'>email:&nbsp;</span><span className='text-[#53afe5]'>info@lukemanbnb.com</span>
                 </Link>
             </div>
