@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { FadeLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { useRouter } from 'next/router';
 
 
 export default function ContactForm() {
@@ -73,15 +74,17 @@ export default function ContactForm() {
         message: '',
       });
 
-      const [isLoading, setIsLoading] = useState(false);
+      const [isSubmitting, setIsSubmitting] = useState(false);
       const [isSuccess, setIsSuccess] = useState(false);
       const [errorMessage, setErrorMessage] = useState('');
+      const router = useRouter();
+      
     
       const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
     
         try {
+            setIsSubmitting(true); //show submitting state
             const response = await fetch('/api/contact', {
               method: 'POST',
               headers: {
@@ -92,6 +95,8 @@ export default function ContactForm() {
       
             if (response.status === 200) {
               setIsSuccess(true);
+              setErrorMessage('');
+              setIsSubmitting(false);
               setFormData({
                 full_name: '',
                 email: '',
@@ -101,13 +106,13 @@ export default function ContactForm() {
               });
             } else {
               const data = await response.json();
-              setErrorMessage(data.error);
+              setErrorMessage('An error occurred while sending the message.');
+              setIsSubmitting(false);
             }
           } catch (error) {
             console.error('Error:', error);
             setErrorMessage('An error occurred while sending the message.');
-          } finally {
-            setIsLoading(false);
+            setIsSubmitting(false);
           }
         };
     
@@ -127,6 +132,13 @@ export default function ContactForm() {
             }
           };
 
+          if (isSuccess) {
+            // Redirect to the success page
+            router.push('/success');
+          
+            // Return null to prevent rendering the form
+            return null;
+          }
 
   return (
     <div className='bg-white'>
@@ -189,33 +201,9 @@ export default function ContactForm() {
                        
                     </div>
                 </div>
-                <div className="xl:w-3/5 lg:w-3/5 bg-white shadow-lg h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
+                <div className="xl:w-3/5 lg:w-3/5 bg-white h-full pt-5 pb-5 xl:pr-5 xl:pl-0 rounded-tr rounded-br">
                 <div className='py-24  justify-center text-center items-center'>
-                    {isLoading ? (
-                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-[#53afe5]'>
-                        <span><FadeLoader height={20} color="#53afe5"/></span>
-                        <span>Sending...</span>
-                    </p>
-                    ) : isSuccess ? (
-                        <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-green-600'>
-                        <span>
-                          <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg>
-                        </span>
-                        <span>Message sent successfully!</span>
-                      </p>
-                    ) : errorMessage ? (
-                        <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
-                        <span>
-                          <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                          </svg>
-                        </span>
-                        <span>Error: {errorMessage}</span>
-                      </p>
-                    ) : (    
-                    <form onSubmit={handleSubmit} id="contact" className="bg-white py-4 px-8 rounded-tr rounded-br">
+                    <form onSubmit={handleSubmit} id="contact" className="bg-white border py-6 px-8 rounded-lg">
                         <h1 className="text-2xl text-neutral-600 font-bold mb-6">Leave your Message</h1>
                         <div className="block xl:flex w-full flex-wrap justify-between mb-6">
                             <div className="w-2/4 max-w-xs mb-6 xl:mb-0">
@@ -261,12 +249,14 @@ export default function ContactForm() {
                                 </label>
                                 <textarea placeholder  name="message" value={formData.message} onChange={handleChange} className="border-neutral-300 border mb-4 rounded py-2 text-sm outline-none resize-none px-3 focus:border focus:border-[#0067DA]" rows={8} id="message" defaultValue={""} />
                             </div>
-                            <button type="submit" className="focus:outline-none border-2 border-stone-500 text-stone-500 hover:bg-white ease-in-out duration-300 hover:text-[#53afe5] hover:border-[#53afe5] rounded px-8 py-3 text-sm leading-6">
-                                Send a Message
+                            <button type="submit" disabled={isSubmitting} className="focus:outline-none border-2 border-stone-500 text-stone-500 hover:bg-white ease-in-out duration-300 hover:text-[#53afe5] hover:border-[#53afe5] rounded px-8 py-3 text-sm leading-6">
+                                 {isSubmitting ? (    <div className="flex items-center space-x-3 justify-center"> <span className='text-[#53afe5]'>Sending</span>  <ScaleLoader height={10} color="#53afe5"  /></div>) : 'Send a Message'}
                             </button>
+                            <div className='w-full mx-auto items-center text-center py-4 text-red-500 font-bold'>{errorMessage}</div>
                         </div>
+                        
                     </form>
-                    )}
+                    
                 </div>
                 </div>
             </div>
