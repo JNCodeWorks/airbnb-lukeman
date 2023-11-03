@@ -18,39 +18,39 @@ export async function getStaticProps() {
 export default function Index({blogPosts}) {
   return (
     <div>
-                  <NextSeo
+                    <NextSeo
                 title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
-      canonical="https://www.canonical.ie/"
+      canonical="https://www.lukeman.com/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
         title: 'Lukeman Homestays & Airbnb',
         description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
-        // images: [
-        //   {
-        //     url: 'https://www.example.ie/og-image-01.jpg',
-        //     width: 800,
-        //     height: 600,
-        //     alt: 'Og Image Alt',
-        //     type: 'image/jpeg',
-        //   },
-        //   {
-        //     url: 'https://www.example.ie/og-image-02.jpg',
-        //     width: 900,
-        //     height: 800,
-        //     alt: 'Og Image Alt Second',
-        //     type: 'image/jpeg',
-        //   },
-        //   { url: 'https://www.example.ie/og-image-03.jpg' },
-        //   { url: 'https://www.example.ie/og-image-04.jpg' },
-        // ],
+        images: [
+          {
+            url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
+            width: 800,
+            height: 600,
+            alt: 'Lukeman Homestays & Airbnb',
+            type: 'image/jpeg',
+          },
+          {
+            url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
+            width: 900,
+            height: 800,
+            alt: 'Lukeman Homestays & Airbnb',
+            type: 'image/jpeg',
+          },
+          { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
+          { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
+        ],
         siteName: 'Lukeman Homestays & Airbnb',
                 }}
-                // twitter={{
-                 //   handle: '@handle',
-                //   site: '@site',
-                //   cardType: 'summary_large_image',
-                // }}
+                twitter={{
+                   handle: '@handle',
+                  site: '@site',
+                  cardType: 'summary_large_image',
+                }}
             />
         <Head>
           <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
