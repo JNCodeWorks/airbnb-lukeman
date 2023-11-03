@@ -6,9 +6,10 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Layout from "../../components/constants/layout/layout";
 import { useEffect, useState } from "react";
-import { FadeLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 import ModalImage from "react-modal-image";
 import { NextSeo } from "next-seo";
+import { useRouter } from "next/router";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
@@ -56,9 +57,10 @@ export default function BlogPost ({ blogPost }) {
     subject:blogPost.fields.name
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const router = useRouter();
   const [minDate, setMinDate] = useState();
 
   useEffect(() => {
@@ -70,7 +72,6 @@ export default function BlogPost ({ blogPost }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
 
         // Calculate the number of nights
         const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
@@ -88,6 +89,7 @@ export default function BlogPost ({ blogPost }) {
   }
 
     try {
+      setIsSubmitting(true); //show submitting state
       const response = await fetch('/api/mail', {
         method: 'POST',
         headers: {
@@ -98,6 +100,8 @@ export default function BlogPost ({ blogPost }) {
 
       if (response.status === 200) {
         setIsSuccess(true);
+        setErrorMessage('');
+        setIsSubmitting(false);
         setFormData({
           visitor_name: '',
           visitor_email: '',
@@ -111,13 +115,13 @@ export default function BlogPost ({ blogPost }) {
         });
       } else {
         const data = await response.json();
-        setErrorMessage(data.error);
+        setErrorMessage('An error occurred while sending the request.');
+        setIsSubmitting(false);
       }
     } catch (error) {
       console.error('Error:', error);
       setErrorMessage('An error occurred while sending the request.');
-    } finally {
-      setIsLoading(false);
+      setIsSubmitting(false);
     }
   };
 
@@ -146,6 +150,14 @@ export default function BlogPost ({ blogPost }) {
 
     return totalPrice;
   };
+
+  if (isSuccess) {
+    // Redirect to the success page
+    router.push('/success');
+  
+    // Return null to prevent rendering the form
+    return null;
+  }
 
         
 return (
@@ -284,30 +296,6 @@ return (
 
                     <div>      
                     <div className="">
-                    {isLoading ? (
-                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-[#53afe5]'>
-                      <span><FadeLoader height={20} color="#53afe5"/></span>
-                      <span>Sending...</span>
-                    </p>
-                    ) : isSuccess ? (
-                    <p className='text-[24px] flex flex-col space-y-4 justify-center items-center text-center font-bold text-green-600'>
-                      <span>
-                        <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                      </span>
-                      <span>Reservation request sent successfully!</span>
-                    </p>
-                    ) : errorMessage ? (
-                    <p className='text-[24px] flex flex-col space-y-4 capitalize justify-center items-center text-center font-bold text-red-600'>
-                      <span>
-                        <svg fill="none" className="h-16 -w-16" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                      </span>
-                      <span>Error: {errorMessage}</span>
-                    </p>
-                    ) : (  
                       <form className="bg-white mx-auto p-6 rounded-lg max-w-md" onSubmit={handleSubmit}>
                         <div className="mb-4">
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="name">
@@ -446,13 +434,15 @@ return (
                         </div>
                         <button
                           type="submit"
+                          disabled={isSubmitting}
                           className="w-full bg-[#53afe5] text-white font-semibold text-base py-2 rounded hover:bg-[#f8a72a] ease-in-out duration-500"
                         >
-                          Make a Reservation
+                          {/* Make a Reservation */}
+                          {isSubmitting ? (    <div className="flex items-center space-x-3 justify-center"> <span>Making a Reservation </span>  <ScaleLoader height={10} color="#ffffff"  /></div>) : 'Make a Reservation'}
                         </button>
                         <p className=" text-center py-2 font-semibold text-sm text-neutral-600">You won&apos;t be charged yet</p>
+                        <div className='w-full mx-auto items-center text-center py-4 text-red-500 font-bold'>{errorMessage}</div>
                       </form>
-                    )}
                     </div>
                     </div>
                 </div>
