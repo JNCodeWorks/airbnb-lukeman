@@ -61,11 +61,11 @@ export default function Index({blogPosts}) {
         {/* <BlogSection/> */}
         <div>
         <div className='lg:w-10/12 mx-auto px-6 py-16'>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 ">
+        <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 ">
             {
                 blogPosts.map ((posts) => (
                     <div key={posts.sys.id}>
-                        <div className='mx-3 bg-white rounded-sm shadow-sm overflow-hidden'>
+                        <div className=' bg-white rounded-sm shadow-sm overflow-hidden'>
                         <div className="relative flex-shrink-o h-72">
                             <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                             <div className="bg-white absolute top-0 left-0">
