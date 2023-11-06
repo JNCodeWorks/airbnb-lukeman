@@ -1,16 +1,9 @@
-import Link from 'next/link'
-import React from 'react'
-import Head from 'next/head'
-import Layout from '@/components/constants/layout/layout'
+import React from "react";
+import Link from "next/link";
+import Layout from "../components/constants/layout/layout";
 
-export default function Success() {
+const SuccessAlert3 = () => {
   return (
-    <>
-      <Head>
-        <title>Lukeman Homestays & Airbnb</title>
-      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-      <link rel="icon" href="/images/logo.png" />    
-    </Head>
     <Layout>
       <div className='bg-white'>
     <div className='lg:w-10/12 mx-auto px-6 pb-28 pt-52'>
@@ -22,8 +15,8 @@ export default function Success() {
             </path>
         </svg>
         <div className="text-center">
-            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Your Comment has been Posted!</h3>
-            <p className="text-gray-600 my-2">Thank you for your generous feedback and review of our services.</p>
+            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Your Reservation has been Sent Successfully!</h3>
+            <p className="text-gray-600 my-2"> We will respond back to you shortly.</p>
             <p className='font-semibold text-neutral-700'> Have a great day!  </p>
             <div className="py-10 text-center">
                 <Link href={'/'} className="px-12 bg-[#53afe5] hover:bg-indigo-500 eas-in-out duration-300 text-white font-semibold py-3">GO BACK</Link>
@@ -34,6 +27,7 @@ export default function Success() {
     </div>
     </div>
     </Layout>
-  </>
-  )
-}
+  );
+};
+
+export default SuccessAlert3;

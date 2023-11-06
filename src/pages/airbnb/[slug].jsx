@@ -153,7 +153,7 @@ export default function BlogPost ({ blogPost }) {
 
   if (isSuccess) {
     // Redirect to the success page
-    router.push('/success');
+    router.push('/successAlert');
   
     // Return null to prevent rendering the form
     return null;
