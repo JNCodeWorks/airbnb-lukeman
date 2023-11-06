@@ -40,7 +40,7 @@ export default function Layout({children}) {
          {loading && <LoadingSpinner />}
         <header className='fixed w-full top-0 z-40 drop-shadow-md'>
             {/* <TopNav/> */}
-            <TopNav/>
+            {/* <TopNav/> */}
             <WebNav/>
             <Responsive/>
         </header>

@@ -7,7 +7,7 @@ export default function Tos() {
   return (
     <div>
                     <NextSeo
-                title="Lukeman Homestays & Airbnb"
+                title='Lukeman Homestays & Airbnb'
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
       canonical="https://www.lukeman.com/"
       openGraph={{

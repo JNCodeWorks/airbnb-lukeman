@@ -6,17 +6,17 @@ const Mail = async (req, res) => {
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL,
-          pass: process.env.EMAIL_PASSWORD,
-        },
+      service: "gmail",
+      auth: {
+        user: process.env.RESERVATION_EMAIL,
+        pass: process.env.RESERVATION_EMAIL_PASSWORD,
+      },
     });
 
     // Create email data
     const mailData = {
       from: visitor_email,
-      to: 'jlloris077@gmail.com',
+      to: 'reservations@lukemanbnb.com',
       subject: subject,
       html: `
       <p>I would like to make a reservtion request for the <strong>${subject}</strong>. Here are the details:</p>

@@ -6,17 +6,17 @@ const Contact = async (req, res) => {
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL,
-          pass: process.env.EMAIL_PASSWORD,
-        },
+      service: "gmail",
+      auth: {
+        user: process.env.RESERVATION_EMAIL,
+        pass: process.env.RESERVATION_EMAIL_PASSWORD,
+      },
     });
 
     // Create email data
     const mailData = {
-      from: email,
-      to: 'jlloris077@gmail.com',
+      from: 'info@lukemanbnb.com',
+      to: 'info@lukemanbnb.com',
       subject: subject,
       html: `
       <p><strong>Name:</strong> ${full_name}</p>
