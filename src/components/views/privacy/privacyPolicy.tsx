@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function PrivacyPolicy() {
   return (
@@ -44,7 +45,7 @@ export default function PrivacyPolicy() {
             <p className={'text-base text-neutral-600'}>We will let you know via email and / or a prominent notice on our Service, prior to the change becoming effective and update the “effective date” at the top of this Privacy Policy. </p>
 
             <h2 className={'text-[#53afe5] uppercase font-bold text-2xl'}>contact us</h2>
-            <p className={'text-base text-neutral-600'}>If you have any questions about this Privacy Policy, please contact us by email: <span className={'text-[#53afe5] cursor-pointer'}>info@lukemanbnb.com</span></p>
+            <p className={'text-base text-neutral-600'}>If you have any questions about this Privacy Policy, please contact us by email: <Link href={"mailto:info@lukemanbnb.com"}  className={'text-[#53afe5] cursor-pointer'}>info@lukemanbnb.com</Link></p>
         </div>
 
         <div className=' space-y-3'>
