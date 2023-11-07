@@ -1,9 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import Head from 'next/head'
 import Layout from "../components/constants/layout/layout";
 
 const SuccessAlert3 = () => {
   return (
+    <>
+    <Head>
+      <title>Lukeman Homestays & Airbnb</title>
+      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+      <link rel="icon" href="/images/logo.png" />    
+    </Head>
     <Layout>
       <div className='bg-white'>
     <div className='lg:w-10/12 mx-auto px-6 pb-28 pt-52'>
@@ -27,6 +34,7 @@ const SuccessAlert3 = () => {
     </div>
     </div>
     </Layout>
+    </>
   );
 };
 

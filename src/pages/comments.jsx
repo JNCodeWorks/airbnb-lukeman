@@ -127,10 +127,12 @@ function Comments() {
       <link rel="icon" href="/images/logo.png" />    
     </Head>
 <Layout>
-<div className="flex mx-auto items-center justify-center mt-56 pb-28 mx-8 mb-4 max-w-lg">
+<div className="flex mx-auto items-center justify-center mt-28 pb-28 mx-8 mb-4 max-w-lg">
+  <div>
+    <h2 className='mx-auto py-4 font-bold text-neutral-600'>Please take a moment to share your thoughts and experiences by leaving a review or providing comments below.</h2>
    <form className="w-full max-w-xl bg-white rounded-lg px-4 pt-2" onSubmit={handleFormSubmit}>
       <div className="flex flex-wrap -mx-3 mb-6">
-         <h2 className="px-4 pt-3 pb-2 text-gray-800 text-lg">  </h2>
+         <h2 className="px-4 pt-3 pb-2 text-neutral-700 text-base font-semibold"> Your opinion matters to us!  </h2>
          <div className="w-full md:w-full px-3 mb-2 mt-2">
             <input type='text' className="bg-gray-100 text-sm rounded border border-gray-400 leading-normal resize-none w-full h-10 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder='Type Your Name' required/>
          </div>
@@ -165,6 +167,7 @@ function Comments() {
          <div className='w-full mx-auto items-center text-center pt-4 text-red-500 font-bold'>{errorMessage}</div>
          </div>
       </form>
+      </div>
    </div>
    </Layout>
    </div>

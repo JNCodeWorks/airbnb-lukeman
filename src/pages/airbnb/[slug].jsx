@@ -299,7 +299,7 @@ return (
                       <form className="bg-white mx-auto p-6 rounded-lg max-w-md" onSubmit={handleSubmit}>
                         <div className="mb-4">
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="name">
-                            Your Name
+                            Your Name *
                           </label>
                           <input
                             type="text"
@@ -314,7 +314,7 @@ return (
                         </div>
                         <div className="mb-4">
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="email">
-                            Your E-mail
+                            Your E-mail *
                           </label>
                           <input
                             type="email"
@@ -328,7 +328,7 @@ return (
                         </div>
                         <div className="mb-4">
                           <label className="block text-neutral-600 font-semibold text-base mb-2" htmlFor="phone">
-                            Your Phone
+                            Your Phone *
                           </label>
 
                           <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'bw'}/>
@@ -347,7 +347,7 @@ return (
                         <div className="py-2">
                           <div className="w-full py-1">
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="adult">
-                              Adults
+                              Adults *
                             </label>
                             <input
                               type="number"
@@ -362,7 +362,7 @@ return (
                           </div>
                           <div className="w-full py-1">
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="child">
-                              Children
+                              Children *
                             </label>
                             <input
                               type="number"
@@ -379,7 +379,7 @@ return (
                         <div className="py-2">
                           <div className="w-full py-1">
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkin-date">
-                              Check-in Date
+                              Check-in Date *
                             </label>
                             <input
                               type="date"
@@ -393,7 +393,7 @@ return (
                           </div>
                           <div className="w-full py-1">
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkout-date">
-                              Check-out Date
+                              Check-out Date *
                             </label>
                             <input
                               type="date"

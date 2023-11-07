@@ -16,7 +16,7 @@ export default function Experience() {
                       <div>
                         <h2 className='text-neutral-700 font-semibold text-4xl capitalize tracking-wide py-4'>why choose us</h2>
                         <p className='text-neutral-600'>Behind our commitment to excellence are few key attributes that define who we are and what makes us different from any other.</p>
-                        <p className='text-neutral-600'>We pride ourselves on a high standard of friendly cheerful service which cafers to the needs of the whole family.</p>
+                        <p className='text-neutral-600'>We pride ourselves on a high standard of friendly cheerful service which caters for the needs of the whole family.</p>
                       </div>
                         <div className='grid md:grid-cols-2 gap-6'>
                             <div className='space-y-6 md:py-6 md:pt-0 pt-6'>

@@ -1,11 +1,17 @@
 import Layout from '@/components/constants/layout/layout'
 import LegalPoilicy from '@/components/views/legal/legalPoilicy'
 import React from 'react'
+import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 
 export default function Legal() {
   return (
     <div>
+    <Head>
+      <title>Lukeman Homestays & Airbnb</title>
+      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+      <link rel="icon" href="/images/logo.png" />    
+    </Head>
                     <NextSeo
                 title='Lukeman Homestays & Airbnb'
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."

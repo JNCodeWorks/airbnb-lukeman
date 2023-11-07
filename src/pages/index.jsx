@@ -137,12 +137,12 @@ export default function Home({blogPosts}) {
                           className="flex-shrink-0 relative"
                           style={{ width: '50px', height: '50px' }}
                         >
-                          <Image
+                          {/* <Image
                             src={"https:" + posts.fields.image.fields.file.url}
                             alt={posts.fields.name}
                             className="block w-full h-full rounded-full"
                             fill
-                          />
+                          /> */}
                         </div>
                         <div className="flex flex-col text-sm items-start">
                           <h1 className="font-semibold text-neutral-700">
