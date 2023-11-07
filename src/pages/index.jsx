@@ -114,7 +114,7 @@ export default function Home({blogPosts}) {
           <div className="flex flex-col items- py-6">
             {/* Carousel container */}
             <div className="relative md:order-2">
-              <div className="relative grid max-w-lg gap-6 mx-auto md:max-w-none lg:gap-10 lg:grid-cols-1">
+              <div className="relative grid max-w-lg gap-6 mx-auto md:max-w-xl lg:gap-10 lg:grid-cols-1">
                 {blogPosts.map((posts, index) => (
                   <div
                     key={posts.sys.id}
@@ -123,7 +123,7 @@ export default function Home({blogPosts}) {
                     }`}
                   >
                     {/* Your slide content here */}
-                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-center justify-center bg-white shadow-lg rounded-xl lg:py-8 lg:px-7">
+                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-center justify-center bg-white shadow-md rounded-xl lg:py-8 lg:px-7">
                       <div className="flex flex-col space-y-2">
                         <h1 className="font-semibold text-neutral-700 text-center text-lg">
                           &quot;{posts.fields.title}&quot;
@@ -133,17 +133,17 @@ export default function Home({blogPosts}) {
                         </p>
                       </div>
                       <div className="flex flex-col items-center justify-center space-y-4">
-                        <div
+                        {/* <div
                           className="flex-shrink-0 relative"
                           style={{ width: '50px', height: '50px' }}
                         >
-                          {/* <Image
+                          <Image
                             src={"https:" + posts.fields.image.fields.file.url}
                             alt={posts.fields.name}
                             className="block w-full h-full rounded-full"
                             fill
-                          /> */}
-                        </div>
+                          />
+                        </div> */}
                         <div className="flex flex-col text-sm items-start">
                           <h1 className="font-semibold text-neutral-700">
                             {posts.fields.name}
