@@ -331,7 +331,7 @@ return (
                             Your Phone *
                           </label>
 
-                          <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'bw'}/>
+                          <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'ke'}/>
                           {/* <input
                             type="tel"
                             id="phone"

@@ -5,8 +5,17 @@ import ContactInfo from '@/components/views/contact/contactInfo'
 import ContactForm from '@/components/views/contact/contactForm'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
+import { useEffect } from 'react'
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-4YF2N5KEXP');
 
 export default function Contacts() {
+  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <div>
                     <NextSeo

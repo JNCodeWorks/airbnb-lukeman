@@ -229,7 +229,7 @@ export default function ContactForm() {
                                     <label htmlFor="phone" className="text-neutral-600 text-sm font-semibold leading-tight tracking-normal mb-2">
                                         Phone
                                     </label>
-                                    <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-12 text-sm border-neutral-300 rounded border"}} value={formData.phone} onChange={handleChange} country={'bw'}/>
+                                    <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-12 text-sm border-neutral-300 rounded border"}} value={formData.phone} onChange={handleChange} country={'ke'}/>
                                     {/* <input required id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-3 text-sm border-neutral-300 rounded border" placeholder /> */}
                                 </div>
                             </div>

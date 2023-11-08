@@ -6,6 +6,9 @@ import Banner from "../../components/views/airbnb/banner"
 import bed from '../../../public/images/bed.svg'
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-4YF2N5KEXP');
 
 
 export async function getStaticProps() {
@@ -17,6 +20,11 @@ export async function getStaticProps() {
 
 
   export default function Homestays ({blogPosts}) {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname);
+      }, []);
+
     return(
         <>
             <div>
@@ -73,7 +81,7 @@ export async function getStaticProps() {
 
                     
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={posts.sys.id}>
-                                      <div className="flex-shrink-0 relative h-60" id="Header">
+                                      <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div>
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">

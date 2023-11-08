@@ -6,7 +6,7 @@
         "guests": "2 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
         "description": "Experience the Warmth of Kenyan Hospitality.",
-        "price": "99"
+        "price": "4999"
     },
     
     {
@@ -16,7 +16,7 @@
         "guests": "4 Guest(s)",
         "bedrooms": "2 Bedroom(s)",
         "description": "A Home Away from Home in Kenya.",
-        "price":"129"
+        "price":"2999"
     },
 
     {
@@ -26,6 +26,6 @@
         "guests": "2 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
         "description": "Discover Kenyan Culture and Comfort.",
-        "price":"150"
+        "price":"3500"
     }
 ]

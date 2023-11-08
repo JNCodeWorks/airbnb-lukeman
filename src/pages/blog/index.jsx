@@ -6,6 +6,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-4YF2N5KEXP');
 
 export async function getStaticProps() {
     const blogPosts = await getBlogPosts();
@@ -16,6 +19,11 @@ export async function getStaticProps() {
 
 
 export default function Index({blogPosts}) {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <div>
                     <NextSeo
@@ -66,7 +74,7 @@ export default function Index({blogPosts}) {
                 blogPosts.map ((posts) => (
                     <div key={posts.sys.id}>
                         <div className=' bg-white rounded-sm shadow-sm overflow-hidden'>
-                        <div className="relative flex-shrink-o h-72">
+                        <div className="relative flex-shrink-0 overflow-hidden h-72">
                             <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                             <div className="bg-white absolute top-0 left-0">
                                 <p className="text-base leading-4 py-3 px-5 capitalize text-gray-800">{posts.fields.type}</p>
