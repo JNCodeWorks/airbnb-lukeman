@@ -12,7 +12,7 @@ export default function Homestays() {
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
             Discover Our Homestay Listings
         </h1>
-        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Browse All</Link>
+        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Coming Soon</Link>
       </div>
       <div className='mt-8 grid gap-5 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
           {
@@ -20,7 +20,7 @@ export default function Homestays() {
 
                     
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={Item.id}>
-                                      <div className="flex-shrink-0 relative h-60">
+                                      <div className="flex-shrink-0 relative overflow-hidden h-60">
                                           <Image src={Item.image} alt={Item.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div>
                                       <div className="flex-1 p-6 flex flex-col justify-between rounded-b-lg">
