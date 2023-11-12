@@ -4,15 +4,11 @@ import PrivacyPolicy from '@/components/views/privacy/privacyPolicy'
 import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import { useEffect } from 'react'
-import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-4YF2N5KEXP');
 
 export default function Privacy() {
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+
   
   return (
     <div>

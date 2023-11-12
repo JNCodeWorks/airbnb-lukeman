@@ -6,9 +6,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
-import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-4YF2N5KEXP');
 
 export async function getStaticProps() {
     const blogPosts = await getBlogPosts();
@@ -20,9 +18,7 @@ export async function getStaticProps() {
 
 export default function Index({blogPosts}) {
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+
 
   return (
     <div>

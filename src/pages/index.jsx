@@ -13,9 +13,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import { getBlogPosts } from '../../lib/reviews'
-import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-4YF2N5KEXP');
 
 export async function getStaticProps() {
   const blogPosts = await getBlogPosts();
@@ -30,9 +28,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({blogPosts}) {
 
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname);
-  }, []);
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
