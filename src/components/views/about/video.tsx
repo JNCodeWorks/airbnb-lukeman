@@ -14,7 +14,7 @@ export default function Video() {
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
     <div className='text-center max-w-2xl mx-auto pb-8 space-y-4'>
         <div className=''>
-            <p className='text-[#53afe5] text-lg font-semibold'>
+            <p className='text-[#07286f] text-lg font-semibold'>
                 Explore our Experience
             </p>
         </div>

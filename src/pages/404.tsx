@@ -20,7 +20,7 @@ const Error10: React.FC = () => {
     return (
         <>
         <Head>
-        <link rel="icon" href="/images/logo.png" />
+        <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />
         </Head>
         <div className="flex items-center flex-col justify-center lg:flex-row py-28 px-6 md:px-24 md:py-20 lg:py-32 gap-16 lg:gap-28">
             <div className="w-full lg:w-1/2">

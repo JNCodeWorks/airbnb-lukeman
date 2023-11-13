@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../../../public/images/logo.png'
+import Logo from '../../../../public/images/LUKEMAN-LOGO.png'
 
 export default function Footer () {
 
@@ -99,7 +99,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">site links</h2>
                     {
                         navigation.links.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-2 items-center hover:text-[#53afe5] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-2 items-center hover:text-[#07286f] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
@@ -109,7 +109,7 @@ export default function Footer () {
                     <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">Support</h2>
                     {
                         navigation.legal.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-3 items-center hover:text-[#53afe5] ease-in-out duration-500'>
+                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-3 items-center hover:text-[#07286f] ease-in-out duration-500'>
                             {items.name}
                          </Link> 
                         ))
@@ -120,11 +120,9 @@ export default function Footer () {
                     <div className='space-y-4 py-4'>
                     <div className='flex space-x-3 items-center'>
                         <span className='text-neutral-700'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 640 640"><path fill="currentColor" d="M546.704 91.89C486.526 31.584 406.482-1.582 321.229-1.582 145.609-1.583 2.67 141.368 2.67 317.118c0 56.139 14.705 111.05 42.567 159.297L.001 641.595l168.959-44.34c46.595 25.382 99.013 38.835 152.222 38.835h.13C496.944 636.09 640 493.14 640 317.401c0-85.182-33.166-165.179-93.344-225.463l.047-.047zM321.323 582.315c-47.599 0-94.218-12.827-134.895-36.957l-9.697-5.788-100.265 26.257 26.776-97.726-6.272-10.04C70.312 415.965 56.4 367.244 56.4 317.13c0-146.082 118.832-264.96 265.066-264.96 70.713 0 137.328 27.65 187.302 77.622 49.996 50.127 77.493 116.588 77.493 187.42-.118 146.187-118.95 265.066-264.96 265.066l.024.036zM466.541 383.85c-7.913-4.028-47.115-23.233-54.39-25.89-7.276-2.658-12.58-4.028-17.977 4.027-5.268 7.914-20.587 25.89-25.252 31.265-4.666 5.28-9.284 6.035-17.197 2.008-7.914-4.028-33.674-12.426-64.064-39.568-23.634-21.095-39.662-47.221-44.328-55.134-4.665-7.914-.52-12.308 3.532-16.193 3.661-3.544 7.925-9.284 11.941-13.95 4.028-4.665 5.28-7.925 7.925-13.31 2.658-5.28 1.359-9.946-.637-13.95-2.008-4.015-17.977-43.217-24.485-59.185-6.39-15.603-13.063-13.43-17.965-13.701-4.665-.237-9.945-.237-15.2-.237-5.257 0-13.95 1.996-21.225 9.933-7.276 7.914-27.898 27.26-27.898 66.45 0 39.201 28.512 77.009 32.516 82.407 4.027 5.267 56.162 85.784 136.029 120.238 18.98 8.161 33.803 13.063 45.355 16.854 19.098 6.024 36.425 5.15 50.126 3.13 15.32-2.256 47.115-19.229 53.788-37.831 6.662-18.615 6.662-34.536 4.666-37.831-1.89-3.544-7.158-5.504-15.201-9.58l-.06.048z"/></svg>
                         </span>
-                        <p className=" text-sm leading-6 text-neutral-700 ">Maweni Plaza, Voi, Kenya.</p>
+                        <Link href="https://wa.me/+254719548363" className=" text-sm leading-6 text-neutral-700 ">+254 719 548 363</Link>
                     </div>
                     <div className='flex space-x-3 items-center'>
                         <span className='text-neutral-700 '>
@@ -135,7 +133,7 @@ export default function Footer () {
                                     <path d="M15 3a6 6 0 0 1 6 6" />
                                 </svg>
                         </span>
-                        <Link href={"tel://+254115600233"} className="text-sm leading-6 text-neutral-700">+254 115 600 233</Link>
+                        <Link href={"tel://+254794234163"} className="text-sm leading-6 text-neutral-700">+254 794 234 163</Link>
                     </div>
                     <div className='flex space-x-3 items-center'>
                         <span className='text-neutral-700'>
@@ -151,7 +149,7 @@ export default function Footer () {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <Image src={Logo} alt='' style={{height: "200px", width: "200px"}} className=""/>
+                <Image src={Logo} alt='' style={{height: "300px", width: "300px"}} className=""/>
             </div>
         </div>
         <div className='text-center bg-neutral-800 py-6 items-center '>

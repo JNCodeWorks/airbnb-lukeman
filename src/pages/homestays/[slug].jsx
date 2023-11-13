@@ -164,32 +164,32 @@ return (
         <>
         <div>
         <NextSeo
-                title='Lukeman Homestays & Airbnb'
+                title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
       canonical="https://www.lukeman.com/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
-        title: 'Lukeman Homestays & Airbnb',
+        title: "Lukeman Homestays & Airbnb",
         description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
         images: [
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 800,
             height: 600,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 900,
             height: 800,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
         ],
-        siteName: 'Lukeman Homestays & Airbnb',
+        siteName: "Lukeman Homestays & Airbnb",
                 }}
                 twitter={{
                    handle: '@handle',
@@ -200,7 +200,7 @@ return (
             <Head>
                 {/* <title>{blogPost.fields.name}</title> */}
                 <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-                <link rel="icon" href="/images/logo.png" />
+                <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />
             </Head>
             <Layout>
             <div className='w-full single bg-cover bg-center'>
@@ -213,7 +213,7 @@ return (
             <div className={'lg:flex  flex-col justify-between py-6'}>
                         <div className={'block box-border'}>
                             <ul className={'flex flex-row space-x-4 items-center  text-white'}>
-                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                <li className='capitalize hover:text-[#07286f] ease-in-out duration-300'>
                                     <Link href={'/'}> home </Link>
                                 </li>
                                 <li className=''>
@@ -221,7 +221,7 @@ return (
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
                                     </svg>
                                 </li>
-                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                <li className='capitalize hover:text-[#07286f] ease-in-out duration-300'>
                                     <Link href={'/homestays'}> homestays </Link> 
                                 </li>
                                 <li className=''>
@@ -242,7 +242,7 @@ return (
                     <div className='lg:col-span-2 space-y-8'>
 
                         <div className='grid lg:grid-cols-3 gap-4'>
-                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <button className='border border-[#1d92ce] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
@@ -251,7 +251,7 @@ return (
                         <span>{blogPost.fields.guests} Guest(s)</span>
                         </button>
 
-                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <button className='border border-[#1d92ce] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                         <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
                         <g clip-path="url(#clip0_1610_32377)">
@@ -271,7 +271,7 @@ return (
                         <span>{blogPost.fields.bedrooms} Bedroom(s)</span>
                         </button>
 
-                        <button className='border border-[#f8a72a] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
+                        <button className='border border-[#1d92ce] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
                             <span className="text-2xl font-bold">Kshs. {blogPost.fields.price}&nbsp;</span> per night
                         </button>
 
@@ -435,7 +435,7 @@ return (
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-[#53afe5] text-white font-semibold text-base py-2 rounded hover:bg-[#f8a72a] ease-in-out duration-500"
+                          className="w-full bg-[#07286f] text-white font-semibold text-base py-2 rounded hover:bg-[#1d92ce] ease-in-out duration-500"
                         >
                           {/* Make a Reservation */}
                           {isSubmitting ? (    <div className="flex items-center space-x-3 justify-center"> <span>Making a Reservation </span>  <ScaleLoader height={10} color="#ffffff"  /></div>) : 'Make a Reservation'}
@@ -452,7 +452,7 @@ return (
             <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
                 gallery
             </h1>
-            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Book now</Link>
+            <Link href={'/#'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Book now</Link>
             </div>
             <div>
                 {/* <PhotoGallery/> */}

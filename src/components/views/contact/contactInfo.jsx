@@ -16,19 +16,19 @@ export default function ContactInfo() {
 
             <div className='lg:mx-auto'>
                 <Link href={"tel://+254115600233"} className='flex flex-col space-y-2 text-sm'>
-                    <span className='capitalize text-neutral-700 font-medium'>phone:&nbsp;</span><span className='text-[#53afe5]'>+254 115 600 233</span>
+                    <span className='capitalize text-neutral-700 font-medium'>phone:&nbsp;</span><span className='text-[#07286f]'>+254 115 600 233</span>
                 </Link>
             </div>
 
             <div className='lg:mx-auto'>
                 <Link href={"mailto:info@lukemanbnb.com"} className='flex flex-col space-y-2 text-sm'>
-                    <span className='capitalize text-neutral-700 font-medium'>email:&nbsp;</span><span className='text-[#53afe5]'>info@lukemanbnb.com</span>
+                    <span className='capitalize text-neutral-700 font-medium'>email:&nbsp;</span><span className='text-[#07286f]'>info@lukemanbnb.com</span>
                 </Link>
             </div>
 
             <div className='lg:mx-auto'>
                 <Link href={"/"} className='flex flex-col space-y-2 text-sm'>
-                    <span className='capitalize text-neutral-700 font-medium'>website:&nbsp;</span><span className='text-[#53afe5]'>lukemanbnb.com</span>
+                    <span className='capitalize text-neutral-700 font-medium'>website:&nbsp;</span><span className='text-[#07286f]'>lukemanbnb.com</span>
                 </Link>
             </div>
         </div>

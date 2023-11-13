@@ -23,32 +23,32 @@ export default function Index({blogPosts}) {
   return (
     <div>
                     <NextSeo
-                title='Lukeman Homestays & Airbnb'
+                title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
       canonical="https://www.lukeman.com/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
-        title: 'Lukeman Homestays & Airbnb',
+        title: "Lukeman Homestays & Airbnb",
         description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
         images: [
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 800,
             height: 600,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 900,
             height: 800,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
         ],
-        siteName: 'Lukeman Homestays & Airbnb',
+        siteName: "Lukeman Homestays & Airbnb",
                 }}
                 twitter={{
                    handle: '@handle',
@@ -58,7 +58,7 @@ export default function Index({blogPosts}) {
             />
         <Head>
           <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-            <link rel="icon" href="/images/logo.png" />    
+            <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
         </Head>
       <Layout>
         <Banner/>
@@ -79,12 +79,12 @@ export default function Index({blogPosts}) {
                         <div className='bg-white p-4'>
                         <p className="text-sm font-light leading-4 capitalize text-neutral-500 py-3 italic">by {posts.fields.author}</p>
                         {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
-                        <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#f8a72a] ease-in-out duration-500">
+                        <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                             <h1>{posts.fields.title}</h1>
                         </Link>
                         <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{posts.fields.description}</p>
                         <div className='mt-4 w-full py-4'>
-                          <Link href={`/blog/${posts.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white">read more</Link>
+                          <Link href={`/blog/${posts.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">read more</Link>
                         </div>
                         </div>
                     </div>
