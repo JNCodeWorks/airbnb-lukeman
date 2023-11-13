@@ -7,7 +7,7 @@ const TermsOfService = () => {
     <div className="max-w-max-content lg:max-w-7xl mx-auto">
                 <div className="relative z-10 mb-8 md:mb-2 md:px-6">
                     <div className="text-base max-w-prose lg:max-w-none">
-                        <h1 className="mt-2 text-3xl leading-8 font-bold text-[#53afe5] tracking-tight sm:text-4xl sm:leading-10">Terms and Conditions</h1>
+                        <h1 className="mt-2 text-3xl leading-8 font-bold text-[#07286f] tracking-tight sm:text-4xl sm:leading-10">Terms and Conditions</h1>
                     </div>
                 </div>
                 
@@ -28,7 +28,7 @@ const TermsOfService = () => {
                                     party fees (such as Internet service provider or airtime charges); you are responsible for those fees. In addition, you must provide and are responsible for all equipment necessary to access the Site and we will not
                                     be responsible for your inability to access and/or use the website , either optimally or at all.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">General</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">General</p>
                                 <p>In these terms and conditions, the following terms will have the following meanings:-</p>
                                 <p><strong>“User”</strong> - refers to the person who accesses and uses the Site.</p>
                                 <p><strong>“Lukeman Homestays & AirBnB”</strong> - refers to Lukeman Homestays & AirBnB Limited.</p>
@@ -37,13 +37,13 @@ const TermsOfService = () => {
                                 <p>
                                     All products and services of Lukeman Homestays & AirBnB herein provided are subject to the terms and conditions of the applicable agreements governing their use. These terms and conditions are meant to regulate your access to this
                                     website and they are to be read together with the applicable terms and conditions governing any transaction(s), product(s) and/or service(s) provided in this website .</p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Use of Material</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Use of Material</p>
                                 <p>
                                     The contents of the Site, including but not limited to text, artwork, names, logos, trademarks, service marks, software, video, music, sound, photographs, graphics, illustrations and other material (&quot;Material&quot;) are protected by the applicable copyright laws. You may only access and use the Site, or any of the information or Materials provided on the Site in a lawful manner.
                                     We authorize you to view and download a single copy of the Material on the Site solely for your personal, non-commercial use. You may not sell or modify the Material or reproduce, display, distribute, or otherwise use the Material in any way for any non private, public or commercial purpose without our written consent. If you violate any of these Terms, your permission to
                                     use the Material automatically terminates and you must immediately destroy any copies you have made of the Material.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Use of your Information and Privacy</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Use of your Information and Privacy</p>
                                 <p>
                                     We may hold and use your information provided by you in the course of accessing the Site for a number of reasons, which may include but not limited to: - Monitoring your access for business purposes such as marketing, product research and development, customer service, prevention of unauthorized use of our systems; providing value added services; improving the content of the Site;
                                     Carrying out activities in connection with a legal, governmental or regulatory requirement on the Lukeman Homestays & AirBnB, in connection with legal proceedings; or in respect of crime or fraud prevention, detection or prosecution. We will take all reasonable steps to use or disclose users&apos; personal information only in the manner stated in the Terms and Conditions. Personal information shall
@@ -62,7 +62,7 @@ const TermsOfService = () => {
                                 <p>
                                     You hereby acknowledge that Internet communications and transactions are not 100% secure or error free. In particular, information may not be secure in transit from you to our Site. Where you provide particularly sensitive personal information such as passwords, ID numbers, or other sensitive information on this site, it is your responsibility to safeguard them.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Intellectual Property Rights</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Intellectual Property Rights</p>
                                 <p>
                                     The material and content accessible from the Site, and any other World Wide Web site owned, operated, licensed, or controlled by Lukeman Homestays & AirBnB as well as all trademarks, service marks, and logos displayed in the Site (collectively, &quot;Materials&quot;) is the proprietary information and valuable intellectual property of the Lukeman Homestays & AirBnB or the party that provided the Materials to the Lukeman Homestays & AirBnB.
                                     The Lukeman Homestays & AirBnB retains all right, title, and interest in the Materials. Accordingly, the Materials may not be modified, copied, distributed, broadcast, displayed, licensed, transferred, republished, uploaded, posted, sold commercially or transmitted in any way without the prior written consent of the Lukeman Homestays & AirBnB except that you may print out a copy of the Materials solely for your
@@ -73,7 +73,7 @@ const TermsOfService = () => {
                                 <p>
                                     The Lukeman Homestays & AirBnB disclaims all liability which may arise from any unauthorized reproduction or use of the contents of the Site.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Links to Third Party Site</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Links to Third Party Site</p>
                                 <p>
                                     We may provide links to Third Party website . Such links do not necessarily imply any endorsement, agreement with, or support for, the information on or content of those Third Party website . We do not control the information or content on those Third Party website and neither we nor our Affiliates makes any warranties in respect of the content of these website nor will be responsible or liable in any manner whatsoever,
                                     for your access, or inability to access, such Third Party website , or for any information or content, products or services made available on or through such Third Party website , or for any loss, liability or damage which you may suffer as a result of access to a Third Party website through a link on the website . You further acknowledge and agree that we shall not be responsible or liable, directly or indirectly, for
@@ -81,7 +81,7 @@ const TermsOfService = () => {
                                 </p>
                             </div>
                             <div className="prose prose-lg text-gray-500 text-base">
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">No Warranties</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">No Warranties</p>
                                 <p>
                                     You expressly agree that use of the Site or any Materials contained therein is at your own and sole risk. The materials and information in the Site, including but not limited to services, products, information, data, text, graphics, links or other items, are provided by the Lukeman Homestays & AirBnB on an &quot;as is&quot; and &quot;as available&quot; basis. References to material and information contained in the website
                                     include such material and information provided by third parties.
@@ -100,33 +100,33 @@ const TermsOfService = () => {
                                     The materials, information and functions provided in the Site shall not under any circumstances be considered or construed as an offer or solicitation to sell, give, issue or as the giving of any advice in respect of any form of investment or other securities, loans, or deposits in any jurisdiction. You shall be responsible to evaluate the quality, adequacy, timeliness and usefulness of all services, content,
                                     advice, opinions and other information obtained or accessible through the Site; further you should seek professional and/or legal advice at all times and obtain independent verification of the materials and information provided herein prior to making any investment, business or commercial decision based on any such materials or information.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Limitation of Liability</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Limitation of Liability</p>
                                 <p>
                                     In no event shall Lukeman Homestays & AirBnB or its directors, employees, licensors, agents, suppliers or service providers be liable to you or any other third party for any loss or damages howsoever arising whether in tort, contract, negligence or any other basis including but not limited to direct, special, indirect, incidental, consequential, exemplary or punitive damages, damages for loss of profits, revenue, or good will, which may arise
                                     from your use or any person’s use, access, misuse or inability to use the Site or any links to third party website or any of the Materials contained therein, reliance on the information contained in the Site, any technical, hardware or software failure of any kind, the interruption, error, omission, delay in operation, computer viruses, even if we have been advise of the possibility of such damages. Your use of the Web Site is
                                     at your own risk. If you are dissatisfied with any of the Materials or other contents of the Site or with these Terms and Conditions or other policies, your sole remedy is to discontinue use of the Site.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Indemnity</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Indemnity</p>
                                 <p>
                                     You hereby irrevocably agree to defend, indemnify, and hold harmless the Lukeman Homestays & AirBnB, its officers, directors, shareholders, employees, independent contractors and agents, from and against any and all claims, actions, liabilities, costs, or demands, including without limitation legal and accounting fees, for all damages directly, indirectly, and/or consequentially resulting or allegedly resulting from your, or you under another person’s
                                     authority including without limitation to governmental agencies, use, misuse, or inability to use the Site or any of the Materials contained therein, or your breach of any of these Terms and Conditions or any intellectual property right or proprietary right infringement claim made by a third party against the Lukeman Homestays & AirBnB in connection with your use of this website . We shall promptly notify you of any such claim, proceeding or suit, and
                                     you shall be responsible for its defense at your expense. The Lukeman Homestays & AirBnB may participate in the defense of such claim or defense but is not obligated to do so.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Force Majeure</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Force Majeure</p>
                                 <p>
                                     We shall not be responsible for any failure to perform due to unforeseen circumstances or to causes beyond our reasonable control, including but not limited to: acts of God, such as fire, flood, earthquakes or other natural disasters; war, riot, arson, embargoes, acts of civil or military authority, or terrorism; fiber cuts; strikes, or shortages in transportation, facilities, fuel, energy, labor or materials; failure of the telecommunications
                                     or information services infrastructure; hacking, SPAM, or any failure of a computer, server or software, for so long as such event continues to delay the Lukeman Homestays & AirBnB’s Site’ performance.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Severability, Non-Waiver and Entire Agreement</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Severability, Non-Waiver and Entire Agreement</p>
                                 <p>
                                     If any provision of these terms and conditions is found to be invalid by any court having competent jurisdiction, the invalidity of such provision shall not affect the validity of the remaining provisions of these terms and conditions, which shall remain in full force and effect. No waiver of any term of these terms and conditions shall be deemed a further or continuing waiver of such term or any other term. Except as expressly provided in a
                                     particular web page, these terms and conditions constitute the entire Agreement between you and us with respect to the use of the Site.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Suspension and Termination of access</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Suspension and Termination of access</p>
                                 <p>
                                     The Lukeman Homestays & AirBnB reserves the right to terminate and/or suspend your access to the Site and/or your use of the Site at any time, for any reason. In particular, and without limitation, we may terminate and/or suspend your access should you violate any of these terms and conditions, or violate the rights of the Lukeman Homestays & AirBnB, of any other user, or of any third party.
                                 </p>
-                                <p className="leading-6 text-[#53afe5] font-semibold tracking-wide uppercase">Governing Law and Jurisdiction</p>
+                                <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">Governing Law and Jurisdiction</p>
                                 <p>
                                     These terms and conditions and all matters arising out of or relating to these Terms and Conditions shall be governed by and are to be construed in accordance with the laws of Kenya, excluding any conflict of law provisions. By accessing this website and/or using the services provided herein by the Lukeman Homestays & AirBnB, you hereby consent to the exclusive jurisdiction of the Kenyan courts in all disputes arising out of or relating to the use of this website .
                                 </p>

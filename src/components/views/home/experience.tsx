@@ -15,13 +15,12 @@ export default function Experience() {
                     <div className='h-full space-y-4 justify-center items-center'>
                       <div>
                         <h2 className='text-neutral-700 font-semibold text-4xl capitalize tracking-wide py-4'>why choose us</h2>
-                        <p className='text-neutral-600'>Behind our commitment to excellence are few key attributes that define who we are and what makes us different from any other.</p>
-                        <p className='text-neutral-600'>We pride ourselves on a high standard of friendly cheerful service which caters for the needs of the whole family.</p>
+                        <p className='text-neutral-600'>We are committed to offering you accommodation that speaks to your needs. Away from the high standard that we command, we are very keen at maintaining a high level of hygiene. And most importantly, your safety and security is our number 1 priority. We also provide you with all services that you may need while staying with us; laundry, catering, delivery, taxi, beauty therapy, tours and safaris among others. All our partners are carefully chosen to your best interest.</p>
                       </div>
                         <div className='grid md:grid-cols-2 gap-6'>
                             <div className='space-y-6 md:py-6 md:pt-0 pt-6'>
                               <p className='flex flex-row items-center text-neutral-600 text-sm uppercase font-semibold space-x-4'>
-                                <span className='text-[#53afe5]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='w-6 h-6' version="1.1" id="Capa_1" viewBox="0 0 365.892 365.892">
+                                <span className='text-[#07286f]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='w-6 h-6' version="1.1" id="Capa_1" viewBox="0 0 365.892 365.892">
                                         <g>
 	                                          <circle cx="182.945" cy="286.681" r="41.494"/>
 	                                          <path d="M182.946,176.029c-35.658,0-69.337,17.345-90.09,46.398c-5.921,8.288-4.001,19.806,4.286,25.726   c3.249,2.321,6.994,3.438,10.704,3.438c5.754,0,11.423-2.686,15.021-7.724c13.846-19.383,36.305-30.954,60.078-30.954   c23.775,0,46.233,11.571,60.077,30.953c5.919,8.286,17.437,10.209,25.726,4.288c8.288-5.92,10.208-17.438,4.288-25.726   C252.285,193.373,218.606,176.029,182.946,176.029z"/>
@@ -29,10 +28,10 @@ export default function Experience() {
 	                                          <path d="M360.611,112.293c-47.209-48.092-110.305-74.577-177.665-74.577c-67.357,0-130.453,26.485-177.664,74.579   c-7.135,7.269-7.027,18.944,0.241,26.079c3.59,3.524,8.255,5.282,12.918,5.281c4.776,0,9.551-1.845,13.161-5.522   c40.22-40.971,93.968-63.534,151.344-63.534c57.379,0,111.127,22.563,151.343,63.532c7.136,7.269,18.812,7.376,26.08,0.242   C367.637,131.238,367.745,119.562,360.611,112.293z"/>
                                         </g>
                                 </svg></span>
-                                <span className='hover:text-[#53afe5] cursor-pointer ease-in-out duration-300'>free high speed wifi</span>
+                                <span className='hover:text-[#07286f] cursor-pointer ease-in-out duration-300'>free high speed wifi</span>
                               </p>
                               <p className='flex flex-row items-center text-neutral-600 text-sm uppercase font-semibold space-x-4'>
-                                <span className='text-[#53afe5]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='w-8 h-8' version="1.1" id="Capa_1" viewBox="0 0 472.053 472.053">
+                                <span className='text-[#07286f]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='w-8 h-8' version="1.1" id="Capa_1" viewBox="0 0 472.053 472.053">
                                         <g>
                                         	<g>
                                         		<path d="M181.423,12.772l-1.805,85.74c0,3.381-2.292,7.755-6.6,7.755l0,0h-2.309l0,0l0,0    c-4.308,0-6.6-4.804-6.6-8.275l-6.893-85.895c-1.764,0.008-3.568,0.008-5.454,0.008c-3.292,0-6.373-0.016-9.291-0.016    l-6.893,87.081c0.024,3.146-2.276,7.096-6.584,7.096l0,0h-2.309l0,0l0,0c-4.308,0-6.6-4.804-6.6-8.275l-1.788-84.879    c-22.866,3.601-22.858,19.647-22.858,89.935c0,23.711,9.421,44.358,26.247,55.453c2.3,1.52,4.731,2.861,7.308,4.007    c2.552,1.13,5.251,2.04,8.064,2.764l-7.73,295.571c0,6.17,13.136,11.209,19.305,11.209h10.161c6.17,0,19.305-5.023,19.305-11.193    l-7.755-296.677c2.837-0.967,5.495-2.211,8.039-3.609c3.13-1.715,6.023-3.739,8.689-6.04    c13.526-11.681,21.021-30.36,21.021-51.478C208.093,30.151,206.686,15.609,181.423,12.772z"/>
@@ -41,20 +40,20 @@ export default function Experience() {
                                         	</g>
                                         </g>
                                   </svg></span>
-                                <span className='hover:text-[#53afe5] cursor-pointer ease-in-out duration-300'>well equipped kitchen</span>
+                                <span className='hover:text-[#07286f] cursor-pointer ease-in-out duration-300'>well equipped kitchen</span>
                               </p>
                               <p className='flex flex-row items-center text-neutral-600 text-sm uppercase font-semibold space-x-4'>
-                                <span className='text-[#53afe5]'><svg xmlns="http://www.w3.org/2000/svg" className='w-10 h-10'  viewBox="0 0 24 24" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 12.0002C5.00024 8.66068 7.35944 5.78639 10.6348 5.1351C13.9102 4.48382 17.1895 6.23693 18.4673 9.32231C19.7451 12.4077 18.6655 15.966 15.8887 17.8212C13.1119 19.6764 9.41127 19.3117 7.05 16.9502C5.73728 15.6373 4.99987 13.8568 5 12.0002Z" stroke="#53afe5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 9.92018C13.923 8.78975 12.949 7.93278 11.818 8.00018H10V11.8402H11.818C12.949 11.9076 13.923 11.0506 14 9.92018Z" stroke="#53afe5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M10 11.8402V16.0002" stroke="#53afe5" stroke-width="1.5" stroke-linecap="round"/>
+                                <span className='text-[#07286f]'><svg xmlns="http://www.w3.org/2000/svg" className='w-10 h-10'  viewBox="0 0 24 24" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 12.0002C5.00024 8.66068 7.35944 5.78639 10.6348 5.1351C13.9102 4.48382 17.1895 6.23693 18.4673 9.32231C19.7451 12.4077 18.6655 15.966 15.8887 17.8212C13.1119 19.6764 9.41127 19.3117 7.05 16.9502C5.73728 15.6373 4.99987 13.8568 5 12.0002Z" stroke="#07286f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 9.92018C13.923 8.78975 12.949 7.93278 11.818 8.00018H10V11.8402H11.818C12.949 11.9076 13.923 11.0506 14 9.92018Z" stroke="#07286f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 11.8402V16.0002" stroke="#07286f" stroke-width="1.5" stroke-linecap="round"/>
                                 </svg></span>
-                                <span className='hover:text-[#53afe5] cursor-pointer ease-in-out duration-300'>ample parking spaces</span>
+                                <span className='hover:text-[#07286f] cursor-pointer ease-in-out duration-300'>ample parking spaces</span>
                               </p>
                             </div>
                             <div className='space-y-6 md:py-6 md:pt-0 pt-6'>
                               <p className='flex flex-row items-center text-neutral-600 text-sm uppercase font-semibold space-x-4'>
-                               <span className='text-[#53afe5]'>
+                               <span className='text-[#07286f]'>
                                <svg xmlns="http://www.w3.org/2000/svg" className='w-10 h-10' fill="currentColor" version="1.1" id="Capa_1" viewBox="0 0 512.001 512.001">
 <g>
 	<g>
@@ -73,11 +72,11 @@ export default function Experience() {
 </g>
 </svg>
                                </span>
-                                <span className='hover:text-[#53afe5] cursor-pointer ease-in-out duration-300'>well furnished rooms</span>
+                                <span className='hover:text-[#07286f] cursor-pointer ease-in-out duration-300'>well furnished rooms</span>
                               </p>
                               <p className='flex flex-row items-center text-neutral-600 text-sm uppercase font-semibold space-x-4'>
-                                <span className='text-[#53afe5]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='h-10 w-10' viewBox="0 0 48 48"><path d="M25.476562 1.9785156 A 1.50015 1.50015 0 0 0 23.998047 3.5C23.998047 5.5 23.3125 5.828125 22.0625 6.828125C20.8125 7.828125 18.998047 9.5 18.998047 12.5 A 1.50015 1.50015 0 1 0 21.998047 12.5C21.998047 10.5 22.685547 10.171875 23.935547 9.171875C25.185547 8.171875 26.998047 6.5 26.998047 3.5 A 1.50015 1.50015 0 0 0 25.476562 1.9785156 z M 31.476562 3.9785156 A 1.50015 1.50015 0 0 0 29.998047 5.5C29.998047 6.25 29.852963 6.5637711 29.648438 6.8535156C29.443911 7.1432601 29.099609 7.4257812 28.599609 7.8007812C28.099609 8.1757812 27.443911 8.6432601 26.898438 9.4160156C26.352963 10.188771 25.998047 11.25 25.998047 12.5 A 1.50015 1.50015 0 1 0 28.998047 12.5C28.998047 11.75 29.145084 11.436229 29.349609 11.146484C29.554135 10.85674 29.898437 10.574219 30.398438 10.199219C30.898438 9.8242185 31.554135 9.3567399 32.099609 8.5839844C32.645084 7.8112289 32.998047 6.75 32.998047 5.5 A 1.50015 1.50015 0 0 0 31.476562 3.9785156 z M 14.544922 16C13.600922 16 12.713781 16.371875 12.050781 17.046875C11.383781 17.725875 11.026969 18.623219 11.042969 19.574219C11.274969 32.808219 13.724063 39.642109 15.164062 42.537109C15.907063 44.033109 17.482734 45 19.177734 45L28.783203 45C30.494203 45 32.028109 44.062688 32.787109 42.554688C33.390225 41.355497 34.166696 39.430316 34.888672 36.703125C35.077886 35.943081 35.473278 35.442934 36.160156 34.917969C36.881841 34.366401 37.908309 33.868125 39.005859 33.318359C40.10341 32.768594 41.285968 32.166276 42.279297 31.181641C43.272626 30.197005 44 28.741909 44 27C44 24.256343 41.743657 22 39 22C38.252002 22 37.533393 22.167194 36.865234 22.447266C36.906965 21.521462 36.939341 20.571674 36.957031 19.574219C36.974031 18.622219 36.616219 17.725875 35.949219 17.046875C35.286219 16.371875 34.399078 16 33.455078 16L23 16L23 27C24.105 27 25 27.895 25 29L25 32C25 33.105 24.105 34 23 34L20 34C18.895 34 18 33.105 18 32L18 29C18 27.895 18.895 27 20 27L20 16L14.544922 16 z M 39 25C40.122343 25 41 25.877657 41 27C41 28.008091 40.718718 28.502917 40.166016 29.050781C39.613314 29.598646 38.712684 30.110484 37.662109 30.636719C37.125301 30.905607 36.552771 31.179066 35.976562 31.492188C36.211268 30.021946 36.421371 28.420132 36.583984 26.640625C36.678427 26.308944 36.899632 25.972258 37.255859 25.671875C37.742062 25.261892 38.438829 25 39 25 z"/></svg></span>
-                                <span className='hover:text-[#53afe5] cursor-pointer ease-in-out duration-300'>free breakfast</span>
+                                <span className='text-[#07286f]'><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className='h-10 w-10' viewBox="0 0 48 48"><path d="M25.476562 1.9785156 A 1.50015 1.50015 0 0 0 23.998047 3.5C23.998047 5.5 23.3125 5.828125 22.0625 6.828125C20.8125 7.828125 18.998047 9.5 18.998047 12.5 A 1.50015 1.50015 0 1 0 21.998047 12.5C21.998047 10.5 22.685547 10.171875 23.935547 9.171875C25.185547 8.171875 26.998047 6.5 26.998047 3.5 A 1.50015 1.50015 0 0 0 25.476562 1.9785156 z M 31.476562 3.9785156 A 1.50015 1.50015 0 0 0 29.998047 5.5C29.998047 6.25 29.852963 6.5637711 29.648438 6.8535156C29.443911 7.1432601 29.099609 7.4257812 28.599609 7.8007812C28.099609 8.1757812 27.443911 8.6432601 26.898438 9.4160156C26.352963 10.188771 25.998047 11.25 25.998047 12.5 A 1.50015 1.50015 0 1 0 28.998047 12.5C28.998047 11.75 29.145084 11.436229 29.349609 11.146484C29.554135 10.85674 29.898437 10.574219 30.398438 10.199219C30.898438 9.8242185 31.554135 9.3567399 32.099609 8.5839844C32.645084 7.8112289 32.998047 6.75 32.998047 5.5 A 1.50015 1.50015 0 0 0 31.476562 3.9785156 z M 14.544922 16C13.600922 16 12.713781 16.371875 12.050781 17.046875C11.383781 17.725875 11.026969 18.623219 11.042969 19.574219C11.274969 32.808219 13.724063 39.642109 15.164062 42.537109C15.907063 44.033109 17.482734 45 19.177734 45L28.783203 45C30.494203 45 32.028109 44.062688 32.787109 42.554688C33.390225 41.355497 34.166696 39.430316 34.888672 36.703125C35.077886 35.943081 35.473278 35.442934 36.160156 34.917969C36.881841 34.366401 37.908309 33.868125 39.005859 33.318359C40.10341 32.768594 41.285968 32.166276 42.279297 31.181641C43.272626 30.197005 44 28.741909 44 27C44 24.256343 41.743657 22 39 22C38.252002 22 37.533393 22.167194 36.865234 22.447266C36.906965 21.521462 36.939341 20.571674 36.957031 19.574219C36.974031 18.622219 36.616219 17.725875 35.949219 17.046875C35.286219 16.371875 34.399078 16 33.455078 16L23 16L23 27C24.105 27 25 27.895 25 29L25 32C25 33.105 24.105 34 23 34L20 34C18.895 34 18 33.105 18 32L18 29C18 27.895 18.895 27 20 27L20 16L14.544922 16 z M 39 25C40.122343 25 41 25.877657 41 27C41 28.008091 40.718718 28.502917 40.166016 29.050781C39.613314 29.598646 38.712684 30.110484 37.662109 30.636719C37.125301 30.905607 36.552771 31.179066 35.976562 31.492188C36.211268 30.021946 36.421371 28.420132 36.583984 26.640625C36.678427 26.308944 36.899632 25.972258 37.255859 25.671875C37.742062 25.261892 38.438829 25 39 25 z"/></svg></span>
+                                <span className='hover:text-[#07286f] cursor-pointer ease-in-out duration-300'>free breakfast</span>
                               </p>
 
                             </div>

@@ -29,32 +29,32 @@ export default function BlogPost ({blogPost}) {
   return (
     <div>
                     <NextSeo
-                title='Lukeman Homestays & Airbnb'
+                title="Lukeman Homestays & Airbnb"
       description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
       canonical="https://www.lukeman.com/"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
-        title: 'Lukeman Homestays & Airbnb',
+        title: "Lukeman Homestays & Airbnb",
         description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
         images: [
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 800,
             height: 600,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           {
             url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75',
             width: 900,
             height: 800,
-            alt: 'Lukeman Homestays & Airbnb',
+            alt: "Lukeman Homestays & Airbnb",
             type: 'image/jpeg',
           },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
           { url: 'https://lukemanbnb.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.47d75517.png&w=3840&q=75' },
         ],
-        siteName: 'Lukeman Homestays & Airbnb',
+        siteName: "Lukeman Homestays & Airbnb",
                 }}
                 twitter={{
                    handle: '@handle',
@@ -64,7 +64,7 @@ export default function BlogPost ({blogPost}) {
             />
         <Head>
             <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-            <link rel="icon" href="/images/logo.png" />
+            <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />
         </Head>
         <Layout>
             <div className='w-full single bg-cover bg-center'>
@@ -76,7 +76,7 @@ export default function BlogPost ({blogPost}) {
             <div className={'lg:flex  flex-col justify-between start py-4'}>
                         <div className={'block box-border'}>
                             <ul className={'flex flex-row space-x-4 items-center  text-white'}>
-                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                <li className='capitalize hover:text-[#07286f] ease-in-out duration-300'>
                                     <Link href={'/'}> home </Link>
                                 </li>
                                 <li className=''>
@@ -84,7 +84,7 @@ export default function BlogPost ({blogPost}) {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
                                     </svg>
                                 </li>
-                                <li className='capitalize hover:text-[#53afe5] ease-in-out duration-300'>
+                                <li className='capitalize hover:text-[#07286f] ease-in-out duration-300'>
                                     <Link href={'/blog'}> blog </Link> 
                                 </li>
                                 <li className=''>
@@ -103,11 +103,11 @@ export default function BlogPost ({blogPost}) {
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
 
                 <div className='prose px-6 lg:mx-auto lg:max-w-6xl gap-8'>
-                <h1 className='text-center text-[#53afe5] font-bold max-w-3xl mx-auto capitalize text-3xl'>
+                <h1 className='text-center text-[#07286f] font-bold max-w-3xl mx-auto capitalize text-3xl'>
                     {blogPost.fields.description}
                 </h1>
                 <p className='text-neutral-500 text-center font-semibold capitalize text-base italic'> ~ by: {blogPost.fields.author}</p>
-                <div className='border-t-2 mx-auto border-[#f8a72a] -mt-5 w-1/4 max-w-sm'></div>
+                <div className='border-t-2 mx-auto border-[#1d92ce] -mt-5 w-1/4 max-w-sm'></div>
                 <div className='flex-shrink-0 relative h-[720px] mx-6 mt-8'>
                     <Image src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.title} className='object-cover' fill/>
                 </div>

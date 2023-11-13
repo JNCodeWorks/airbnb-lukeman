@@ -12,7 +12,7 @@ export default function Homestays() {
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
             Discover Our Homestay Listings
         </h1>
-        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#f8a72a] ease-in-out duration-500 font-medium'}>Coming Soon</Link>
+        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Coming Soon</Link>
       </div>
       <div className='mt-8 grid gap-5 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
           {
@@ -25,19 +25,19 @@ export default function Homestays() {
                                       </div>
                                       <div className="flex-1 p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                              <Link href={'/homestays'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#f8a72a] ease-in-out duration-500">
+                                              <Link href={'/homestays'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                                                       <h1>{Item.name}</h1>
                                               </Link>
                                               <p className="capitalize text-sm text-neutral-600">{Item.description}</p>
                                           </div>
                                           <div className=" flex flex-row justify-between py-8">
-                                              <p className="flex flex-row text-sm text-neutral-700 mb-2"> <span className="text-[#f8a72a] mr-2 text-sm">
+                                              <p className="flex flex-row text-sm text-neutral-700 mb-2"> <span className="text-[#1d92ce] mr-2 text-sm">
                                                 <svg fill="none" className='w-5 h-5' stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
                                                   </svg>
                                                   </span>{Item.guests}</p>
                                               <p className="flex flex-row text-sm text-neutral-700 mb-2">
-                                                  <span className="text-[#f8a72a] mr-2 text-sm">
+                                                  <span className="text-[#1d92ce] mr-2 text-sm">
                                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor">
                                                 <g clip-path="url(#clip0_1610_32377)">
                                                 <path d="M1.83303 7.5H14.1664C14.52 7.5 14.8591 7.64048 15.1092 7.89052C15.3592 8.14057 15.4997 8.47971 15.4997 8.83333V12H0.499695V8.83333C0.499695 8.47971 0.640171 8.14057 0.890219 7.89052C1.14027 7.64048 1.47941 7.5 1.83303 7.5V7.5Z"  stroke-width="1.35954" stroke-linecap="round" stroke-linejoin="round"/>
@@ -60,7 +60,7 @@ export default function Homestays() {
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
                                                     <span className="text-2xl font-bold">Kshs. {Item.price}</span> per night
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#53afe5] hover:bg-[#f8a72a] ease-in-out duration-500 capitalize text-white"><Link href={'/homestays'}>view</Link></button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/homestays'}>view</Link></button>
                                               </div>
                                           </div>
                                       </div>  

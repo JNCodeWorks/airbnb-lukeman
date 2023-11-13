@@ -89,12 +89,12 @@ function Comments() {
   return (
 <div>
     <NextSeo
-    title='Lukeman Homestays & Airbnb'
+    title="Lukeman Homestays & Airbnb"
     description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
     canonical="https://www.canonical.ie/"
     openGraph={{
       url: 'https://www.lukemanbnb.com',
-      title: 'Lukeman Homestays & Airbnb',
+      title: "Lukeman Homestays & Airbnb",
       description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
       // images: [
       //   {
@@ -114,7 +114,7 @@ function Comments() {
       //   { url: 'https://www.example.ie/og-image-03.jpg' },
       //   { url: 'https://www.example.ie/og-image-04.jpg' },
       // ],
-      siteName: 'Lukeman Homestays & Airbnb',
+      siteName: "Lukeman Homestays & Airbnb",
     }}
     // twitter={{
     //   handle: '@handle',
@@ -124,7 +124,7 @@ function Comments() {
   />
       <Head>
       <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-      <link rel="icon" href="/images/logo.png" />    
+      <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
 <Layout>
 <div className="flex mx-auto items-center justify-center mt-28 pb-28 mx-8 mb-4 max-w-lg">
@@ -157,7 +157,7 @@ function Comments() {
             <div className="-mr-1">
             <button
               type="submit"
-              className="bg-[#53afe5] text-white font-medium py-1 px-4 border border-[#53ae5] rounded-lg tracking-wide mr-1 hover:bg-[#f8a72a] eas-in-out duration-300"
+              className="bg-[#07286f] text-white font-medium py-1 px-4 border border-[#53ae5] rounded-lg tracking-wide mr-1 hover:bg-[#1d92ce] eas-in-out duration-300"
               disabled={isSubmitting} // Disable the button while submitting
             >
               {isSubmitting ? 'Posting your comment . . .' : 'Post a Comment'}

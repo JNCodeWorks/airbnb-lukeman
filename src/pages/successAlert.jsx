@@ -9,7 +9,7 @@ const SuccessAlert3 = () => {
     <Head>
       <title>Lukeman Homestays & Airbnb</title>
       <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
-      <link rel="icon" href="/images/logo.png" />    
+      <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
     <Layout>
       <div className='bg-white'>
@@ -26,7 +26,7 @@ const SuccessAlert3 = () => {
             <p className="text-gray-600 my-2"> We will respond back to you shortly.</p>
             <p className='font-semibold text-neutral-700'> Have a great day!  </p>
             <div className="py-10 text-center">
-                <Link href={'/'} className="px-12 bg-[#53afe5] hover:bg-indigo-500 eas-in-out duration-300 text-white font-semibold py-3">GO BACK</Link>
+                <Link href={'/'} className="px-12 bg-[#07286f] hover:bg-indigo-500 eas-in-out duration-300 text-white font-semibold py-3">GO BACK</Link>
             </div>
         </div>
     </div>
