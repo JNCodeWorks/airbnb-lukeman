@@ -31,7 +31,7 @@ export default function CTA() {
                                 </div>
                                 <div className="">
                                     <div className='w-full items-center  rounded-lg overflow-hidden'>
-                                        {showPlayer && <ReactPlayer url="/videos/myvideo.mp4" controls playing autoPlay muted volume={1} loop pip width='100%' height='100%'/>}
+                                        {showPlayer && <ReactPlayer url="https://www.youtube.com/watch?v=SRf_gbDtd4E" controls playing autoPlay muted volume={1} loop pip width='100%'/>}
                                     </div>
                                 </div>
                             </div>

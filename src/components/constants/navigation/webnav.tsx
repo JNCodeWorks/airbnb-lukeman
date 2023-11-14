@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image';
-import Logo from '../../../../public/images/logo2.png'
+import Logo from '../../../../public/images/lukeman-logo2.png'
 
 
 export default function WebNav() {
@@ -63,10 +63,10 @@ export default function WebNav() {
     <div className='bg-[#fefefe] rounded-b-xl shadow-md'>
         {/* <div className={navbar ? 'navbar active w-full hidden rounded-full lg:flex' : 'navbar w-full hidden rounded-full lg:flex'}> */}
         <div className='py-6 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
-        <div className='items-center ml-[96px] overflow-hidden'>
-                <Link href={'/'} className='flex flex-col items-center'>
-                <div className='absolute -mt-[99px]'>
-                    <Image src={Logo} alt='' className='relative' style={{height: "200px", width: "300px"}}/>
+        <div className='items-center overflow-hidden'>
+                <Link href={'/'} className='flex flex-col ml-20 items-center'>
+                <div className='absolute -mt-[31px]'>
+                    <Image src={Logo} alt='' className='relative' style={{height: "65px", width: "170px"}}/>
                 </div>
                 </Link>
 

@@ -150,9 +150,16 @@ export default function ContactForm() {
                     <div className="xl:w-5/6 xl:px-0 px-8 mx-auto">
                         <h1 className="xl:text-4xl text-3xl pb-4 text-neutral-700 font-bold">Get in Touch</h1>
                         <p className="text-[17px] text-neutral-600 pb-8 leading-relaxed font-normal lg:pr-4">Have questions or need assistance? Our dedicated team is here to help. Reach out to us via the contact form, and we will get back to you promptly. You can also find our contact details and location information for additional inquiries and support.</p>
-                        <div className="flex pb-4 items-center">
+                        <div className="flex items-center pb-4">
+                            <div className=''>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20"  height="20" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 640 640"><path fill="#07286f" d="M546.704 91.89C486.526 31.584 406.482-1.582 321.229-1.582 145.609-1.583 2.67 141.368 2.67 317.118c0 56.139 14.705 111.05 42.567 159.297L.001 641.595l168.959-44.34c46.595 25.382 99.013 38.835 152.222 38.835h.13C496.944 636.09 640 493.14 640 317.401c0-85.182-33.166-165.179-93.344-225.463l.047-.047zM321.323 582.315c-47.599 0-94.218-12.827-134.895-36.957l-9.697-5.788-100.265 26.257 26.776-97.726-6.272-10.04C70.312 415.965 56.4 367.244 56.4 317.13c0-146.082 118.832-264.96 265.066-264.96 70.713 0 137.328 27.65 187.302 77.622 49.996 50.127 77.493 116.588 77.493 187.42-.118 146.187-118.95 265.066-264.96 265.066l.024.036zM466.541 383.85c-7.913-4.028-47.115-23.233-54.39-25.89-7.276-2.658-12.58-4.028-17.977 4.027-5.268 7.914-20.587 25.89-25.252 31.265-4.666 5.28-9.284 6.035-17.197 2.008-7.914-4.028-33.674-12.426-64.064-39.568-23.634-21.095-39.662-47.221-44.328-55.134-4.665-7.914-.52-12.308 3.532-16.193 3.661-3.544 7.925-9.284 11.941-13.95 4.028-4.665 5.28-7.925 7.925-13.31 2.658-5.28 1.359-9.946-.637-13.95-2.008-4.015-17.977-43.217-24.485-59.185-6.39-15.603-13.063-13.43-17.965-13.701-4.665-.237-9.945-.237-15.2-.237-5.257 0-13.95 1.996-21.225 9.933-7.276 7.914-27.898 27.26-27.898 66.45 0 39.201 28.512 77.009 32.516 82.407 4.027 5.267 56.162 85.784 136.029 120.238 18.98 8.161 33.803 13.063 45.355 16.854 19.098 6.024 36.425 5.15 50.126 3.13 15.32-2.256 47.115-19.229 53.788-37.831 6.662-18.615 6.662-34.536 4.666-37.831-1.89-3.544-7.158-5.504-15.201-9.58l-.06.048z"/></svg>
+                            </div>
+                            {/* <p className="pl-4 text-neutral-600 text-base">abcd@gmail.com</p> */}
+                            <Link href="https://wa.me/+254719548363" className="pl-4 leading-6 text-neutral-700 ">+254 719 548 363</Link>
+                        </div>
+                        <div className="flex pb-4 items-center"> 
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#07286f" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#07286f" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
                                     <path d="M15 7a2 2 0 0 1 2 2" />
@@ -163,7 +170,7 @@ export default function ContactForm() {
                         </div>
                         <div className="flex items-center pb-4">
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#07286f" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="#07286f" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" />
                                     <rect x={3} y={5} width={18} height={14} rx={2} />
                                     <polyline points="3 7 12 13 21 7" />
@@ -172,23 +179,11 @@ export default function ContactForm() {
                             <Link href={"mailto:info@lukemanbnb.com"} className="pl-4 text-neutral-600 text-base">info@lukemanbnb.com</Link>
                         </div>
 
-                        <div className="flex items-center pb-4">
-                            <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#07286f" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                            </svg>
 
-
-                            </div>
-                            {/* <p className="pl-4 text-neutral-600 text-base">abcd@gmail.com</p> */}
-                            <p className="text-base pl-4 text-neutral-600 ">
-                                Maweni Plaza, Voi, Taita-Taveta County, Kenya.
-                            </p>
-                        </div>
                         <div className='space-y-2 pb-8'>
                             <h5 className={'capitalize font-semibold text-neutral-600 text-lg'}>opening hours</h5>
-                            <p className='text-neutral-600 text-base'><strong>Days:</strong> Monday - Friday</p>
-                            <p className='text-neutral-600 text-base'><strong>Time:</strong> 08:00 - 17:00</p>
+                            <p className='text-neutral-600 text-base'> We operate around the clock, <br /> 24 hours a day, 7 days a week. </p>
+                            {/* <p className='text-neutral-600 text-base'><strong>Time:</strong> 08:00 - 19:00</p> */}
                         </div>
                         <div className={'flex items-center space-x-4'}>
                             {Links.social.map((item) => (
@@ -261,9 +256,9 @@ export default function ContactForm() {
                 </div>
             </div>
         </div>
-        <div className='py-12'>
+        {/* <div className='py-12'>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.8229255644073!2d38.56330905231441!3d-3.393365649918491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18392960cce3241d%3A0xa382038230ab70e2!2sMAWENI%20PLAZA!5e0!3m2!1sen!2ske!4v1696249597424!5m2!1sen!2ske" width="100%" height="500" style={{border: "0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        </div> */}
     </div>
     </div>
   )

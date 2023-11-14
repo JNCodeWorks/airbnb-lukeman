@@ -9,14 +9,14 @@ export default function ContactInfo() {
         </div>
         <div className='grid lg:grid-cols-4 md:grid-cols-2 gap-6'>
             <div className='lg:mx-auto'>
-                <p className='flex flex-col space-y-2 text-sm'>
-                    <span className='capitalize text-neutral-700 font-medium'>address:&nbsp;</span><span className='text-neutral-500'> Maweni Plaza, Voi, Taita-Taveta County, Kenya.</span>
-                </p>
+                <Link href="https://wa.me/+254719548363" className='flex flex-col space-y-2 text-sm'>
+                    <span className='capitalize text-neutral-700 font-medium'>whatsapp:&nbsp;</span><span className='text-[#07286f]'>+254 719 548 363</span>
+                </Link>
             </div>
 
             <div className='lg:mx-auto'>
-                <Link href={"tel://+254115600233"} className='flex flex-col space-y-2 text-sm'>
-                    <span className='capitalize text-neutral-700 font-medium'>phone:&nbsp;</span><span className='text-[#07286f]'>+254 115 600 233</span>
+                <Link href={"tel://+254794234163"} className='flex flex-col space-y-2 text-sm'>
+                    <span className='capitalize text-neutral-700 font-medium'>phone:&nbsp;</span><span className='text-[#07286f]'>+254 794 234 163</span>
                 </Link>
             </div>
 

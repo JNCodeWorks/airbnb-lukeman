@@ -23,8 +23,10 @@ export default function Video() {
         </h1>
         <p className='text-neutral-600'>Get a glimpse of the unforgettable experiences that await you in Kenya.</p>
       </div>
-      <div className='w-full items-center'>
-        {showPlayer && <ReactPlayer url="/videos/myvideo.mp4" controls playing autoPlay muted volume={1} loop pip width='100%' height='100%'/>}
+      <div className='w-full items-center  justify-center text-center'>
+        <div style={{ position: 'relative', paddingTop: '56.25%', width: '100%', height: '100%' }}>
+        {showPlayer && <ReactPlayer url="https://www.youtube.com/watch?v=SRf_gbDtd4E" controls playing autoPlay muted volume={1} loop pip style={{ position: 'absolute', top: 0, left: 0 }} width='100%' height='100%' />}
+        </div>
       </div>
     </div>
   )
