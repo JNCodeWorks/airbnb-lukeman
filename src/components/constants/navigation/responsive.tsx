@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../../../../public/images/LUKEMAN-LOGO.png'
+import Logo from '../../../../public/images/lukeman-logo2.png'
 
 export default function Responsive() {
 
@@ -61,21 +61,17 @@ export default function Responsive() {
     <div className='lg:hidden'>
       <div className='bg-[#fefefe] shadow-md xl:hidden py-4 flex justify-between w-full px-8 rounded-b-xl items-center border-b border-transparent sm:border-neutral-200'>
       {/* <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 items-center border-b-2 sm:border-neutral-200' : 'navbar xl:hidden flex justify-between w-full px-8 items-center border-b border-transparent sm:border-neutral-200'}> */}
-      {/* <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3">
-                <Link href={'/'} className='flex flex-col items-center'>
-                    <div>
-                        <Image src={Logo} alt='' style={{height: "70px", width: "70px"}}/>
-                    </div>
-                 </Link>
-                </button> */}
-                        <div className='items-center ml-[56px] overflow-hidden'>
-                <Link href={'/'} className='flex flex-col items-center'>
-                <div className='absolute -mt-[99px]'>
-                    <Image src={Logo} alt='' className='relative' style={{height: "200px", width: "300px"}}/>
+      {/* <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3"> */}
+      <div className='items-center overflow-hidden'>
+                <Link href={'/'} className='flex flex-col ml-14 items-center'>
+                <div className='absolute -mt-[29px]'>
+                    <Image src={Logo} alt='' className='relative' style={{width: "150px", height: "60px"}}/>
                 </div>
                 </Link>
 
             </div>
+                {/* </button> */}
+
                 <div aria-label="toggler" className="flex justify-center items-center">
                     <button id="open" aria-label="open" onClick={() => setShow(!show)} className={`${show ? "flex items-center space-x-1" : "hidden"} focus:outline-none focus:ring-2 `}>
                         <svg className="text-[#07286f]" width={28} height={28} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
