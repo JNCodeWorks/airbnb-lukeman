@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../../../public/images/LUKEMAN-LOGO.png'
+import Logo from '../../../../public/images/lukeman-logo2.png'
 
 export default function Footer () {
 
@@ -148,8 +148,12 @@ export default function Footer () {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center">
-                <Image src={Logo} alt='' style={{height: "300px", width: "300px"}} className=""/>
+            <div className="flex justify-center items-center mx-auto">
+            <Link href={'/'} className='mx-auto'>
+                <div className=''>
+                    <Image src={Logo} alt='' className='' style={{height: "70px", width: "200px"}}/>
+                </div>
+                </Link>
             </div>
         </div>
         <div className='text-center bg-neutral-800 py-6 items-center '>

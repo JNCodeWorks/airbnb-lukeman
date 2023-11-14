@@ -30,8 +30,22 @@ export default function CTA() {
                                     <Link href={'/about'}><button role="button" aria-label="Join the community" className="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-[#1d92ce] rounded-full text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 capitalize focus:ring-white focus:outline-none">about us</button></Link>
                                 </div>
                                 <div className="">
-                                    <div className='w-full items-center  rounded-lg overflow-hidden'>
-                                        {showPlayer && <ReactPlayer url="https://www.youtube.com/watch?v=SRf_gbDtd4E" controls playing autoPlay muted volume={1} loop pip width='100%'/>}
+                                    <div style={{ position: 'relative', paddingTop: '56.25%', width: '100%', height: '100%' }}>
+                                        {showPlayer && (
+                                            <ReactPlayer
+                                            url="https://www.youtube.com/watch?v=SRf_gbDtd4E"
+                                            controls
+                                            playing
+                                            autoPlay
+                                            muted
+                                            volume={1}
+                                            loop
+                                            pip
+                                            style={{ position: 'absolute', top: 0, left: 0 }}
+                                            width='100%'
+                                            height='100%'
+                                            />
+                                        )}
                                     </div>
                                 </div>
                             </div>
