@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../../../public/images/LUKEMAN-LOGO.png'
+import Logo from '../../../../public/images/lukeman-logo2.png'
 
 export default function Footer () {
 
@@ -148,10 +148,13 @@ export default function Footer () {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center">
-                <Image src={Logo} alt='' style={{height: "300px", width: "300px"}} className=""/>
-            </div>
+        {/* <div className="">
+        <div className={"grid relative place-items-center"}>
+            <Image src={Logo} alt={"Lukemanbnb.com"} width={220} height={150} />
         </div>
+        </div> */}
+        </div>
+
         <div className='text-center bg-neutral-800 py-6 items-center '>
             <p className="text-sm leading-none text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Homestays & AirBnB </span> | All Rights Reserved </p>
         </div>
