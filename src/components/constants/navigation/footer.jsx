@@ -148,11 +148,11 @@ export default function Footer () {
                     </div>
                 </div>
             </div>
-        <div className="">
+        {/* <div className="">
         <div className={"grid relative place-items-center"}>
             <Image src={Logo} alt={"Lukemanbnb.com"} width={220} height={150} />
         </div>
-        </div>
+        </div> */}
         </div>
 
         <div className='text-center bg-neutral-800 py-6 items-center '>
