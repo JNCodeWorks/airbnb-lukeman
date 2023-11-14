@@ -66,7 +66,7 @@ export default function WebNav() {
         <div className='items-center overflow-hidden'>
                 <Link href={'/'} className='flex flex-col ml-20 items-center'>
                 <div className='absolute -mt-[31px]'>
-                    <Image src={Logo} alt='' className='relative' style={{height: "65px", width: "200px"}}/>
+                    <Image src={Logo} alt='' className='relative' style={{height: "65px", width: "170px"}}/>
                 </div>
                 </Link>
 
