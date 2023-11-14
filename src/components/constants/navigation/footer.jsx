@@ -148,14 +148,13 @@ export default function Footer () {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center items-center mx-auto">
-            <Link href={'/'} className='mx-auto'>
-                <div className=''>
-                    <Image src={Logo} alt='' className='' style={{height: "70px", width: "200px"}}/>
-                </div>
-                </Link>
-            </div>
+        <div className="">
+        <div className={"grid relative place-items-center"}>
+            <Image src={Logo} alt={"Lukemanbnb.com"} width={220} height={150} />
         </div>
+        </div>
+        </div>
+
         <div className='text-center bg-neutral-800 py-6 items-center '>
             <p className="text-sm leading-none text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Homestays & AirBnB </span> | All Rights Reserved </p>
         </div>
