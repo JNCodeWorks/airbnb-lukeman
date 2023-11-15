@@ -12,7 +12,7 @@ export default function Homestays() {
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
             Discover Our Homestay Listings
         </h1>
-        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Coming Soon</Link>
+        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
       <div className='mt-8 grid gap-5 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
           {

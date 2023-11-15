@@ -1,31 +1,31 @@
 [
     {
         "id": "1",
-        "image": "/images/1.jpeg",
-        "name": "Single Homestay Retreat",
-        "guests": "2 Guest(s)",
-        "bedrooms": "1 Bedroom(s)",
+        "image": "/images/3bedroom.jpg",
+        "name": "Spacious 3-Bedroom Retreat",
+        "guests": "6 Guest(s)",
+        "bedrooms": "3 Bedroom(s)",
         "description": "Experience the Warmth of Kenyan Hospitality.",
-        "price": "4999"
+        "price": "5000"
     },
     
     {
         "id": "2",
-        "image": "/images/pxl1.jpg",
-        "name": "Duo Homestay Retreat",
-        "guests": "4 Guest(s)",
-        "bedrooms": "2 Bedroom(s)",
+        "image": "/images/4bedroom.jpg",
+        "name": "Modern 4-Bedroom Residence",
+        "guests": "8 Guest(s)",
+        "bedrooms": "4 Bedroom(s)",
         "description": "A Home Away from Home in Kenya.",
-        "price":"2999"
+        "price":"7000"
     },
 
     {
         "id": "3",
-        "image": "/images/1.jpeg",
-        "name": "Duplex Homestay Retreat",
-        "guests": "2 Guest(s)",
-        "bedrooms": "1 Bedroom(s)",
+        "image": "/images/3bed.jpg",
+        "name": "Luxurious 3-Bedroom Home",
+        "guests": "6 Guest(s)",
+        "bedrooms": "3 Bedroom(s)",
         "description": "Discover Kenyan Culture and Comfort.",
-        "price":"3500"
+        "price":"6000"
     }
 ]
