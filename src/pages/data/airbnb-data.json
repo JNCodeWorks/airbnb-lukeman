@@ -2,7 +2,7 @@
     {
         "id": "1",
         "image": "/images/7.jpg",
-        "name": "studio apartment",
+        "name": "studio (Bedsitter)",
         "guests": "2 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
         "description": "Studio Serenity: Your Stylish Retreat",
@@ -12,20 +12,20 @@
     {
         "id": "2",
         "image": "/images/6.jpg",
-        "name": "Cozy Apartment",
+        "name": "1 Bedroom Apartment",
         "guests": "4 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
         "description": "Your Cozy Escape: A 1-Bedroom Haven.",
-        "price":"2500"
+        "price":"3000"
     },
 
     {
         "id": "3",
-        "image": "/images/7.jpg",
-        "name": "Studio Apartment",
-        "guests": "2 Guest(s)",
-        "bedrooms": "1 Bredroom(s)",
-        "description": "Studio Serenity: Your Stylish Retreat",
-        "price":"2000"
+        "image": "/images/2bedroom.jpg",
+        "name": "2 Bedroom Apartment",
+        "guests": "4 Guest(s)",
+        "bedrooms": "2 Bredroom(s)",
+        "description": "SYour Tranquil 2-Bedroom Escape",
+        "price":"4000"
     }
 ]
