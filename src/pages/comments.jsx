@@ -90,12 +90,12 @@ function Comments() {
 <div>
     <NextSeo
     title="Lukeman Homestays & Airbnb"
-    description="Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience."
+    description="Experience comfort and warmth at Lukeman Homestays & Airbnb – your cozy home away from home. Enjoy hospitality and relaxation for an unforgettable stay."
     canonical="https://www.canonical.ie/"
     openGraph={{
       url: 'https://www.lukemanbnb.com',
       title: "Lukeman Homestays & Airbnb",
-      description: 'Discover the comfort and warmth of Lukeman Homestays & Airbnb - your home away from home. Immerse yourself in cozy accommodations, where every stay feels like a familiar embrace. Experience the perfect blend of hospitality and relaxation, making your journey an unforgettable experience.',
+      description: 'Experience comfort and warmth at Lukeman Homestays & Airbnb – your cozy home away from home. Enjoy hospitality and relaxation for an unforgettable stay.',
       // images: [
       //   {
       //     url: 'https://www.example.ie/og-image-01.jpg',
