@@ -1,31 +1,31 @@
 [
     {
         "id": "1",
-        "image": "/images/7.jpg",
-        "name": "studio (Bedsitter)",
-        "guests": "2 Guest(s)",
+        "image": "/images/6.jpg",
+        "name": "Voi, Kenya",
+        "guests": "4 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
-        "description": "Studio Serenity: Your Stylish Retreat",
+        "description": "1 Bedroom Apartment",
         "price": "2000"
     },
     
     {
         "id": "2",
-        "image": "/images/6.jpg",
-        "name": "1 Bedroom Apartment",
+        "image": "/images/diani.jpg",
+        "name": "Diani, Kenya",
         "guests": "4 Guest(s)",
         "bedrooms": "1 Bedroom(s)",
-        "description": "Your Cozy Escape: A 1-Bedroom Haven.",
+        "description": "Studio Apartments (bedsitter)",
         "price":"3000"
     },
 
     {
         "id": "3",
         "image": "/images/2bedroom.jpg",
-        "name": "2 Bedroom Apartment",
+        "name": "Voi, Kenya",
         "guests": "4 Guest(s)",
         "bedrooms": "2 Bredroom(s)",
-        "description": "SYour Tranquil 2-Bedroom Escape",
+        "description": "2 Bedroom Apartment",
         "price":"4000"
     }
 ]

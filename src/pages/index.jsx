@@ -11,6 +11,8 @@ import Activities from '@/components/views/home/activities'
 import Testimonial from '@/components/views/home/testimonial'
 import Link from 'next/link'
 import Head from 'next/head'
+import { FaStar, FaRegStar } from 'react-icons/fa';
+import RatingStars from '@/pages/RatingStars'
 import { NextSeo } from 'next-seo'
 import { getBlogPosts } from '../../lib/reviews'
 
@@ -49,6 +51,8 @@ export default function Home({blogPosts}) {
           clearInterval(interval);
         };
       }, [currentIndex]);
+
+      
 
   return (
     <>
@@ -131,7 +135,7 @@ export default function Home({blogPosts}) {
                         <h1 className="font-semibold text-neutral-700 text-center text-lg">
                           &quot;{posts.fields.title}&quot;
                         </h1>
-                        <p className="text-neutral-600 text-center mx-auto px-6 text-[16px]">
+                        <p className="text-neutral-600 text-center mx-auto px-6 text-[14px]">
                           &quot;{posts.fields.comment}&quot;
                         </p>
                       </div>
@@ -147,6 +151,7 @@ export default function Home({blogPosts}) {
                             fill
                           />
                         </div> */}
+                        <RatingStars rating={posts.fields.rating} />
                         <div className="flex flex-col text-sm items-start">
                           <h1 className="font-semibold text-neutral-700">
                             {posts.fields.name}

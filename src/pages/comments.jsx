@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { createClient } from 'contentful-management'
 import { useRouter } from 'next/router'
 import { NextSeo } from 'next-seo'
+import { FaStar } from 'react-icons/fa';
 
 function Comments() {
     const [name, setName] = useState('');
@@ -13,9 +14,21 @@ function Comments() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    const [rating, setRating] = useState(null);
+    const [hoverRating, setHoverRating] = useState(null);
     const router = useRouter();
     
+    const handleRatingClick = (ratingValue) => {
+      setRating(ratingValue);
+  };
 
+  const handleMouseOver = (ratingValue) => {
+      setHoverRating(ratingValue);
+  };
+
+  const handleMouseLeave = () => {
+      setHoverRating(null);
+  };
 
     
     const handleFormSubmit = async (e) => {
@@ -51,6 +64,9 @@ function Comments() {
           comment: {
             'en-US': comment,
           },
+          rating: {
+            'en-US': rating, // Include the rating value here
+        },
         },
       });
     
@@ -64,6 +80,7 @@ function Comments() {
             setTitle('');
             setLocation('');
             setComment('');
+            setRating(null);
           } else {
             // Set the error message when there's an error
             setErrorMessage('Failed to submit the comment');
@@ -147,7 +164,34 @@ function Comments() {
          <div className="w-full md:w-full px-3 mb-2 mt-2">
             <textarea className="bg-gray-100 rounded border border-gray-400 leading-normal text-sm resize-none w-full h-40 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="comment" value={comment}  onChange={(e) => setComment(e.target.value)} placeholder='Type Your Comment . . .' required/>
          </div>
-         <div className="w-full md:w-full flex items-start md:w-full px-3">
+         <div className=' w-full md:w-full px-3 mt-2 text-sm text-gray-600'> Please rate our services</div>
+         <div className="flex items-center w-full md:w-full px-3 mb-2 mt-2">
+                {[...Array(5)].map((star, index) => {
+                    const ratingValue = index + 1;
+                    return (
+                      <label key={index}>
+                      <input
+                          type="radio"
+                          name="rating"
+                          value={rating}
+                          onClick={() => handleRatingClick(ratingValue)}
+                          onMouseOver={() => handleMouseOver(ratingValue)}
+                          onMouseLeave={handleMouseLeave}
+                          style={{ display: 'none' }} // Hide the radio input
+                      />
+                      <FaStar
+                          className="cursor-pointer"
+                          color={(hoverRating || rating) >= ratingValue ? "#ffc107" : "#e4e5e9"}
+                          size={30}
+                          onMouseOver={() => handleMouseOver(ratingValue)}
+                          onMouseLeave={handleMouseLeave}
+                      />
+                  </label>
+                    );
+                })}
+                {rating && <p className="ml-4 text-xs text-neutral-600 ">{rating} out of 5 stars</p>}
+            </div>
+         <div className="w-full md:w-full flex items-start md:w-full pt-4 px-3">
             <div className="flex items-start w-1/2 text-red-600 px-2 mr-auto">
                <svg fill="none" className="w-5 h-5 text-red-600 mr-1" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
