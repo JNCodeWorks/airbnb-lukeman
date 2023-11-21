@@ -27,5 +27,14 @@
         "bedrooms": "2 Bredroom(s)",
         "description": "2 Bedroom Apartment",
         "price":"4000"
+    },
+    {
+        "id": "4",
+        "image": "/images/6.jpg",
+        "name": "Voi, Kenya",
+        "guests": "4 Guest(s)",
+        "bedrooms": "1 Bedroom(s)",
+        "description": "1 Bedroom Apartment",
+        "price": "2000"
     }
 ]

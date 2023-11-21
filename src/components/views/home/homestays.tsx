@@ -2,10 +2,41 @@ import React from 'react'
 import Link from 'next/link'
 import Data from '@/pages/data/homestay-data.json'
 import Image from 'next/image'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 
 export default function Homestays() {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    // Add more settings as per your requirements
+  };
+
   return (
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
@@ -14,18 +45,19 @@ export default function Homestays() {
         </h1>
         <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
-      <div className='mt-8 grid gap-5 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
+      <div className='mt-8'>
+      <Slider {...settings}>
           {
                                 Data.map ((Item) => (
 
-                    
+                                  <>
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={Item.id}>
-                                      <div className="flex-shrink-0 relative overflow-hidden h-60">
+                                      <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={Item.image} alt={Item.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div>
-                                      <div className="flex-1 p-6 flex flex-col justify-between rounded-b-lg">
+                                      <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                              <Link href={'/homestays'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
+                                              <Link href={'/airbnb'} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                                                       <h1>{Item.name}</h1>
                                               </Link>
                                               <p className="capitalize text-sm text-neutral-600">{Item.description}</p>
@@ -60,13 +92,15 @@ export default function Homestays() {
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
                                                     <span className="text-2xl font-bold">Kshs. {Item.price}</span> per night
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/homestays'}>view</Link></button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/airbnb'}>view</Link></button>
                                               </div>
                                           </div>
                                       </div>  
                                   </div>
+                                  </>
                                   ))
           }
+          </Slider>
       </div>
     </div>
   )
