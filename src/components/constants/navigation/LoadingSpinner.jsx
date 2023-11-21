@@ -39,7 +39,7 @@ const LoadingSpinner = () => (
                 }}
             />
       <Head>
-      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/> 
+       
         <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />   
       </Head>
   <div className="fixed top-0 left-0 w-screen h-screen flex flex-col items-center justify-center bg-white z-50">
