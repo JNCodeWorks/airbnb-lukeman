@@ -34,7 +34,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home({blogPosts}) {
   
       const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1000,
         autoplay: true,
