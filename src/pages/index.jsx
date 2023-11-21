@@ -11,8 +11,13 @@ import Activities from '@/components/views/home/activities'
 import Testimonial from '@/components/views/home/testimonial'
 import Link from 'next/link'
 import Head from 'next/head'
+import { FaStar, FaRegStar } from 'react-icons/fa';
+import RatingStars from '@/pages/RatingStars'
 import { NextSeo } from 'next-seo'
 import { getBlogPosts } from '../../lib/reviews'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 export async function getStaticProps() {
@@ -27,28 +32,33 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export default function Home({blogPosts}) {
-
-
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % blogPosts.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((currentIndex - 1 + blogPosts.length) % blogPosts.length);
-  };
-
-    // Automatically advance to the next slide in a loop
-    useEffect(() => {
-        const interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    
-        // Clear the interval when the component unmounts to prevent memory leaks
-        return () => {
-          clearInterval(interval);
-        };
-      }, [currentIndex]);
+  
+      const settings = {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+        // Add more settings as per your requirements
+      };
 
   return (
     <>
@@ -87,7 +97,7 @@ export default function Home({blogPosts}) {
       // }}
     />
     <Head>
-      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+      
       <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
     <Layout>
@@ -116,37 +126,25 @@ export default function Home({blogPosts}) {
         </div>
           <div className="flex flex-col items- py-6">
             {/* Carousel container */}
-            <div className="relative md:order-2">
-              <div className="relative grid max-w-lg gap-6 mx-auto md:max-w-xl lg:gap-10 lg:grid-cols-1">
-                {blogPosts.map((posts, index) => (
-                  <div
-                    key={posts.sys.id}
-                    className={`testimonial-slide ${
-                      index === currentIndex ? 'active' : ''
-                    }`}
-                  >
+            <div className="">
+              <Slider {...settings}>
+                {blogPosts.map((posts) => (
+                  <>
+                  <div key={posts.sys.id} className="mx-3">
+                    <div className='h-96'>
                     {/* Your slide content here */}
-                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-center justify-center bg-white shadow-md rounded-xl lg:py-8 lg:px-7">
+                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-center justify-center rounded-xl lg:py-8 lg:px-7">
                       <div className="flex flex-col space-y-2">
                         <h1 className="font-semibold text-neutral-700 text-center text-lg">
                           &quot;{posts.fields.title}&quot;
                         </h1>
-                        <p className="text-neutral-600 text-center mx-auto px-6 text-[16px]">
+                        <p className="text-neutral-600 text-center mx-auto px-6 text-[14px]">
                           &quot;{posts.fields.comment}&quot;
                         </p>
                       </div>
                       <div className="flex flex-col items-center justify-center space-y-4">
-                        {/* <div
-                          className="flex-shrink-0 relative"
-                          style={{ width: '50px', height: '50px' }}
-                        >
-                          <Image
-                            src={"https:" + posts.fields.image.fields.file.url}
-                            alt={posts.fields.name}
-                            className="block w-full h-full rounded-full"
-                            fill
-                          />
-                        </div> */}
+                    
+                        <RatingStars rating={posts.fields.rating} />
                         <div className="flex flex-col text-sm items-start">
                           <h1 className="font-semibold text-neutral-700">
                             {posts.fields.name}
@@ -155,22 +153,12 @@ export default function Home({blogPosts}) {
                         </div>
                       </div>
                     </div>
+                    </div>
                   </div>
+                  </>
                 ))}
-              </div>     
+              </Slider>     
             </div>
-          </div>
-          <div className="carousel-controls">
-            <button className="prev-button" onClick={prevSlide}>
-            <svg fill="none" className='w-6 h-6' stroke="currentColor" stroke-width="4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
-            </svg>
-            </button>
-            <button className="next-button" onClick={nextSlide}>
-            <svg fill="none" className='w-6 h-6' stroke="currentColor" stroke-width="4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
-            </svg>
-            </button>
           </div>
           <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-y-0 py-12 justify-center md:space-x-8">
             <Link

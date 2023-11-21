@@ -14,7 +14,7 @@ export default function Legal() {
     <div>
     <Head>
       <title>Lukeman Homestays & Airbnb</title>
-      <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+      
       <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
                     <NextSeo

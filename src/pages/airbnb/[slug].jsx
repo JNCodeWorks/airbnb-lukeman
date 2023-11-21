@@ -199,13 +199,14 @@ return (
             />
             <Head>
                 {/* <title>{blogPost.fields.name}</title> */}
-                <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+                
                 <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />
             </Head>
             <Layout>
-            <div className='w-full single bg-cover bg-center'>
-            <div className='bannerOverlay h-96 flex flex-col justify-center text-white'>
-            <div className="lg:w-10/12 mx-auto px-6 w-full">
+            <div className='w-full relative bg-cover bg-center'>
+            <img src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.name} className="object-cover" style={{height: "550px", width: "100vw"}}/>
+            <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-50 flex flex-col justify-center text-white'>
+            <div className="lg:w-10/12 mx-auto px-6 w-full ">
             <div className="xl:text-5xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
                 <h1 className="font-medium capitalize "> {blogPost.fields.name} </h1>
                 <p className='text-base max-w-prose capitalize'> {blogPost.fields.description} </p>
@@ -229,7 +230,7 @@ return (
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
                                     </svg>
                                 </li>
-                                <li className='capitalize'>{blogPost.fields.name}</li>
+                                <li className='capitalize'>{blogPost.fields.description}</li>
                             </ul>
                         </div>
                     </div>

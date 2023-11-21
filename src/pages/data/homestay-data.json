@@ -2,30 +2,30 @@
     {
         "id": "1",
         "image": "/images/3bedroom.jpg",
-        "name": "Spacious 3-Bedroom Retreat",
+        "name": "Voi, Kenya",
         "guests": "6 Guest(s)",
         "bedrooms": "3 Bedroom(s)",
-        "description": "Experience the Warmth of Kenyan Hospitality.",
+        "description": "Spacious 3-Bedroom Retreat",
         "price": "5000"
     },
     
     {
         "id": "2",
         "image": "/images/4bedroom.jpg",
-        "name": "Modern 4-Bedroom Residence",
+        "name": "Voi, Kenya",
         "guests": "8 Guest(s)",
         "bedrooms": "4 Bedroom(s)",
-        "description": "A Home Away from Home in Kenya.",
+        "description": "Modern 4-Bedroom Residence",
         "price":"7000"
     },
 
     {
         "id": "3",
         "image": "/images/3bed.jpg",
-        "name": "Luxurious 3-Bedroom Home",
+        "name": "Voi, Kenya",
         "guests": "6 Guest(s)",
         "bedrooms": "3 Bedroom(s)",
-        "description": "Discover Kenyan Culture and Comfort.",
+        "description": "Luxurious 3-Bedroom Home",
         "price":"6000"
     }
 ]

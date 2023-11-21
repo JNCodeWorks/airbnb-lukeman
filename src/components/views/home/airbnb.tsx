@@ -2,9 +2,41 @@ import React from 'react'
 import Link from 'next/link'
 import Data from '@/pages/data/airbnb-data.json'
 import Image from 'next/image'
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import bed from '../../../../public/images/bed.svg'
 
 export default function Airbnb() {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    // Add more settings as per your requirements
+  };
+
   return (
     <div className='lg:w-10/12 mx-auto px-6 py-16'>
       <div className='flex lg:flex-row flex-col lg:items-center space-y-4 lg:space-y-0 items-start justify-between'>
@@ -13,11 +45,12 @@ export default function Airbnb() {
         </h1>
         <Link href={'/airbnb'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
-      <div className='mt-8 grid gap-5 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:max-w-none'>
+      <div className='mt-8'>
+      <Slider {...settings}>
           {
                                 Data.map ((Item) => (
 
-                    
+                                  <>
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={Item.id}>
                                       <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={Item.image} alt={Item.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
@@ -64,8 +97,10 @@ export default function Airbnb() {
                                           </div>
                                       </div>  
                                   </div>
+                                  </>
                                   ))
           }
+          </Slider>
       </div>
     </div>
   )

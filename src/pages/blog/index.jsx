@@ -57,7 +57,7 @@ export default function Index({blogPosts}) {
                 }}
             />
         <Head>
-          <link href="https://fonts.cdnfonts.com/css/reddit-sans" rel="stylesheet"/>
+          
             <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
         </Head>
       <Layout>
