@@ -15,6 +15,7 @@ import { FaStar, FaRegStar } from 'react-icons/fa';
 import RatingStars from '@/pages/RatingStars'
 import { NextSeo } from 'next-seo'
 import { getBlogPosts } from '../../lib/reviews'
+import { getLatestBlogPosts } from '../../lib/blogUtils';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -22,8 +23,9 @@ import 'slick-carousel/slick/slick-theme.css';
 
 export async function getStaticProps() {
   const blogPosts = await getBlogPosts();
+  const latestBlogPosts = await getLatestBlogPosts(4);
   return {
-    props: { blogPosts },
+    props: { blogPosts, latestBlogPosts }, 
   };
 }
 
@@ -31,7 +33,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 
-export default function Home({blogPosts}) {
+export default function Home({blogPosts, latestBlogPosts}) {
   
       const settings = {
         dots: false,
@@ -40,6 +42,33 @@ export default function Home({blogPosts}) {
         autoplay: true,
         autoplaySpeed: 7000,
         slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+        // Add more settings as per your requirements
+      };
+
+      const set = {
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
           {
@@ -160,7 +189,7 @@ export default function Home({blogPosts}) {
               </Slider>     
             </div>
           </div>
-          <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-y-0 py-12 justify-center md:space-x-8">
+          <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-y-0 justify-center md:space-x-8">
             <Link
               className="bg-[#07286f] py-4 px-8 capitalize rounded-full text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white"
               href={'/airbnb'}
@@ -176,6 +205,40 @@ export default function Home({blogPosts}) {
           </div>
         </div>
       </section>
+    </div>
+
+    {/* Blog Posts */}
+    <div className="container mx-auto lg:w-10/12 px-6 py-16">
+    <div className='text-center pb-8'>
+      <h2 className='capitalize text-4xl font-bold tracking-wide text-neutral-700'>
+        Our Article Library
+      </h2>
+    </div>
+      <Slider {...set}>
+        {latestBlogPosts.map((post) => (
+                    <div key={post.sys.id} className='card-container'>
+                    <div className=' bg-white rounded-sm shadow-sm overflow-hidden mx-4 h-full'>
+                    <div className="relative flex-shrink-0 overflow-hidden h-72">
+                        <Image src={"https:" + post.fields.image.fields.file.url} alt={post.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
+                        <div className="bg-white absolute top-0 left-0">
+                            <p className="text-base leading-4 py-3 px-5 capitalize text-gray-800">{post.fields.type}</p>
+                        </div>
+                    </div>
+                    <div className='bg-white p-4'>
+                    <p className="text-sm font-light leading-4 capitalize text-neutral-500 py-3 italic">by {post.fields.author}</p>
+                    {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
+                    <Link href={`/blog/${post.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
+                        <h1>{post.fields.title}</h1>
+                    </Link>
+                    <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{post.fields.description}</p>
+                    <div className='mt-4 w-full py-4'>
+                      <Link href={`/blog/${post.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">read more</Link>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        ))}
+      </Slider>
     </div>
 
     </Layout>

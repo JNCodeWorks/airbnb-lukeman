@@ -111,7 +111,7 @@ export default function BlogPost ({blogPost}) {
                 <div className='flex-shrink-0 relative h-[720px] mx-6 mt-8'>
                     <Image src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.title} className='object-cover' fill/>
                 </div>
-                    <ReactMarkdown className="mx-auto px-6 w-full text-neutral-600"> 
+                    <ReactMarkdown className="mx-auto px-6 pt-12 w-full text-neutral-600"> 
                         {blogPost.fields.body}
                     </ReactMarkdown>
                 </div>
