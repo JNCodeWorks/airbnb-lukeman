@@ -9,7 +9,7 @@ const client = createClient ({
 export default client;
 
 export async function getBlogPosts () {
-    const entries = await client.getEntries({content_type: 'blogposts' });
+    const entries = await client.getEntries({content_type: 'blogposts', order: '-sys.createdAt', });
     return entries.items;
 }
 
