@@ -92,7 +92,7 @@ export default function Airbnb() {
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
                                                     <span className="text-2xl font-bold">Kshs. {Item.price}</span> per night
                                                   </h4>
-                                                  <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/airbnb'}>view</Link></button>
+                                                  <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/airbnb'}>book now</Link></button>
                                               </div>
                                           </div>
                                       </div>  

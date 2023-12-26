@@ -6,6 +6,10 @@ import Banner from "../../components/views/airbnb/banner"
 import bed from '../../../public/images/bed.svg'
 import Head from "next/head";
 import { NextSeo } from "next-seo";
+import ModalImage from "react-modal-image";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 
 
@@ -18,6 +22,33 @@ export async function getStaticProps() {
 
 
   export default function Homestays ({blogPosts}) {
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+      // Add more settings as per your requirements
+    };
 
     return(
         <>
@@ -75,14 +106,28 @@ export async function getStaticProps() {
 
                     
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={posts.sys.id}>
-                                      <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
+                                      {/* <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
-                                      </div>
+                                      </div> */}
+                                      
+                                      <Slider {...settings}>
+                                          {posts.fields.gallery.map((image) => (
+                                            <div key={image.sys.id} className="flex-shrink-0 relative overflow-hidden h-72">
+                                              <Image
+                                                src={"https:" + image.fields.file.url}
+                                                alt={image.fields.title}
+                                                className="object-cover hover:scale-125 ease-in-out duration-500"
+                                                fill
+                                              />
+                                            </div>
+                                          ))}
+                                        </Slider>
+                                      
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                              <Link href={`/airbnb/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
+                                             <button><Link href={`/airbnb/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                                                       <h1>{posts.fields.name}</h1>
-                                              </Link>
+                                              </Link></button>
                                               <p className="capitalize text-sm text-neutral-600">{posts.fields.description}</p>
                                           </div>
                                           <div className=" flex flex-row justify-between py-8">
@@ -115,7 +160,7 @@ export async function getStaticProps() {
                                                   <h4 className="pb-2 text-neutral-700">
                                                       <span className="text-2xl font-bold">Kshs. {posts.fields.price}</span> per night
                                                   </h4>
-                                                  <Link href={`/airbnb/${posts.fields.slug}`} className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">view</Link>
+                                                  <Link href={`/airbnb/${posts.fields.slug}`} className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">book now</Link>
                                               </div>
                                           </div>
                                       </div>  
