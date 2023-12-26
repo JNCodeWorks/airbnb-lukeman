@@ -1,4 +1,3 @@
-// blogUtils.js
 import { createClient } from 'contentful';
 
 // Initialize Contentful client

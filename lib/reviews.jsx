@@ -8,7 +8,7 @@ const client = createClient({
 
 export default client;
 
-export async function getBlogPosts() {
+export async function getComments() {
   const entries = await client.getEntries({ content_type: 'reviews' });
   return entries.items;
 }
