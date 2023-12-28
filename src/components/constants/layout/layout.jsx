@@ -1,4 +1,6 @@
 import React from 'react'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 // import TopNav from '../navigation/topnav'
 import WebNav from '../navigation/webnav'
 import Responsive from '../navigation/responsive'
@@ -48,6 +50,8 @@ export default function Layout({children}) {
         <main className=''>
             {children}
             <ScrollTop/>
+            <Analytics/>
+            <SpeedInsights/>
         </main>
 
         <footer>
