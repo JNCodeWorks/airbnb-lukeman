@@ -18,7 +18,19 @@ export async function getStaticProps() {
 
 export default function Index({blogPosts}) {
 
+  const formatDate = (timestamp) => {
+    const months = [
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
+    ];
 
+    const date = new Date(timestamp);
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month} ${day}, ${year}`;
+  };
 
   return (
     <div>
@@ -77,7 +89,7 @@ export default function Index({blogPosts}) {
                             </div>
                         </div>
                         <div className='bg-white p-4'>
-                        <p className="text-sm font-light leading-4 capitalize text-neutral-500 py-3 italic">by {posts.fields.author}</p>
+                        <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 ">{formatDate(posts.sys.createdAt)}</p>
                         {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
                         <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                             <h1>{posts.fields.title}</h1>

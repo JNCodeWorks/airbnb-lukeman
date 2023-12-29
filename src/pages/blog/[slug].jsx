@@ -26,6 +26,21 @@ export async function getStaticProps ({ params }) {
 }
 
 export default function BlogPost ({blogPost}) {
+
+    const formatDate = (timestamp) => {
+        const months = [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+    
+        const date = new Date(timestamp);
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const year = date.getFullYear();
+    
+        return `${month} ${day}, ${year}`;
+      };
+
   return (
     <div>
                     <NextSeo
@@ -101,19 +116,21 @@ export default function BlogPost ({blogPost}) {
             </div>
 
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
-
-                <div className='prose px-6 lg:mx-auto lg:max-w-6xl gap-8'>
-                <h1 className='text-center text-[#07286f] font-bold max-w-3xl mx-auto capitalize text-3xl'>
+                <div className='grid md:grid-cols-3'>
+                <div className='md:col-span-2 prose lg:mx-auto lg:max-w-6xl gap-8'>
+                <h1 className='text-center text-[#07286f] font-bold mx-auto capitalize lg:text-3xl text-xl'>
                     {blogPost.fields.description}
                 </h1>
-                <p className='text-neutral-500 text-center font-semibold capitalize text-base italic'> ~ by: {blogPost.fields.author}</p>
-                <div className='border-t-2 mx-auto border-[#1d92ce] -mt-5 w-1/4 max-w-sm'></div>
-                <div className='flex-shrink-0 relative h-[720px] mx-6 mt-8'>
+                <p className='text-neutral-500 text-center md:space-x-6 grid md:block font-semibold capitalize text-base italic'> <span>~ by: {blogPost.fields.author}</span> <span>{formatDate(blogPost.sys.createdAt)}</span> </p>
+                {/* <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 "></p> */}
+                <div className='border-t-2 mx-auto border-[#1d92ce] -mt-5 w-2/4 max-w-sm'></div>
+                <div className='flex-shrink-0 relative lg:h-[480px] h-[360px] mx-6 mt-8'>
                     <Image src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.title} className='object-cover' fill/>
                 </div>
                     <ReactMarkdown className="mx-auto px-6 pt-12 w-full text-neutral-600"> 
                         {blogPost.fields.body}
                     </ReactMarkdown>
+                </div>
                 </div>
             </div>
         </Layout>
