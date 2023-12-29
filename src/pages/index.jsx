@@ -148,6 +148,20 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         // Add more settings as per your requirements
       };
 
+      const formatDate = (timestamp) => {
+        const months = [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+    
+        const date = new Date(timestamp);
+        const month = months[date.getMonth()];
+        const day = date.getDate();
+        const year = date.getFullYear();
+    
+        return `${month} ${day}, ${year}`;
+      };
+
   return (
     <>
     <NextSeo
@@ -278,7 +292,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         <h1 className='text-neutral-700 text-[34px] capitalize font-bold leading-[50px]'>
             Discover Our Homestay Listings
         </h1>
-        <Link href={'/airbnb'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Browse All</Link>
+        <Link href={'/homestays'} className={'px-8 py-3 border bg-white rounded-full text-neutral-700 capitalize hover:text-white hover:bg-[#1d92ce] ease-in-out duration-500 font-medium'}>Browse All</Link>
       </div>
       <div className='mt-8'>
       <Slider {...setters}>
@@ -445,7 +459,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                         </div>
                     </div>
                     <div className='bg-white p-4'>
-                    <p className="text-sm font-light leading-4 capitalize text-neutral-500 py-3 italic">by {post.fields.author}</p>
+                    <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 ">{formatDate(post.sys.createdAt)}</p>
                     {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
                     <Link href={`/blog/${post.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                         <h1>{post.fields.title}</h1>
