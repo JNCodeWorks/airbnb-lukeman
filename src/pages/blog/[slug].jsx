@@ -1,6 +1,7 @@
 import React from 'react'
 import { getBlogPostBySlug } from "../../../lib/blogpost";
 import { getBlogPosts } from "../../../lib/blogpost";
+import { getLatestBlogPosts } from '../../../lib/blogUtils';
 import Layout from '../../components/constants/layout/layout';
 import ReactMarkdown from 'react-markdown';
 import Head from 'next/head';
@@ -20,12 +21,13 @@ export async function getStaticPaths () {
 export async function getStaticProps ({ params }) {
     const { slug } = params;
     const blogPost = await getBlogPostBySlug(slug);
+    const latestBlogPosts = await getLatestBlogPosts(10);
     return {
-        props: { blogPost },
+        props: { blogPost, latestBlogPosts },
     };
 }
 
-export default function BlogPost ({blogPost}) {
+export default function BlogPost ({blogPost, latestBlogPosts}) {
 
     const formatDate = (timestamp) => {
         const months = [
@@ -116,8 +118,8 @@ export default function BlogPost ({blogPost}) {
             </div>
 
             <div className='lg:w-10/12 mx-auto px-6 py-16'>
-                <div className='grid md:grid-cols-3'>
-                <div className='md:col-span-2 prose lg:mx-auto lg:max-w-6xl gap-8'>
+                <div className='grid md:grid-cols-4 md:divide-x-2 md:divide-[#1d92ce] gap-4'>
+                <div className='md:col-span-3 prose lg:mx-auto lg:max-w-6xl gap-8'>
                 <h1 className='text-center text-[#07286f] font-bold mx-auto capitalize lg:text-3xl text-xl'>
                     {blogPost.fields.description}
                 </h1>
@@ -130,6 +132,24 @@ export default function BlogPost ({blogPost}) {
                     <ReactMarkdown className="mx-auto px-6 pt-12 w-full text-neutral-600"> 
                         {blogPost.fields.body}
                     </ReactMarkdown>
+                </div>
+                <div className='px-2'>
+                    <p className='text-center text-lg font-semibold text-[#07286f]'>Recent Posts</p>
+                {
+                latestBlogPosts.map ((posts) => (
+                    <div key={posts.sys.id} className='md:pl-4 py-2'>
+                        <div className=' bg-white rounded-sm shadow-sm overflow-hidden'>
+                        <div className='bg-white p-4'>
+                        <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 ">{formatDate(posts.sys.createdAt)}</p>
+                        {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
+                        <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-[16px] font-semibold text-neutral-500 sm:pr-20 mt-2 tracking-wide hover:text-[#1d92ce] ease-in-out duration-500">
+                            <h1>{posts.fields.title}</h1>
+                        </Link>
+                        </div>
+                    </div>
+                    </div>
+                ))
+            }
                 </div>
                 </div>
             </div>
