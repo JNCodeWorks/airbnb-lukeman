@@ -27,7 +27,7 @@ export default function CTA() {
                                         <h1 role="heading" className="text-xl md:text-2xl lg:text-4xl xl:text-4xl lg:w-10/12 text-white font-bold leading-6 lg:leading-10 md:text-left text-center">We are Passionate About Creating Memorable Travel Experiences.</h1>
                                         <p className='text-white'>We Are Driven By The Desire To Offer Travelers A Unique And Authentic Experience In The Heart Of Kenya&apos;s Natural Beauty.</p>
                                     </div>
-                                    <Link href={'/about'}><button role="button" aria-label="Join the community" className="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-[#1d92ce] rounded-full text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 capitalize focus:ring-white focus:outline-none">about us</button></Link>
+                                    <Link href={'/about'}><button role="button" aria-label="About Us" className="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-[#1d92ce] rounded-full text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 capitalize focus:ring-white focus:outline-none">about us</button></Link>
                                 </div>
                                 <div className="">
                                     <div style={{ position: 'relative', paddingTop: '56.25%', width: '100%', height: '100%' }}>

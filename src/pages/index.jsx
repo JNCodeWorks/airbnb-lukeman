@@ -167,7 +167,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
     <NextSeo
       title="Lukeman Homestays & Airbnb"
       description="Experience comfort and warmth at Lukeman Homestays & Airbnb – your cozy home away from home. Enjoy hospitality and relaxation for an unforgettable stay."
-      canonical="https://www.lukeman.com"
+      canonical="https://www.lukemanbnb.com"
       openGraph={{
         url: 'https://www.lukemanbnb.com',
         title: "Lukeman Homestays & Airbnb",
@@ -201,6 +201,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
     <Head>
       
       <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
+      <meta name="google-site-verification" content="bXvgTpvmVs9DLNq0HpHpZJh5NxpsD3xU7DgGOD84luU" />
     </Head>
     <Layout>
       <Banner/>
