@@ -207,8 +207,8 @@ return (
             <img src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.name} className="object-cover" style={{height: "550px", width: "100vw"}}/>
             <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-50 flex flex-col justify-center text-white'>
             <div className="lg:w-10/12 mx-auto px-6 w-full ">
-            <div className="xl:text-5xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
-                <h1 className="font-medium capitalize "> {blogPost.fields.name} </h1>
+            <div className="xl:text-4xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
+                <h1 className="font-semibold capitalize "> {blogPost.fields.name} </h1>
                 <p className='text-base max-w-prose capitalize'> {blogPost.fields.description} </p>
             </div>
             <div className={'lg:flex  flex-col justify-between py-6'}>

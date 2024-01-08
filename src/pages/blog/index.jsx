@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { getBlogPosts } from '../../../lib/blogpost'
 import Layout from '../../components/constants/layout/layout'
 import Banner from '../../components/views/blog/banner'
@@ -6,6 +7,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
+import ReactPaginate from 'react-paginate'
+
+
+const PAGE_SIZE = 9;
 
 
 export async function getStaticProps() {
@@ -17,6 +22,8 @@ export async function getStaticProps() {
 
 
 export default function Index({blogPosts}) {
+
+  const [currentPage, setCurrentPage] = useState(0);
 
   const formatDate = (timestamp) => {
     const months = [
@@ -31,6 +38,18 @@ export default function Index({blogPosts}) {
 
     return `${month} ${day}, ${year}`;
   };
+
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(blogPosts.length / PAGE_SIZE);
+
+  // Calculate the start and end indexes for the current page
+  const startIndex = currentPage * PAGE_SIZE;
+  const endIndex = (currentPage + 1) * PAGE_SIZE;
+  const currentPosts = blogPosts.slice(startIndex, endIndex);
 
   return (
     <div>
@@ -79,7 +98,7 @@ export default function Index({blogPosts}) {
         <div className='lg:w-10/12 mx-auto px-6 py-16'>
         <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 ">
             {
-                blogPosts.map ((posts) => (
+                currentPosts.map ((posts) => (
                     <div key={posts.sys.id} className='card-container'>
                         <div className=' bg-white rounded-sm shadow-sm overflow-hidden h-full'>
                         <div className="relative flex-shrink-0 overflow-hidden h-72">
@@ -94,7 +113,7 @@ export default function Index({blogPosts}) {
                         <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                             <h1>{posts.fields.title}</h1>
                         </Link>
-                        <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{posts.fields.description}</p>
+                        <p className="text-base leading-normal mt-4 text-neutral-600">{posts.fields.description}</p>
                         <div className='mt-4 w-full py-4'>
                           <Link href={`/blog/${posts.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">read more</Link>
                         </div>
@@ -103,6 +122,18 @@ export default function Index({blogPosts}) {
                     </div>
                 ))
             }
+            </div>
+
+            {/* Pagination controls */}
+            <div className='py-6'>
+            <ReactPaginate
+              pageCount={totalPages}
+              pageRangeDisplayed={3} // Number of page links to display
+              marginPagesDisplayed={2} // Number of pages to display on the edges
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+            />
             </div>
         </div>
         </div>

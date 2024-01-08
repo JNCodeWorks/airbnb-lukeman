@@ -84,11 +84,12 @@ export default function BlogPost ({blogPost, latestBlogPosts}) {
             <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />
         </Head>
         <Layout>
-            <div className='w-full single bg-cover bg-center'>
-            <div className='bannerOverlay h-96 flex flex-col justify-center text-white'>
-            <div className="lg:w-10/12 mx-auto px-6 w-full">
+            <div className='w-full relative bg-cover bg-center'>
+            <img src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.name} className="object-cover" style={{height: "550px", width: "100vw"}}/>
+            <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-50 flex flex-col justify-center text-white'>
+            <div className="lg:w-10/12 mx-auto px-6 w-full ">
             <div className="xl:text-4xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
-                <h1 className="font-medium capitalize "> {blogPost.fields.title} </h1>  
+                <h1 className="font-semibold capitalize "> {blogPost.fields.title} </h1>
             </div>
             <div className={'lg:flex  flex-col justify-between start py-4'}>
                         <div className={'block box-border'}>
