@@ -1,6 +1,7 @@
 import { getBlogPosts } from "../../../lib/contentful";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Layout from "../../components/constants/layout/layout"
 import Banner from "../../components/views/homestays/banner"
 import bed from '../../../public/images/bed.svg'
@@ -9,9 +10,12 @@ import { NextSeo } from "next-seo";
 import { useEffect } from "react";
 import ModalImage from "react-modal-image";
 import Slider from 'react-slick';
+import ReactPaginate from "react-paginate";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
+const PAGE_SIZE = 8;
 
 
 export async function getStaticProps() {
@@ -23,6 +27,20 @@ export async function getStaticProps() {
 
 
   export default function Homestays ({blogPosts}) {
+
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const handlePageClick = ({ selected }) => {
+      setCurrentPage(selected);
+    };
+  
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(blogPosts.length / PAGE_SIZE);
+  
+    // Calculate the start and end indexes for the current page
+    const startIndex = currentPage * PAGE_SIZE;
+    const endIndex = (currentPage + 1) * PAGE_SIZE;
+    const currentPosts = blogPosts.slice(startIndex, endIndex);
 
     const settings = {
       dots: true,
@@ -103,7 +121,7 @@ export async function getStaticProps() {
       </div>
       <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-2 md:grid-cols-2 lg:max-w-none'>
           {
-                                blogPosts.map ((posts) => (
+                                currentPosts.map ((posts) => (
 
                     
                                   <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={posts.sys.id}>
@@ -167,6 +185,17 @@ export async function getStaticProps() {
                                   ))
           }
       </div>
+                  {/* Pagination controls */}
+            <div className='py-6'>
+            <ReactPaginate
+              pageCount={totalPages}
+              pageRangeDisplayed={3} // Number of page links to display
+              marginPagesDisplayed={2} // Number of pages to display on the edges
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+            />
+            </div>
     </div>
                     </div>
                 </Layout>
