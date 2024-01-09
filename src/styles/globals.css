@@ -212,3 +212,33 @@ body {
 height: 650px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.pagination li a {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination li a:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .active a {
+  background-color: #1d92ce;
+  color: #fff;
+  border: 1px solid #1d92ce;
+}
+

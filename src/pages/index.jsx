@@ -95,12 +95,12 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
       };
 
       const set = {
-        dots: false,
+        dots: true,
         infinite: true,
         speed: 1000,
         autoplay: true,
         autoplaySpeed: 7000,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         responsive: [
           {
