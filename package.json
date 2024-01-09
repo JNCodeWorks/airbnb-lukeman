@@ -21,6 +21,7 @@
     "axios": "^1.5.1",
     "contentful": "^10.5.3",
     "contentful-management": "^11.3.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "flowbite-react": "^0.6.4",
