@@ -19,7 +19,7 @@ export default function Contacts() {
       description="Experience comfort and warmth at Lukeman Homestays & Airbnb – your cozy home away from home. Enjoy hospitality and relaxation for an unforgettable stay."
       canonical="https://www.lukemanbnb.com/"
       openGraph={{
-        url: 'https://www.lukemanbnb.com',
+        url: 'https://www.lukemanbnb.com/',
         title: "Lukeman Homestays & Airbnb",
         description: 'Experience comfort and warmth at Lukeman Homestays & Airbnb – your cozy home away from home. Enjoy hospitality and relaxation for an unforgettable stay.',
         images: [
