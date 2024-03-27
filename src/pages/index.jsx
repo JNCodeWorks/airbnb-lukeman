@@ -395,18 +395,18 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                 {Comments.map((posts) => (
                   <>
                   <div key={posts.sys.id} className="mx-3">
-                    <div className='h-96'>
+                    <div className='h-96 bg-gray-200'>
                     {/* Your slide content here */}
-                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-center justify-center rounded-xl lg:py-8 lg:px-7">
-                      <div className="flex flex-col space-y-2">
-                        <h1 className="font-semibold text-neutral-700 text-center text-lg">
+                    <div className="flex flex-col  space-y-8 justify-between flex-1 p-6 items-start rounded-xl lg:py-8 lg:px-7">
+                      <div className="flex flex-col space-y-4">
+                        <h1 className="font-semibold text-neutral-700 text-start px-6 text-lg">
                           &quot;{posts.fields.title}&quot;
                         </h1>
-                        <p className="text-neutral-600 text-center mx-auto px-6 text-[14px]">
+                        <p className="text-neutral-600 text-start mx-auto px-6 text-[14px]">
                           &quot;{posts.fields.comment}&quot;
                         </p>
                       </div>
-                      <div className="flex flex-col items-center justify-center space-y-4">
+                      <div className="flex flex-col items-start px-6 justify-center space-y-4">
                     
                         <RatingStars rating={posts.fields.rating} />
                         <div className="flex flex-col text-sm items-start">
