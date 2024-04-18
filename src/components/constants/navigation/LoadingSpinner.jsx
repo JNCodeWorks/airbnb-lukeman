@@ -43,7 +43,9 @@ const LoadingSpinner = () => (
         <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />   
       </Head>
   <div className="fixed top-0 left-0 w-screen h-screen flex flex-col items-center justify-center bg-white z-50">
-    <div className="loading-bar">Loading</div>
+    <div className="loader">Loading
+      <span></span>
+    </div>
   </div>
   </>
 );
