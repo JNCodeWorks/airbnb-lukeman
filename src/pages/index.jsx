@@ -8,7 +8,6 @@ import Homestays from '@/components/views/home/homestays'
 import Experience from '@/components/views/home/experience'
 import CTA from '@/components/views/home/cta'
 import Activities from '@/components/views/home/activities'
-import Testimonial from '@/components/views/home/testimonial'
 import Link from 'next/link'
 import Head from 'next/head'
 import { FaStar, FaRegStar } from 'react-icons/fa';

@@ -35,11 +35,16 @@ export default function Responsive() {
             },
             {
                 id: 5,
+                name: 'villas',
+                href: '/villas'
+            },
+            {
+                id: 6,
                 name: 'blog',
                 href: '/blog'
             },
             {
-                id: 6,
+                id: 7,
                 name: 'contacts',
                 href: '/contacts'
             }
