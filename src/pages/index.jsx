@@ -62,7 +62,6 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
             },
           },
         ],
-        // Add more settings as per your requirements
       };
 
       const setters = {
@@ -90,7 +89,6 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
             },
           },
         ],
-        // Add more settings as per your requirements
       };
 
       const set = {
@@ -117,7 +115,6 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
             },
           },
         ],
-        // Add more settings as per your requirements
       };
 
       const bnb = {
@@ -144,8 +141,10 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
             },
           },
         ],
-        // Add more settings as per your requirements
       };
+
+
+      
 
       const formatDate = (timestamp) => {
         const months = [
@@ -204,6 +203,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
     </Head>
     <Layout>
       <Banner/>
+
       {/* <Airbnb/> */}
 
       <div className='lg:w-10/12 mx-auto px-6 py-16'>

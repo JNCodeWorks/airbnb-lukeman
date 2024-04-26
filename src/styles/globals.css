@@ -170,8 +170,8 @@ body {
   background-color: #07286f;
  }
 
-.homeBanner2{
-  height: 100vh;
+ .homeBanner2{
+  height: 580px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url(/images/pxl1.jpg);
   background-repeat: no-repeat;
   width: 100%;
@@ -179,9 +179,88 @@ body {
 
 .homeBanner2 .bannerOverlay{
   background: rgba(15, 15, 15, .4);
-  height: 100vh;
+  height: 580px;
   width: 100%;
 }
+
+ .homeBanner{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/1DKnriVvXMQYMlkrmw2Vw0/1bf2712f6afb42505b45efa9adaf050f/WhatsApp_Image_2024-04-03_at_9.43.07_AM__1_.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
+.homeBanner5{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/1BdSFlhNYczcQhFrrhcMcS/efc16b58a0f79691cad3391412571adc/IMG-20231208-WA0038.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner5 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
+.homeBanner3{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/KiaQQdwbwbSmeSCGoWrl5/17e3c03be1b98375133256a638882b00/WhatsApp_Image_2024-04-16_at_19.58.10.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner3 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
+.homeBanner4{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/6y8YvTsIcKl4DiNOoR3JUN/c13c2fe8791a8bb56618aa78ff94c4ca/IMG_20231114_140412.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner4 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
+.homeBanner6{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("http://images.ctfassets.net/kkpwxk9m1i0h/5CIPQTrBaeEnbZK9oUpuFq/196560e5559ef4698c49bcbe0781c0c2/WhatsApp_Image_2024-04-11_at_01.51.25.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner6 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
+.homeBanner7{
+  height: 720px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/1JChnFUigH5RYnEs36jd7c/f1e2a186934433df1e67e64b467da31e/WhatsApp_Image_2024-04-03_at_5.09.19_PM__2_.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner7 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 720px;
+  width: 100%;
+}
+
 
 .single{
   height: 580px;
