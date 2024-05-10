@@ -64,7 +64,7 @@ export default function Responsive() {
 
   return (
     <div className='lg:hidden'>
-      <div className='bg-[#fefefe] shadow-md xl:hidden py-4 flex justify-between w-full px-8 rounded-b-xl items-center border-b border-transparent sm:border-neutral-200'>
+      <div className='bg-[#fefefe] shadow xl:hidden py-4 flex justify-between w-full px-8 rounded-b items-center border-b border-transparent sm:border-neutral-200'>
       {/* <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 items-center border-b-2 sm:border-neutral-200' : 'navbar xl:hidden flex justify-between w-full px-8 items-center border-b border-transparent sm:border-neutral-200'}> */}
       {/* <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3"> */}
       <div className='items-center overflow-hidden'>
