@@ -70,7 +70,7 @@ export default function Footer () {
                     </div>
                     <p className="py-6 text-sm text-neutral-700"> We are passionate about creating memorable travel experiences. Our mission is to connect travelers with unique accommodations, from cozy homestays to luxurious Airbnb listings. With expertise in the hospitality industry, we are dedicated to helping you find the perfect place to stay on your next adventure.</p>
                     <div className="flex items-center gap-x-4">
-                        <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
+                        <Link href={'https://www.instagram.com/lukemanbnb/'} target={'_blank'} className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     fillRule="evenodd"
@@ -79,20 +79,18 @@ export default function Footer () {
                                     fill="white"
                                 />
                             </svg>
-                        </div>
-                        <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
+                        </Link>
+                        <Link href={'https://www.facebook.com/profile.php?id=61555203083751'} target={'_blank'} className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
                         <svg  className="svg-icon w-6 h-6" viewBox="0 0 20 20">
 							<path fill="white" d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z"></path>
 						</svg>
-                        </div>
-                        <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="22" viewBox="0 0 50 50">
-                            <path fill="white" d="M 6.9199219 6 L 21.136719 26.726562 L 6.2285156 44 L 9.40625 44 L 22.544922 28.777344 L 32.986328 44 L 43 44 L 28.123047 22.3125 L 42.203125 6 L 39.027344 6 L 26.716797 20.261719 L 16.933594 6 L 6.9199219 6 z"></path>
-                        </svg>
-                        </div>
-                        <div className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
+                        </Link>
+                        <Link href={'https://www.tiktok.com/@lukemanbnb.com'} target={'_blank'} className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
+                        <svg fill="white" width="22" height="22" viewBox="0 0 512 512" id="icons" xmlns="http://www.w3.org/2000/svg"><path d="M412.19,118.66a109.27,109.27,0,0,1-9.45-5.5,132.87,132.87,0,0,1-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14,23.9,350,16,350.13,16H267.69V334.78c0,4.28,0,8.51-.18,12.69,0,.52-.05,1-.08,1.56,0,.23,0,.47-.05.71,0,.06,0,.12,0,.18a70,70,0,0,1-35.22,55.56,68.8,68.8,0,0,1-34.11,9c-38.41,0-69.54-31.32-69.54-70s31.13-70,69.54-70a68.9,68.9,0,0,1,21.41,3.39l.1-83.94a153.14,153.14,0,0,0-118,34.52,161.79,161.79,0,0,0-35.3,43.53c-3.48,6-16.61,30.11-18.2,69.24-1,22.21,5.67,45.22,8.85,54.73v.2c2,5.6,9.75,24.71,22.38,40.82A167.53,167.53,0,0,0,115,470.66v-.2l.2.2C155.11,497.78,199.36,496,199.36,496c7.66-.31,33.32,0,62.46-13.81,32.32-15.31,50.72-38.12,50.72-38.12a158.46,158.46,0,0,0,27.64-45.93c7.46-19.61,9.95-43.13,9.95-52.53V176.49c1,.6,14.32,9.41,14.32,9.41s19.19,12.3,49.13,20.31c21.48,5.7,50.42,6.9,50.42,6.9V131.27C453.86,132.37,433.27,129.17,412.19,118.66Z"/></svg>
+                        </Link>
+                        <Link href={'https://wa.me/+254719548363'} target={'_blank'} className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 640 640"><path fill="white" d="M546.704 91.89C486.526 31.584 406.482-1.582 321.229-1.582 145.609-1.583 2.67 141.368 2.67 317.118c0 56.139 14.705 111.05 42.567 159.297L.001 641.595l168.959-44.34c46.595 25.382 99.013 38.835 152.222 38.835h.13C496.944 636.09 640 493.14 640 317.401c0-85.182-33.166-165.179-93.344-225.463l.047-.047zM321.323 582.315c-47.599 0-94.218-12.827-134.895-36.957l-9.697-5.788-100.265 26.257 26.776-97.726-6.272-10.04C70.312 415.965 56.4 367.244 56.4 317.13c0-146.082 118.832-264.96 265.066-264.96 70.713 0 137.328 27.65 187.302 77.622 49.996 50.127 77.493 116.588 77.493 187.42-.118 146.187-118.95 265.066-264.96 265.066l.024.036zM466.541 383.85c-7.913-4.028-47.115-23.233-54.39-25.89-7.276-2.658-12.58-4.028-17.977 4.027-5.268 7.914-20.587 25.89-25.252 31.265-4.666 5.28-9.284 6.035-17.197 2.008-7.914-4.028-33.674-12.426-64.064-39.568-23.634-21.095-39.662-47.221-44.328-55.134-4.665-7.914-.52-12.308 3.532-16.193 3.661-3.544 7.925-9.284 11.941-13.95 4.028-4.665 5.28-7.925 7.925-13.31 2.658-5.28 1.359-9.946-.637-13.95-2.008-4.015-17.977-43.217-24.485-59.185-6.39-15.603-13.063-13.43-17.965-13.701-4.665-.237-9.945-.237-15.2-.237-5.257 0-13.95 1.996-21.225 9.933-7.276 7.914-27.898 27.26-27.898 66.45 0 39.201 28.512 77.009 32.516 82.407 4.027 5.267 56.162 85.784 136.029 120.238 18.98 8.161 33.803 13.063 45.355 16.854 19.098 6.024 36.425 5.15 50.126 3.13 15.32-2.256 47.115-19.229 53.788-37.831 6.662-18.615 6.662-34.536 4.666-37.831-1.89-3.544-7.158-5.504-15.201-9.58l-.06.048z"/></svg>
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="">
