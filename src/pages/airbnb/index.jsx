@@ -44,7 +44,7 @@ export async function getStaticProps() {
     const currentPosts = blogPosts.slice(startIndex, endIndex);
 
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       autoplay: true,

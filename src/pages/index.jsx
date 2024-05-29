@@ -67,10 +67,10 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
       const setters = {
         dots: true,
         infinite: true,
-        speed: 1000,
+        speed: 500,
         arrows: true,
-        autoplay: false,
-        autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 5000,
         slidesToShow: 2,
         slidesToScroll: 1,
         responsive: [
@@ -118,7 +118,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
       };
 
       const bnb = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         autoplay: true,
