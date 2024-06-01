@@ -145,7 +145,7 @@ export async function getStaticProps() {
                                       
                                       <div className="flex-1 bg-white p-6 flex flex-col justify-between rounded-b-lg">
                                           <div className="flex-1 space-y-2">
-                                             <button><Link href={`/airbnb/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
+                                             <button><Link href={`/villas/${posts.fields.slug}`} className="capitalize font-bold text-neutral-700 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
                                                       <h1>{posts.fields.name}</h1>
                                               </Link></button>
                                               <p className="capitalize text-sm text-neutral-600">{posts.fields.description}</p>
