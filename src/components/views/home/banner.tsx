@@ -37,6 +37,23 @@ export default function Banner() {
     <div>
         <div className='w-full height bg-gray-50'>
           <Slider {...state}>
+
+          <div className="w-full homeBanner8 bg-cover bg-center">
+                <div className="bannerOverlay  flex flex-col justify-center text-white">
+                    <div className="lg:w-10/12 mx-auto px-6 w-full">
+                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-6 text-left">
+                            <h1 className="font-semibold capitalize"> Vipingo, Kilifi </h1>
+                            <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Indulge in luxury and tranquility at our executive two-bedroom villa apartment, nestled in the serene coastal area of Vipingo, Kilifi. Perfect for families, friends, or business travelers, our villa offers a perfect blend of sophistication and comfort, enhanced by a stunning swimming pool and beautiful surroundings</p>
+                            <span className='capitalize'>
+                                <Link href='/villas/executive-vipingo-apartment' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
+                                    book now
+                                </Link>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
           <div className="w-full homeBanner6 bg-cover bg-center">
                 <div className="bannerOverlay  flex flex-col justify-center text-white">
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
@@ -45,6 +62,22 @@ export default function Banner() {
                             <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Discover a comfortable retreat at Diani Studio Apartments, perfect for solo travellers or couples seeking a serene getaway in the vibrant heart of Diani Beach. Our thoughtfully designed bedsitter-style apartments offer an intimate space for relaxation and exploration.</p>
                             <span className='capitalize'>
                                 <Link href='/airbnb/diani-studio-bedsitter' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
+                                    book now
+                                </Link>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full homeBanner5 bg-cover bg-center">
+                <div className="bannerOverlay  flex flex-col justify-center text-white">
+                    <div className="lg:w-10/12 mx-auto px-6 w-full">
+                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-12 text-left">
+                            <h1 className="font-semibold capitalize"> Vipingo, Kilifi </h1>
+                            <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Discover the epitome of luxury and tranquility at our executive two-bedroom villa apartment, situated in the serene coastal enclave of Vipingo, Kilifi. Perfect for families, friends, or business travelers seeking a blend of comfort and sophistication, our villa offers an exquisite retreat with modern amenities and breathtaking surroundings.</p>
+                            <span className='capitalize'>
+                                <Link href='/villas/villas/2-bedroom-villa-vipingo-kilifi' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
                                     book now
                                 </Link>
                             </span>
@@ -69,22 +102,6 @@ export default function Banner() {
                 </div>
             </div>
 
-            <div className="w-full homeBanner5 bg-cover bg-center">
-                <div className="bannerOverlay  flex flex-col justify-center text-white">
-                    <div className="lg:w-10/12 mx-auto px-6 w-full">
-                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-12 text-left">
-                            <h1 className="font-semibold capitalize"> Voi, Taita-Taveta </h1>
-                            <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Indulge in comfort and spaciousness at our luxurious three-bedroom apartment, where each bedroom boasts its own en suite bathroom. Nestled in the heart of Voi Town, our apartment offers an exceptional retreat for families or groups seeking a lavish and convenient stay.</p>
-                            <span className='capitalize'>
-                                <Link href='/homestays/three-bedroom-all-en-suite' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
-                                    book now
-                                </Link>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div className="w-full homeBanner3 bg-cover bg-center">
                 <div className="bannerOverlay  flex flex-col justify-center text-white">
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
@@ -101,22 +118,6 @@ export default function Banner() {
                 </div>
             </div>
 
-            <div className="w-full homeBanner4 bg-cover bg-center">
-                <div className="bannerOverlay  flex flex-col justify-center text-white">
-                    <div className="lg:w-10/12 mx-auto px-6 w-full">
-                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-12 text-left">
-                            <h1 className="font-semibold capitalize"> Voi, Taita-Taveta </h1>
-                            <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">This spacious 2-bedroom apartment is designed to cater to your every need. The tastefully furnished living area provides a cozy ambiance for relaxation, complete with comfortable seating and a flat-screen TV. The well-equipped kitchen is perfect for preparing meals and enjoying them at the dining table.</p>
-                            <span className='capitalize'>
-                                <Link href='/airbnb/2-bedroom-apartment-voi' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
-                                    book now
-                                </Link>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div className="w-full homeBanner7 bg-cover bg-center">
                 <div className="bannerOverlay  flex flex-col justify-center text-white">
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
@@ -125,6 +126,22 @@ export default function Banner() {
                             <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Experience comfort and convenience at our charming one-bedroom Airbnb, nestled in the vibrant coastal town of Mtwapa. Perfect for solo travelers, couples, or small families, our cozy retreat offers a delightful blend of relaxation and adventure.</p>
                             <span className='capitalize'>
                                 <Link href='/airbnb/1-bedroom-aribnb-mtwapa' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
+                                    book now
+                                </Link>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full homeBanner4 bg-cover bg-center">
+                <div className="bannerOverlay  flex flex-col justify-center text-white">
+                    <div className="lg:w-10/12 mx-auto px-6 w-full">
+                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-12 text-left">
+                            <h1 className="font-semibold capitalize"> Voi, Taita Taveta </h1>
+                            <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Discover comfort and convenience at our charming two-bedroom Airbnb apartment, nestled in the serene town of Voi. Ideal for families, friends, or business travelers, our apartment offers a perfect blend of relaxation and modern amenities, making it an ideal retreat for those seeking to explore the natural beauty and attractions of Voi.</p>
+                            <span className='capitalize'>
+                                <Link href='/airbnb/two-bedroom-voi-sikujua' className='bg-[#07286f] rounded-md py-3 px-6 text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white'>
                                     book now
                                 </Link>
                             </span>
