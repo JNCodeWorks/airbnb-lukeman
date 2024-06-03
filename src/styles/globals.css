@@ -198,7 +198,7 @@ body {
 
 .homeBanner5{
   height: 540px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/1BdSFlhNYczcQhFrrhcMcS/efc16b58a0f79691cad3391412571adc/IMG-20231208-WA0038.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/6MKWUs4o3nvZncikqjXBOO/9fd6a9bbc9db2757e2233cd8137d9e0e/IMG_2774.jpg");
   background-repeat: no-repeat;
   width: 100%;
 }
@@ -224,7 +224,7 @@ body {
 
 .homeBanner4{
   height: 540px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/6y8YvTsIcKl4DiNOoR3JUN/c13c2fe8791a8bb56618aa78ff94c4ca/IMG_20231114_140412.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/5822d95NsDK54ucnpIsZQT/5e4f3b3ac70723c10c769d9618e61df5/IMG_20240511_155200.jpg");
   background-repeat: no-repeat;
   width: 100%;
 }
@@ -256,6 +256,19 @@ body {
 }
 
 .homeBanner7 .bannerOverlay{
+  background: rgba(15, 15, 15, .4);
+  height: 540px;
+  width: 100%;
+}
+
+.homeBanner8{
+  height: 540px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url("https://images.ctfassets.net/kkpwxk9m1i0h/4i4fFiSBRNmbmqmXTZUfJ9/75293fc2549a97735c25e7bf24f9eed1/IMG_1840.jpg");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeBanner8 .bannerOverlay{
   background: rgba(15, 15, 15, .4);
   height: 540px;
   width: 100%;

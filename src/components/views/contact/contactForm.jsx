@@ -134,7 +134,7 @@ export default function ContactForm() {
 
           if (isSuccess) {
             // Redirect to the success page
-            router.push('/success');
+            router.push('/successAlert1');
           
             // Return null to prevent rendering the form
             return null;
