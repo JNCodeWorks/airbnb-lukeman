@@ -154,7 +154,7 @@ export default function Footer () {
         </div>
 
         <div className='text-center bg-neutral-800 py-6 items-center '>
-            <p className="text-sm leading-none text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Homestays & AirBnB </span> | All Rights Reserved </p>
+            <p className="text-sm leading-none text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Airbnb, Homestays & Villas </span> | All Rights Reserved </p>
         </div>
         </div>
     );

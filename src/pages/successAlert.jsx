@@ -7,7 +7,7 @@ const SuccessAlert3 = () => {
   return (
     <>
     <Head>
-      <title>Lukeman Homestays & Airbnb</title>
+      <title>Lukeman Airbnb, Homestays & Villas</title>
       
       <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
