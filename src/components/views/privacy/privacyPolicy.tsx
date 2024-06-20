@@ -15,12 +15,12 @@ export default function PrivacyPolicy() {
         <div className='max-w-4xl space-y-3'>
             <p className={'text-neutral-600'}>
                 <span className={'uppercase text-[#07286f] text-xl font-semibold'}>important:</span>
-                <span className={'text-lg'}> By using our website and all associated services provided by Lukeman Homestays & AirBnB and/or
+                <span className={'text-lg'}> By using our website and all associated services provided by Lukeman Airbnb, Homestays & Villas and/or
                  by providing us with any personal data, you give your explicit consent that all personal data that you submit may be processed
                   by us in the manner and for the purposes described in the following privacy policy and in compliance with the effective laws and regulations on personal data.</span>
             </p>
             <h2 className={'text-[#07286f] uppercase font-bold text-2xl'}>respecting your privacy</h2>
-            <p className={'text-base text-neutral-600 leading-7'}>We are committed to protecting and respecting your privacy. This Policy sets out the basis on which any personal data that we collect from you or that you provide to us will be processed on our website and on all associated websites provided by Lukeman Homestays & AirBnB. </p>
+            <p className={'text-base text-neutral-600 leading-7'}>We are committed to protecting and respecting your privacy. This Policy sets out the basis on which any personal data that we collect from you or that you provide to us will be processed on our website and on all associated websites provided by Lukeman Airbnb, Homestays & Villas. </p>
             <p className={'text-base text-neutral-600 leading-7'}>We keep certain basic information when you visit our website and recognize the importance of keeping that information secure and letting you know what we will do with it. We may use your Personal Information/Data to contact you with newsletters, marketing or promotional materials and other information that may be of interest to you.</p>
             <p className={'text-base text-neutral-600 leading-7'}>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you (“Personal Data”). Personally identifiable information may include, but is not limited to:</p>
             <ul className={'list-disc text-neutral-600 list-inside text-base'}>

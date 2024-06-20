@@ -11,7 +11,7 @@ export default function Resort() {
         </h1>
         <div className=' mt-9 pb-4'>
             <p className='text-neutral-600'>
-              At Lukeman Homestays & Airbnb, we&apos;re not just another accommodation provider; we&apos;re a community of travelers and hosts passionate about making a difference. Here&apos;s what sets us apart
+              At Lukeman Airbnb, Homestays & Villas, we&apos;re not just another accommodation provider; we&apos;re a community of travelers and hosts passionate about making a difference. Here&apos;s what sets us apart
             </p>
         </div>
       </div>

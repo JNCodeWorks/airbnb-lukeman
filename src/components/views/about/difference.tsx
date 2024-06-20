@@ -18,7 +18,7 @@ export default function Difference() {
                     &quot;Our Commitment to Hospitality Excellence&quot;
                 </p>
                 <p className='text-neutral-600 leading-7'>
-                At Lukeman Homestays & Airbnb, our mission is to provide guests with an unforgettable and comfortable home-away-from-home experience. We are dedicated to delivering exceptional hospitality, creating lasting memories, and ensuring the well-being of every guest who walks through our doors. We believe in personalized service, attention to detail, and fostering a welcoming environment where travelers can connect with local culture, forging a genuine connection that goes beyond a mere stay.
+                At Lukeman Airbnb, Homestays & Villas, our mission is to provide guests with an unforgettable and comfortable home-away-from-home experience. We are dedicated to delivering exceptional hospitality, creating lasting memories, and ensuring the well-being of every guest who walks through our doors. We believe in personalized service, attention to detail, and fostering a welcoming environment where travelers can connect with local culture, forging a genuine connection that goes beyond a mere stay.
                 </p>
             </div>
             <div className='border-b-2 border-neutral-300'></div>

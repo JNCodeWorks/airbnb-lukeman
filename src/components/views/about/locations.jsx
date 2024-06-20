@@ -17,7 +17,7 @@ export default function Locations() {
                 </div>
                 <div className='space-y-3'>
                     <p className='font-semibold text-neutral-700'>
-                        Lukeman Homestays & Airbnb offers serene accommodation nestled amidst the enchanting landscapes of Kenya.
+                        Lukeman Airbnb, Homestays & Villas offers serene accommodation nestled amidst the enchanting landscapes of Kenya.
                     </p>
                     <p className='text-neutral-600 leading-8'>
                         Escape from the hustle and hassle of your everyday routine and come away to the luxurious homestays & airbnbs we provide, where a serene world awaits you. Throw off all your worries and slip into the scenic, relaxed atmosphere and be pampered and rejuvenated.
