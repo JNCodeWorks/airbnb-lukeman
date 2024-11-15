@@ -90,7 +90,7 @@ export default function Homestays() {
                                           <div className="flex-1 -mt-2">
                                               <div className="flex flex-row items-center justify-between">
                                                   <h4 className="pb-2 text-neutral-700 font-medium">
-                                                    <span className="text-2xl font-bold">Kshs. {Item.price}</span> per night
+                                                    <span className="text-2xl font-bold">KES {Item.price}</span> per night
                                                   </h4>
                                                   <button className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white"><Link href={'/airbnb'}>book now</Link></button>
                                               </div>

@@ -1,4 +1,3 @@
-// pages/api/contentful-webhook.js
 
 import { createClient } from 'contentful';
 

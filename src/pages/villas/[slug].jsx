@@ -273,7 +273,7 @@ return (
                         </button>
 
                         <button className='border border-[#1d92ce] justify-center text-sm text-neutral-700 items-center flex space-x-6 rounded-full py-3'>
-                            <span className="text-2xl font-bold">Kshs. {blogPost.fields.price}&nbsp;</span> per night
+                            <span className="text-2xl font-bold">KES {blogPost.fields.price}&nbsp;</span> per night
                         </button>
 
                         </div>
@@ -415,7 +415,7 @@ return (
                         type="text"
                         id="totalPrice"
                         name="total_price"
-                        value={`Kshs. ${calculateTotalPrice()}`}
+                        value={`KES ${calculateTotalPrice()}`}
                         className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                         readOnly
                       />

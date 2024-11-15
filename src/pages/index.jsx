@@ -69,9 +69,9 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         infinite: true,
         speed: 500,
         arrows: true,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
           {
@@ -97,7 +97,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         speed: 1000,
         autoplay: true,
         autoplaySpeed: 7000,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
           {
@@ -160,6 +160,10 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         return `${month} ${day}, ${year}`;
       };
 
+      const contentfulLoader = ({ src, width, quality }) => {
+        return `${src}?w=${width}&q=${quality || 75}&fm=webp`
+      }
+
   return (
     <>
     <NextSeo
@@ -219,7 +223,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                 LatestAirbnb.map ((posts) => (
 
                                   <>
-                                  <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden mx-3" key={posts.sys.id}>
+                                  <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={posts.sys.id}>
                                       {/* <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div> */}
@@ -227,12 +231,15 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                       <Slider {...bnb}>
                                           {posts.fields.gallery.map((image) => (
                                             <div key={image.sys.id} className="flex-shrink-0 relative overflow-hidden h-72">
-                                              <Image
-                                                src={"https:" + image.fields.file.url}
-                                                alt={image.fields.title}
-                                                className="object-cover hover:scale-125 ease-in-out duration-500"
-                                                fill
-                                              />
+                                                  <Image
+                                                    loader={contentfulLoader}
+                                                    src={"https:" + image.fields.file.url}
+                                                    alt={image.fields.title}
+                                                    className="object-cover hover:scale-125 ease-in-out duration-500"
+                                                    placeholder="blur"
+                                                    blurDataURL={`${"https:" + image.fields.file.url}?w=10&q=10`}
+                                                    fill
+                                                  />
                                             </div>
                                           ))}
                                         </Slider>
@@ -270,9 +277,9 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                           </div>
                                           <div className="mt-2 border-t w-full border-neutral-600 pt-8 md:flex md:items-center md:justify-between"></div>
                                           <div className="flex-1 -mt-2">
-                                              <div className="flex flex-row items-center justify-between">
+                                              <div className="flex flex-col items-start space-y-3 justify-between">
                                                   <h4 className="pb-2 text-neutral-700">
-                                                      <span className="text-2xl font-bold">Kshs. {posts.fields.price}</span> per night
+                                                      <span className="text-2xl font-bold">KES {posts.fields.price}</span> per night
                                                   </h4>
                                                   <Link href={`/airbnb/${posts.fields.slug}`} className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">book now</Link>
                                               </div>
@@ -300,7 +307,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                 LatestHomestays.map ((posts) => (
 
                                   <>
-                                  <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden mx-3" key={posts.sys.id}>
+                                  <div className=" mx-3 bg-white rounded-sm shadow-md overflow-hidden" key={posts.sys.id}>
                                       {/* <div className="flex-shrink-0 relative overflow-hidden h-60" id="Header">
                                           <Image src={"https:" + posts.fields.image.fields.file.url} alt={posts.fields.name} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
                                       </div> */}
@@ -308,12 +315,15 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                       <Slider {...bnb}>
                                           {posts.fields.gallery.map((image) => (
                                             <div key={image.sys.id} className="flex-shrink-0 relative overflow-hidden h-72">
-                                              <Image
-                                                src={"https:" + image.fields.file.url}
-                                                alt={image.fields.title}
-                                                className="object-cover hover:scale-125 ease-in-out duration-500"
-                                                fill
-                                              />
+                                                  <Image
+                                                    loader={contentfulLoader}
+                                                    src={"https:" + image.fields.file.url}
+                                                    alt={image.fields.title}
+                                                    className="object-cover hover:scale-125 ease-in-out duration-500"
+                                                    placeholder="blur"
+                                                    blurDataURL={`${"https:" + image.fields.file.url}?w=10&q=10`}
+                                                    fill
+                                                  />
                                             </div>
                                           ))}
                                         </Slider>
@@ -351,9 +361,9 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                                           </div>
                                           <div className="mt-2 border-t w-full border-neutral-600 pt-8 md:flex md:items-center md:justify-between"></div>
                                           <div className="flex-1 -mt-2">
-                                              <div className="flex flex-row items-center justify-between">
+                                              <div className="flex flex-col items-start space-y-3 justify-between">
                                                   <h4 className="pb-2 text-neutral-700">
-                                                      <span className="text-2xl font-bold">Kshs. {posts.fields.price}</span> per night
+                                                      <span className="text-2xl font-bold">KES {posts.fields.price}</span> per night
                                                   </h4>
                                                   <Link href={`/homestays/${posts.fields.slug}`} className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">book now</Link>
                                               </div>
@@ -423,7 +433,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
               </Slider>     
             </div>
           </div>
-          <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-y-0 justify-center md:space-x-8">
+          <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 justify-center md:space-x-8">
             <Link
               className="bg-[#07286f] py-4 px-8 capitalize rounded-full text-white text-base font-semibold hover:bg-[#1d92ce] ease-in-out duration-500 hover:text-white"
               href={'/airbnb'}
@@ -451,9 +461,18 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
       <Slider {...set}>
         {latestBlogPosts.map((post) => (
                     <div key={post.sys.id} className='card-container'>
-                    <div className=' bg-white rounded-sm shadow-sm overflow-hidden mx-4 h-full'>
+                    <div className=' bg-white rounded-sm shadow-sm overflow-hidden mx-3 h-full'>
                     <div className="relative flex-shrink-0 overflow-hidden h-72">
-                        <Image src={"https:" + post.fields.image.fields.file.url} alt={post.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/>
+                      <Image
+                        loader={contentfulLoader}
+                        src={"https:" + post.fields.image.fields.file.url}
+                        alt={post.fields.title}
+                        className="object-cover hover:scale-125 ease-in-out duration-500"
+                        placeholder="blur"
+                        blurDataURL={`${"https:" + post.fields.image.fields.file.url}?w=10&q=10`}
+                        fill
+                      />
+                        {/* <Image src={"https:" + post.fields.image.fields.file.url} alt={post.fields.title} className="object-cover hover:scale-125 ease-in-out duration-500" fill/> */}
                         <div className="bg-white absolute top-0 left-0">
                             <p className="text-base leading-4 py-3 px-5 capitalize text-gray-800">{post.fields.type}</p>
                         </div>
@@ -461,13 +480,13 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
                     <div className='bg-white p-4'>
                     <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 ">{formatDate(post.sys.createdAt)}</p>
                     {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
-                    <Link href={`/blog/${post.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide text-lg hover:text-[#1d92ce] ease-in-out duration-500">
+                    <Link href={`/blog/${post.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide  hover:text-[#1d92ce] ease-in-out duration-500">
                         <h1>{post.fields.title}</h1>
                     </Link>
-                    <p className="text-base leading-normal mt-4 sm:pr-20 md:pr-10 text-neutral-600">{post.fields.description}</p>
-                    <div className='mt-4 w-full py-4'>
+                    <p className="text-base leading-normal sm:pr-20 md:pr-10 text-neutral-600">{post.fields.description}</p>
+                    {/* <div className='mt-4 w-full py-4'>
                       <Link href={`/blog/${post.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">read more</Link>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
                 </div>
