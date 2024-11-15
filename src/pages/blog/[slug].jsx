@@ -43,6 +43,10 @@ export default function BlogPost ({blogPost, latestBlogPosts}) {
         return `${month} ${day}, ${year}`;
       };
 
+      const contentfulLoader = ({ src, width, quality }) => {
+        return `${src}?w=${width}&q=${quality || 75}&fm=webp`
+      }
+
   return (
     <div>
                     <NextSeo
@@ -85,7 +89,17 @@ export default function BlogPost ({blogPost, latestBlogPosts}) {
         </Head>
         <Layout>
             <div className='w-full relative bg-cover bg-center'>
-            <img src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.name} className="object-cover" style={{height: "550px", width: "100vw"}}/>
+            <Image
+              loader={contentfulLoader}
+              src={"https:" + blogPost.fields.image.fields.file.url}
+              alt={blogPost.fields.name}
+              className="object-cover hover:scale-125 ease-in-out duration-500"
+              placeholder="blur"
+              blurDataURL={`${"https:" + blogPost.fields.image.fields.file.url}?w=10&q=10`}
+              width={800}
+              height={800} 
+              style={{height: "550px", width: "100vw"}}
+            />
             <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-50 flex flex-col justify-center text-white'>
             <div className="lg:w-10/12 mx-auto px-6 w-full ">
             <div className="xl:text-4xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
@@ -128,7 +142,15 @@ export default function BlogPost ({blogPost, latestBlogPosts}) {
                 {/* <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 "></p> */}
                 <div className='border-t-2 mx-auto border-[#1d92ce] -mt-5 w-2/4 max-w-sm'></div>
                 <div className='flex-shrink-0 relative lg:h-[480px] h-[360px] mx-6 mt-8'>
-                    <Image src={"https:" + blogPost.fields.image.fields.file.url} alt={blogPost.fields.title} className='object-cover' fill/>
+                <Image
+                loader={contentfulLoader}
+                src={"https:" + blogPost.fields.image.fields.file.url}
+                alt={blogPost.fields.name}
+                className="object-cover"
+                placeholder="blur"
+                blurDataURL={`${"https:" + blogPost.fields.image.fields.file.url}?w=10&q=10`}
+                fill
+                />
                 </div>
                     <ReactMarkdown className="mx-auto px-6 pt-12 w-full text-neutral-600"> 
                         {blogPost.fields.body}
