@@ -27,7 +27,7 @@ export async function getStaticProps() {
   }
 
 
-  export default function Homestays ({blogPosts}) {
+  export default function Homestays ({ blogPosts, src, alt, width, height }) {
 
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -69,6 +69,10 @@ export async function getStaticProps() {
       ],
       // Add more settings as per your requirements
     };
+
+    const contentfulLoader = ({ src, width, quality }) => {
+      return `${src}?w=${width}&q=${quality || 75}&fm=webp`
+    }
 
     return(
         <>
@@ -120,7 +124,7 @@ export async function getStaticProps() {
             explore our AirBnB facilities
         </h1>
       </div>
-      <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-2 md:grid-cols-2 lg:max-w-none'>
+      <div className='mt-8 grid gap-6 mx-auto lg:grid-cols-3 md:grid-cols-3 lg:max-w-none'>
           {
                                 currentPosts.map ((posts) => (
 
@@ -133,12 +137,15 @@ export async function getStaticProps() {
                                       <Slider {...settings}>
                                           {posts.fields.gallery.map((image) => (
                                             <div key={image.sys.id} className="flex-shrink-0 relative overflow-hidden h-72">
-                                              <Image
-                                                src={"https:" + image.fields.file.url}
-                                                alt={image.fields.title}
-                                                className="object-cover hover:scale-125 ease-in-out duration-500"
-                                                fill
-                                              />
+                                                  <Image
+                                                    loader={contentfulLoader}
+                                                    src={"https:" + image.fields.file.url}
+                                                    alt={image.fields.title}
+                                                    className="object-cover hover:scale-125 ease-in-out duration-500"
+                                                    placeholder="blur"
+                                                    blurDataURL={`${"https:" + image.fields.file.url}?w=10&q=10`}
+                                                    fill
+                                                  />
                                             </div>
                                           ))}
                                         </Slider>
@@ -176,9 +183,9 @@ export async function getStaticProps() {
                                           </div>
                                           <div className="mt-2 border-t w-full border-neutral-600 pt-8 md:flex md:items-center md:justify-between"></div>
                                           <div className="flex-1 -mt-2">
-                                              <div className="flex flex-row items-center justify-between">
+                                              <div className="flex flex-col items-start space-y-3 justify-between">
                                                   <h4 className="pb-2 text-neutral-700">
-                                                      <span className="text-2xl font-bold">Kshs. {posts.fields.price}</span> per night
+                                                      <span className="text-2xl font-bold">KES {posts.fields.price}</span> per night
                                                   </h4>
                                                   <Link href={`/airbnb/${posts.fields.slug}`} className="rounded-md px-4 py-2 bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">book now</Link>
                                               </div>

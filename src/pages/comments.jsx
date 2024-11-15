@@ -144,7 +144,7 @@ function Comments() {
       <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
     </Head>
 <Layout>
-<div className="flex mx-auto items-center justify-center mt-28 pb-28 mx-8 mb-4 max-w-lg">
+<div className="flex mx-auto items-center justify-center mt-28 pb-28 mb-4 max-w-lg">
   <div>
     <h2 className='mx-auto py-4 font-bold text-neutral-600'>Please take a moment to share your thoughts and experiences by leaving a review or providing comments below.</h2>
    <form className="w-full max-w-xl bg-white rounded-lg px-4 pt-2" onSubmit={handleFormSubmit}>
@@ -191,7 +191,7 @@ function Comments() {
                 })}
                 {rating && <p className="ml-4 text-xs text-neutral-600 ">{rating} out of 5 stars</p>}
             </div>
-         <div className="w-full md:w-full flex items-start md:w-full pt-4 px-3">
+         <div className="w-full md:w-full flex items-start pt-4 px-3">
             <div className="flex items-start w-1/2 text-red-600 px-2 mr-auto">
                <svg fill="none" className="w-5 h-5 text-red-600 mr-1" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
