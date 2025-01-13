@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=MonteCarlo&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*,html,body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  /* background: linear-gradient(rgba(236, 150, 7, 0.1), rgba(236, 150, 7, 0.1)); */
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -63,12 +73,6 @@
   }
 } */
 
-html,
-body {
-  font-family: 'Reddit Sans', sans-serif;
-  padding: 0;
-  margin: 0;
-}
 
 body {
   color: rgb(var(--foreground-rgb));

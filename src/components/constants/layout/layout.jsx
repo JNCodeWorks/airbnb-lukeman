@@ -1,63 +1,53 @@
-import React from 'react'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import React, { useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 // import TopNav from '../navigation/topnav'
-import WebNav from '../navigation/webnav'
-import Responsive from '../navigation/responsive'
-import TopNav from '../navigation/topnav'
-import Footer from '../navigation/footer'
-import { useEffect, useState } from 'react';
+import WebNav from '../navigation/webnav';
+import Responsive from '../navigation/responsive';
+import TopNav from '../navigation/topnav';
+import Footer from '../navigation/footer';
 import { useRouter } from 'next/router';
-import LoadingSpinner from '../navigation/LoadingSpinner';
-import ScrollTop from '../navigation/scrolltop'
+import ScrollTop from '../navigation/scrolltop';
 
+export default function Layout({ children }) {
+  const router = useRouter();
 
-export default function Layout({children}) {
+  useEffect(() => {
+    const handleRouteChange = () => {
+      // Optionally, you can track route changes or handle any other logic here
+    };
 
-    const router = useRouter();
-    const [loading, setLoading] = useState(false);
-  
-    useEffect(() => {
-      const handleStart = () => {
-        setLoading(true);
-      };
-  
-      const handleComplete = () => {
-        setLoading(false);
-      };
-  
-      router.events.on('routeChangeStart', handleStart);
-      router.events.on('routeChangeComplete', handleComplete);
-      router.events.on('routeChangeError', handleComplete);
+    router.events.on('routeChangeStart', handleRouteChange);
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('routeChangeError', handleRouteChange);
 
-      return () => {
-        router.events.off('routeChangeStart', handleStart);
-        router.events.off('routeChangeComplete', handleComplete);
-        router.events.off('routeChangeError', handleComplete);
-      };
-    }, [router]);
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('routeChangeError', handleRouteChange);
+    };
+  }, [router]);
 
   return (
-   <>
-         {loading && <LoadingSpinner />}
-        <header className='fixed w-full top-0 z-40 drop-shadow-md'>
-            {/* <TopNav/> */}
-            {/* <TopNav/> */}
-            <WebNav/>
-            <Responsive/>
-        </header>
+    <>
+      <header className="fixed w-full top-0 z-40 drop-shadow-md">
+        {/* <TopNav/> */}
+        {/* <TopNav/> */}
+        <WebNav />
+        <Responsive />
+      </header>
 
-        <main className=''>
-            {children}
-            <ScrollTop/>
-            <Analytics/>
-            <SpeedInsights/>
-        </main>
+      <main className="">
+        {children}
+        <ScrollTop />
+        <Analytics />
+        <SpeedInsights />
+      </main>
 
-        <footer>
-            {/* <Footer/> */}
-            <Footer/>
-        </footer>
-   </>
-  )
+      <footer>
+        {/* <Footer/> */}
+        <Footer />
+      </footer>
+    </>
+  );
 }

@@ -2,13 +2,12 @@ import Layout from '@/components/constants/layout/layout'
 import Banner from '@/components/views/about/banner'
 import Difference from '@/components/views/about/difference'
 import History from '@/components/views/about/history'
-import Locations from '@/components/views/about/locations'
-import Resort from '@/components/views/about/resort'
 import Video from '@/components/views/about/video'
 import Head from 'next/head'
 import React from 'react'
-import { useEffect } from 'react'
 import { NextSeo } from 'next-seo'
+import Experience from '@/components/views/home/experience'
+import Locations from '@/components/views/about/locations'
 
 
 export default function About() {
@@ -53,14 +52,14 @@ export default function About() {
             />
       <Head>
       
-        <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
+        <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
       </Head>
       <Layout>
         <Banner/>
+        <Experience/>
+        <Difference/>
         <Locations/>
         <History/>
-        <Difference/>
-        <Resort/>
         <Video/>
       </Layout>
     </div>

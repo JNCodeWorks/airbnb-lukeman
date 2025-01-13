@@ -67,7 +67,7 @@ export default function WebNav() {
   return (
     <div className='bg-[#fefefe] rounded-b shadow'>
         {/* <div className={navbar ? 'navbar active w-full hidden rounded-full lg:flex' : 'navbar w-full hidden rounded-full lg:flex'}> */}
-        <div className='py-6 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
+        <div className='py-5 lg:flex justify-between items-center lg:w-10/12 px-6 mx-auto hidden'>
         <div className='items-center overflow-hidden'>
                 <Link href={'/'} className='flex flex-col ml-20 items-center'>
                 <div className='absolute -mt-[31px]'>
@@ -78,7 +78,7 @@ export default function WebNav() {
             </div>
              
             <div>
-                <nav className='flex items-center space-x-8 items-center'>
+                <nav className='flex items-center space-x-8'>
                     {navigation.links.map((item)=>(
                         <Link href={item.href} key={item.id} className={router.pathname == item.href ? "text-[#1d92ce] capitalize font-medium" : "hover:text-[#1d92ce] ease-in-out duration-300 text-[#07286f] capitalize font-medium"}>{item.name}</Link>
                     ))}

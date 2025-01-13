@@ -39,20 +39,14 @@ export default function Footer () {
             }
         ],
 
-        legal: [
+        legal: [    
             {
                 id:1,
-                name: 'legal policy',
-                href:'legal'
-            },
-    
-            {
-                id:2,
                 name: 'privacy policy',
                 href:'/privacy'
             },
             {
-                id:3,
+                id:2,
                 name: 'terms & conditions',
                 href:'tos'
             }
@@ -62,13 +56,13 @@ export default function Footer () {
     return (
         <div className="bg-neutral-300">
         <div className="lg:w-10/12 mx-auto container py-16 px-6">
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 lg:space-x-28 lg:gap-0 gap-10">
                 <div className="flex flex-col flex-shrink-0">
                     <div>
                         {/* <Image src={Logo} alt='' style={{height: "100px", width: "100px"}}/> */}
                         <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">about us</h2>
                     </div>
-                    <p className="py-6 text-sm text-neutral-700"> We are passionate about creating memorable travel experiences. Our mission is to connect travelers with unique accommodations, from cozy homestays to luxurious Airbnb listings. With expertise in the hospitality industry, we are dedicated to helping you find the perfect place to stay on your next adventure.</p>
+                    <p className="py-6 text-[14px] leading-6 text-neutral-700"> We are passionate about creating memorable travel experiences. Our mission is to connect travelers with unique accommodations, from cozy homestays to luxurious Airbnb listings. With expertise in the hospitality industry, we are dedicated to helping you find the perfect place to stay on your next adventure.</p>
                     <div className="flex items-center gap-x-4">
                         <Link href={'https://www.instagram.com/lukemanbnb/'} target={'_blank'} className="opacity-50 w-8 h-8 flex-shrink-0 bg-neutral-700 cursor-pointer hover:bg-neutral-700 rounded-full flex items-center justify-center">
                             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,68 +87,80 @@ export default function Footer () {
                         </Link>
                     </div>
                 </div>
-                <div className="">
-                    <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">site links</h2>
-                    {
-                        navigation.links.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-2 items-center hover:text-[#07286f] ease-in-out duration-500'>
-                            {items.name}
-                         </Link> 
-                        ))
-                    }
+                <div className="flex flex-col">
+                    <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">
+                    Quick Links
+                    </h2>
+                        <div className="py-3">
+                            {
+                                navigation.links.map ((items) => (
+                                <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-2 items-center hover:text-[#07286f] ease-in-out duration-500'>
+                                    {items.name}
+                                </Link> 
+                                ))
+                            }
+                        </div>
                 </div>
-                <div>
-                    <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">Support</h2>
-                    {
-                        navigation.legal.map ((items) => (
-                        <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-3 items-center hover:text-[#07286f] ease-in-out duration-500'>
-                            {items.name}
-                         </Link> 
-                        ))
-                    }
-                </div>
-                <div className=''>
-                    <h2 className="text-base font-semibold leading-4 text-neutral-700 uppercase">have a question?</h2>
-                    <div className='space-y-4 py-4'>
-                    <div className='flex space-x-3 items-center'>
-                        <span className='text-neutral-700'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 640 640"><path fill="currentColor" d="M546.704 91.89C486.526 31.584 406.482-1.582 321.229-1.582 145.609-1.583 2.67 141.368 2.67 317.118c0 56.139 14.705 111.05 42.567 159.297L.001 641.595l168.959-44.34c46.595 25.382 99.013 38.835 152.222 38.835h.13C496.944 636.09 640 493.14 640 317.401c0-85.182-33.166-165.179-93.344-225.463l.047-.047zM321.323 582.315c-47.599 0-94.218-12.827-134.895-36.957l-9.697-5.788-100.265 26.257 26.776-97.726-6.272-10.04C70.312 415.965 56.4 367.244 56.4 317.13c0-146.082 118.832-264.96 265.066-264.96 70.713 0 137.328 27.65 187.302 77.622 49.996 50.127 77.493 116.588 77.493 187.42-.118 146.187-118.95 265.066-264.96 265.066l.024.036zM466.541 383.85c-7.913-4.028-47.115-23.233-54.39-25.89-7.276-2.658-12.58-4.028-17.977 4.027-5.268 7.914-20.587 25.89-25.252 31.265-4.666 5.28-9.284 6.035-17.197 2.008-7.914-4.028-33.674-12.426-64.064-39.568-23.634-21.095-39.662-47.221-44.328-55.134-4.665-7.914-.52-12.308 3.532-16.193 3.661-3.544 7.925-9.284 11.941-13.95 4.028-4.665 5.28-7.925 7.925-13.31 2.658-5.28 1.359-9.946-.637-13.95-2.008-4.015-17.977-43.217-24.485-59.185-6.39-15.603-13.063-13.43-17.965-13.701-4.665-.237-9.945-.237-15.2-.237-5.257 0-13.95 1.996-21.225 9.933-7.276 7.914-27.898 27.26-27.898 66.45 0 39.201 28.512 77.009 32.516 82.407 4.027 5.267 56.162 85.784 136.029 120.238 18.98 8.161 33.803 13.063 45.355 16.854 19.098 6.024 36.425 5.15 50.126 3.13 15.32-2.256 47.115-19.229 53.788-37.831 6.662-18.615 6.662-34.536 4.666-37.831-1.89-3.544-7.158-5.504-15.201-9.58l-.06.048z"/></svg>
-                        </span>
-                        <Link href="https://wa.me/+254719548363" className=" text-sm leading-6 text-neutral-700 ">+254 719 548 363</Link>
-                    </div>
-                    <div className='flex space-x-3 items-center'>
-                        <span className='text-neutral-700 '>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
-                                    <path d="M15 7a2 2 0 0 1 2 2" />
-                                    <path d="M15 3a6 6 0 0 1 6 6" />
-                                </svg>
-                        </span>
-                        <Link href={"tel://+254794234163"} className="text-sm leading-6 text-neutral-700">+254 794 234 163</Link>
-                    </div>
-                    <div className='flex space-x-3 items-center'>
-                        <span className='text-neutral-700'>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <rect x={3} y={5} width={18} height={14} rx={2} />
-                                    <polyline points="3 7 12 13 21 7" />
-                                </svg>
-                        </span>
-                    <Link href={"mailto:info@lukemanbnb.com"}  className="text-sm leading-6 text-neutral-700">info@lukemanbnb.com</Link>
-                    </div>
+
+                <div className="flex flex-col">
+                    <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">
+                    Legal
+                    </h2>
+                    <div className="py-2">
+                            {
+                                navigation.legal.map ((items) => (
+                                <Link href={items.href} key={items.id} className='flex space-x-2 text-sm text-neutral-700 capitalize py-3 items-center hover:text-[#07286f] ease-in-out duration-500'>
+                                    {items.name}
+                                </Link> 
+                                ))
+                            }
                     </div>
                 </div>
-            </div>
-        {/* <div className="">
+                
+                <div className="flex flex-col">
+                    <h2 className="text-base font-semibold uppercase leading-4 text-neutral-700">
+                    Have a Question?
+                    </h2>
+                        <div className='space-y-4 py-4'>
+                            <div className='flex space-x-3 items-center'>
+                                <span className='text-neutral-700'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" shapeRendering="geometricPrecision" textRendering="geometricPrecision" imageRendering="optimizeQuality" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 640 640"><path fill="currentColor" d="M546.704 91.89C486.526 31.584 406.482-1.582 321.229-1.582 145.609-1.583 2.67 141.368 2.67 317.118c0 56.139 14.705 111.05 42.567 159.297L.001 641.595l168.959-44.34c46.595 25.382 99.013 38.835 152.222 38.835h.13C496.944 636.09 640 493.14 640 317.401c0-85.182-33.166-165.179-93.344-225.463l.047-.047zM321.323 582.315c-47.599 0-94.218-12.827-134.895-36.957l-9.697-5.788-100.265 26.257 26.776-97.726-6.272-10.04C70.312 415.965 56.4 367.244 56.4 317.13c0-146.082 118.832-264.96 265.066-264.96 70.713 0 137.328 27.65 187.302 77.622 49.996 50.127 77.493 116.588 77.493 187.42-.118 146.187-118.95 265.066-264.96 265.066l.024.036zM466.541 383.85c-7.913-4.028-47.115-23.233-54.39-25.89-7.276-2.658-12.58-4.028-17.977 4.027-5.268 7.914-20.587 25.89-25.252 31.265-4.666 5.28-9.284 6.035-17.197 2.008-7.914-4.028-33.674-12.426-64.064-39.568-23.634-21.095-39.662-47.221-44.328-55.134-4.665-7.914-.52-12.308 3.532-16.193 3.661-3.544 7.925-9.284 11.941-13.95 4.028-4.665 5.28-7.925 7.925-13.31 2.658-5.28 1.359-9.946-.637-13.95-2.008-4.015-17.977-43.217-24.485-59.185-6.39-15.603-13.063-13.43-17.965-13.701-4.665-.237-9.945-.237-15.2-.237-5.257 0-13.95 1.996-21.225 9.933-7.276 7.914-27.898 27.26-27.898 66.45 0 39.201 28.512 77.009 32.516 82.407 4.027 5.267 56.162 85.784 136.029 120.238 18.98 8.161 33.803 13.063 45.355 16.854 19.098 6.024 36.425 5.15 50.126 3.13 15.32-2.256 47.115-19.229 53.788-37.831 6.662-18.615 6.662-34.536 4.666-37.831-1.89-3.544-7.158-5.504-15.201-9.58l-.06.048z"/></svg>
+                                </span>
+                                <Link href="https://wa.me/+254719548363" className=" text-sm leading-6 text-neutral-700 ">+254 719 548 363</Link>
+                            </div>
+                            <div className='flex space-x-3 items-center'>
+                                <span className='text-neutral-700 '>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-phone-call" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <path d="M4 4h5l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v5a1 1 0 0 1 -1 1a16 16 0 0 1 -16 -16a1 1 0 0 1 1 -1" />
+                                            <path d="M15 7a2 2 0 0 1 2 2" />
+                                            <path d="M15 3a6 6 0 0 1 6 6" />
+                                        </svg>
+                                </span>
+                                <Link href={"tel://+254794234163"} className="text-sm leading-6 text-neutral-700">+254 794 234 163</Link>
+                            </div>
+                            <div className='flex space-x-3 items-center'>
+                                <span className='text-neutral-700'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-mail" width={24} height={24} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" />
+                                            <rect x={3} y={5} width={18} height={14} rx={2} />
+                                            <polyline points="3 7 12 13 21 7" />
+                                        </svg>
+                                </span>
+                            <Link href={"mailto:info@lukemanbnb.com"}  className="text-sm leading-6 text-neutral-700">info@lukemanbnb.com</Link>
+                            </div>
+                        </div>
+                </div>
+                    </div>
+        <div className="">
         <div className={"grid relative place-items-center"}>
-            <Image src={Logo} alt={"Lukemanbnb.com"} width={220} height={150} />
+            <Image src={Logo} alt={"Lukemanbnb.com"} width={200} height={1}/>
         </div>
-        </div> */}
+        </div>
         </div>
 
         <div className='text-center bg-neutral-800 py-6 items-center '>
-            <p className="text-sm leading-none text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Airbnb, Homestays & Villas </span> | All Rights Reserved </p>
+            <p className="text-sm leading-6 text-white">Copyright ©  {new Date().getFullYear()} <span className='font-semibold'>  Lukeman Airbnb, Homestays & Villas </span> | All Rights Reserved </p>
         </div>
         </div>
     );

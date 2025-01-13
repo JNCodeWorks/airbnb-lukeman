@@ -141,8 +141,8 @@ export default function ContactForm() {
           }
 
   return (
-    <div className='bg-white'>
-    <div className='xl:w-10/12 mx-auto px-6 xl:px-0 py-16'>
+    <div className='py-16'>
+    <div className='xl:w-10/12 mx-auto px-6 xl:px-0 py-8'>
 
 <div className="container mx-auto">
             <div className="lg:flex">

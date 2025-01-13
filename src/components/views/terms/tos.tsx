@@ -3,7 +3,7 @@ import React from 'react';
 const TermsOfService = () => {
   return (
     <div className='bg-gray-100 p-2'>
-    <div className="lg:w-10/12 mx-auto px-6 xl:px-0 mt-32 mb-16">
+    <div className="lg:w-10/12 mx-auto px-6 xl:px-0 mt-20 mb-16">
     <div className="max-w-max-content lg:max-w-7xl mx-auto">
                 <div className="relative z-10 mb-8 md:mb-2 md:px-6">
                     <div className="text-base max-w-prose lg:max-w-none">
@@ -12,8 +12,8 @@ const TermsOfService = () => {
                 </div>
                 
                     <div className=" mt-2 md:p-6">
-                        <div className="lg:grid lg:grid-cols-2 lg:gap-8 mb-8">
-                            <div className="prose prose-lg text-gray-500 mb-6 lg:max-w-none lg:mb-0 text-base">
+                        <div className="lg:grid lg:grid-cols-2 lg:gap-12 mb-8">
+                            <div className="prose prose-lg text-gray-500 mb-6 lg:max-w-none lg:mb-0 text-sm space-y-6">
                                 <p className="leading-7">
                                     The following terms and conditions govern your access and use of this website (“Site”). These terms and conditions also govern the content and services offered to you through the Site. By accessing,
                                     using, printing, installing, or downloading any material from the Site, you agree to be bound by these Terms and Conditions. These Terms and Conditions are subject to change at any time at our discretion;
@@ -80,7 +80,7 @@ const TermsOfService = () => {
                                     any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such third party website and access to any such third party Site is entirely at your own risk and subject to any terms and conditions and privacy policies posted therein.
                                 </p>
                             </div>
-                            <div className="prose prose-lg text-gray-500 text-base">
+                            <div className="prose prose-lg text-gray-500 text-sm space-y-6">
                                 <p className="leading-6 text-[#07286f] font-semibold tracking-wide uppercase">No Warranties</p>
                                 <p className="leading-7">
                                     You expressly agree that use of the Site or any Materials contained therein is at your own and sole risk. The materials and information in the Site, including but not limited to services, products, information, data, text, graphics, links or other items, are provided by the Lukeman Airbnb, Homestays & Villas on an &quot;as is&quot; and &quot;as available&quot; basis. References to material and information contained in the website

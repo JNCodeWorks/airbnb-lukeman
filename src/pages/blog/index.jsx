@@ -93,7 +93,7 @@ export default function Index({blogPosts}) {
             />
         <Head>
           
-            <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
+            <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
         </Head>
       <Layout>
         <Banner/>
