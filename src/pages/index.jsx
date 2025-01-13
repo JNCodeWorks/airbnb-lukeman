@@ -42,7 +42,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         dots: false,
         infinite: true,
         speed: 1000,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 7000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -95,7 +95,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         dots: true,
         infinite: true,
         speed: 1000,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 7000,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -121,7 +121,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
         dots: false,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -202,7 +202,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
     />
     <Head>
       
-      <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
+      <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
       <meta name="google-site-verification" content="bXvgTpvmVs9DLNq0HpHpZJh5NxpsD3xU7DgGOD84luU" />
     </Head>
     <Layout>

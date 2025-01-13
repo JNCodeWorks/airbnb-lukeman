@@ -15,7 +15,7 @@ export default function Privacy() {
       <Head>
       <title>Lukeman Airbnb, Homestays & Villas</title>
       
-      <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />    
+      <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
     </Head>
                     <NextSeo
                 title="Lukeman Airbnb, Homestays & Villas"

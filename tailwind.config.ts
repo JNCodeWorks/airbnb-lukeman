@@ -16,6 +16,12 @@ const config: Config = {
       animation: {
         'spin-slow': 'spin 5s linear infinite',
       },
+      fontFamily: {
+        sans: ['Josefin Sans', 'sans-serif'],
+        rubik: ['Rubik', 'sans-serif'],
+        montecarlo: ['MonteCarlo', 'sans-serif'],
+        tangerine: ['Tangerine', 'serif'],
+      },
     },
   },
   plugins: [

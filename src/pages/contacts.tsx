@@ -50,12 +50,12 @@ export default function Contacts() {
             />
       <Head>
        
-        <link rel="icon" href="/images/LUKEMAN.COM-LOGO.jpg" />   
+        <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />    
       </Head>
       
       <Layout>
-        <Banner/>
-        <ContactInfo/>
+        {/* <Banner/> */}
+        {/* <ContactInfo/> */}
         <ContactForm/>
       </Layout>
     </div>
