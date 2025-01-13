@@ -41,7 +41,7 @@ export default function Banner() {
           <div className="w-full homeBanner8 bg-cover bg-center">
                 <div className="bannerOverlay  flex flex-col justify-center text-white">
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
-                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-6 text-left">
+                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 py-8 text-left">
                             <h1 className="font-semibold capitalize"> Vipingo, Kilifi </h1>
                             <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Indulge in luxury and tranquility at our executive two-bedroom villa apartment, nestled in the serene coastal area of Vipingo, Kilifi. Perfect for families, friends, or business travelers, our villa offers a perfect blend of sophistication and comfort, enhanced by a stunning swimming pool and beautiful surroundings</p>
                             <span className='capitalize'>
@@ -57,7 +57,7 @@ export default function Banner() {
           <div className="w-full homeBanner6 bg-cover bg-center">
                 <div className="bannerOverlay  flex flex-col justify-center text-white">
                     <div className="lg:w-10/12 mx-auto px-6 w-full">
-                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 pt-6 text-left">
+                        <div className="lg:text-5xl text-3xl flex flex-col space-y-12 py-8 text-left">
                             <h1 className="font-semibold capitalize"> Diani Beach, Ukunda </h1>
                             <p className="lg:text-md text-base capitalize lg:max-w-3xl max-w-prose leading-8 ">Discover a comfortable retreat at Diani Studio Apartments, perfect for solo travellers or couples seeking a serene getaway in the vibrant heart of Diani Beach. Our thoughtfully designed bedsitter-style apartments offer an intimate space for relaxation and exploration.</p>
                             <span className='capitalize'>

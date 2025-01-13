@@ -13,7 +13,7 @@ export default function Banner() {
                         explore the world of hospitality & tourism
                     </h1>
                     <p className='lg:text-md text-base leading-7 capitalize'>
-                        Stay informed and inspired with our travel blog and news updates. Discover travel tips, destination guides, and the latest trends in hospitality. Whether you are planning your next adventure or simply seeking travel inspiration, our blog is your go-to resource for all things travel-related.
+                        Stay informed and inspired with our travel blog and news updates. Discover travel tips, destination guides, and the latest trends in hospitality.
                     </p>
                 </div>
             </div>
