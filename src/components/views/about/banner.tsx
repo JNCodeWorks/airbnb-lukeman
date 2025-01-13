@@ -14,7 +14,7 @@ export default function Banner() {
                         About us
                     </h1>
                     <p className='lg:text-md text-base leading-7 capitalize'>
-                        Lukeman Airbnb, Homestays & Villas is an accommodation provider established to offer you a secure, cost-effective, convenient and glamarous stay for all groups of travellers. All our facilities command a high standard accommodation to spice up your stay and make your experience even much better. The serenity, ambience and services are mind-blowing.
+                        We offer you a secure, cost-effective, convenient and glamarous stay for all groups of travellers. All our facilities command a high standard accommodation to spice up your stay and make your experience even much better.
                     </p>
                 </div>
             </div>
