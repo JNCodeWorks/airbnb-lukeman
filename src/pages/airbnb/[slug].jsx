@@ -144,14 +144,18 @@ export default function BlogPost ({ blogPost }) {
   };
 
   const calculateTotalPrice = () => {
+    // Parse the price after removing commas
+    const nightlyPrice = parseFloat(blogPost.fields.price.replace(/,/g, ''));
+    
     // Calculate the number of nights
     const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
 
     // Calculate the total price
-    const totalPrice = numberOfNights * blogPost.fields.price;
+    const totalPrice = numberOfNights * nightlyPrice;
 
-    return totalPrice;
-  };
+    return totalPrice.toLocaleString(); // Add commas back for display
+};
+
 
   if (isSuccess) {
     // Redirect to the success page
