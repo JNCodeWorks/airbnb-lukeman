@@ -103,35 +103,44 @@ export default function Index({blogPosts}) {
         <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 ">
             {
                 currentPosts.map ((posts) => (
-                    <div key={posts.sys.id} className='card-container'>
-                        <div className=' bg-white rounded-sm shadow-sm overflow-hidden h-full'>
-                        <div className="relative flex-shrink-0 overflow-hidden h-72">
-                        <Image
-                          loader={contentfulLoader}
-                          src={"https:" + posts.fields.image.fields.file.url}
-                          alt={posts.fields.title}
-                          className="object-cover hover:scale-125 ease-in-out duration-500"
-                          placeholder="blur"
-                          blurDataURL={`${"https:" + posts.fields.image.fields.file.url}?w=10&q=10`}
-                          fill
-                        />
-                            <div className="bg-white absolute top-0 left-0">
-                                <p className="text-base leading-4 py-3 px-5 capitalize text-gray-800">{posts.fields.type}</p>
-                            </div>
-                        </div>
-                        <div className='bg-white p-4'>
-                        <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3 ">{formatDate(posts.sys.createdAt)}</p>
-                        {/* <h1 className="text-2xl font-semibold leading-7 sm:pr-20 mt-2 text-neutral-700">{posts.fields.title}</h1> */}
-                        <Link href={`/blog/${posts.fields.slug}`} className="capitalize text-2xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide hover:text-[#1d92ce] ease-in-out duration-500">
-                            <h1>{posts.fields.title}</h1>
-                        </Link>
-                        <p className="text-base leading-normal mt-4 text-neutral-600">{posts.fields.description}</p>
-                        <div className='mt-4 w-full py-4'>
-                          <Link href={`/blog/${posts.fields.slug}`} className="rounded-md px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white">read more</Link>
-                        </div>
-                        </div>
+                  <div key={posts.sys.id} className="card-container relative h-full">
+                  <div className="bg-white rounded-sm shadow-sm overflow-hidden h-full flex flex-col">
+                    <div className="relative flex-shrink-0 overflow-hidden h-80">
+                      <Image
+                        loader={contentfulLoader}
+                        src={`https:${posts.fields.image.fields.file.url}`}
+                        alt={posts.fields.title}
+                        className="object-cover hover:scale-125 ease-in-out duration-500"
+                        placeholder="blur"
+                        blurDataURL={`https:${posts.fields.image.fields.file.url}?w=10&q=10`}
+                        fill
+                      />
+                      <div className="bg-white absolute rounded-r top-0 left-0">
+                        <p className="text-sm leading-4 py-2 px-4 capitalize text-gray-800">{posts.fields.type}</p>
+                      </div>
                     </div>
+                    <div className="bg-white p-4 flex-grow">
+                      <p className="text-sm font-medium leading-4 capitalize text-neutral-500 py-3">
+                        {formatDate(posts.sys.createdAt)}
+                      </p>
+                      <Link
+                        href={`/blog/${posts.fields.slug}`}
+                        className="capitalize text-xl font-semibold text-neutral-700 sm:pr-20 mt-2 tracking-wide hover:text-[#1d92ce] ease-in-out duration-500"
+                      >
+                        <h1>{posts.fields.title}</h1>
+                      </Link>
+                      <p className="text-sm leading-normal text-neutral-600">{posts.fields.description}</p>
                     </div>
+                    <div className="bottom-0 w-full">
+                      <Link
+                        href={`/blog/${posts.fields.slug}`}
+                        className="block text-center rounded-b px-4 py-2 w-full bg-[#07286f] hover:bg-[#1d92ce] ease-in-out duration-500 capitalize text-white text-sm"
+                      >
+                        Read More
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 ))
             }
             </div>
