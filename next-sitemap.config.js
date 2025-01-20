@@ -1,13 +1,3 @@
-// const SITE_URL = process.env.SITE_URL || 'https://www.explorekenya.co.ke';
- 
-// /** @type {import('next-sitemap').IConfig} */
-// const config = {
-//   siteUrl: SITE_URL,
-//   generateRobotsTxt: true,
-// };
- 
-// export default config;
-
 const siteUrl = process.env.SITE_URL || 'https://www.lukemanbnb.com';
  
 // add your private routes here

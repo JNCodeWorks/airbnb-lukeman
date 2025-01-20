@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 const Mail = async (req, res) => {
   if (req.method === 'POST') {
-    const { subject, visitor_name, visitor_email, visitor_phone, total_adults, total_children, checkin, checkout, total_price, visitor_message } = req.body;
+    const { subject, visitor_name, visitor_email, visitor_phone, total_adults, total_children, checkin, checkout, total_price, visitor_message, image } = req.body;
 
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -19,7 +19,7 @@ const Mail = async (req, res) => {
       to: 'reservations@lukemanbnb.com',
       subject: subject,
       html: `
-      <p>I would like to make a reservtion request for the <strong>${subject}</strong>. Here are the details:</p>
+      <p>I would like to make a reservation request for the <strong>${subject}</strong>. Here are the details:</p>
       <p><strong>Name:</strong> ${visitor_name}</p>
       <p><strong>Email:</strong> ${visitor_email}</p>
       <p><strong>Phone:</strong> ${visitor_phone}</p>
@@ -30,6 +30,14 @@ const Mail = async (req, res) => {
       <p><strong>Total Price:</strong>KES ${total_price}</p>
       <p><strong>Message:</strong> ${visitor_message}</p>
     `,
+
+    attachments: [
+      {
+        filename: 'reservation_image.jpg', // File name to display in the email
+        path: image, // Path or URL to the image
+      },
+    ],
+
     };
 
     try {
