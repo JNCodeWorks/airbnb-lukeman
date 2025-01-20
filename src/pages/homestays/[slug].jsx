@@ -10,8 +10,8 @@ import { ScaleLoader } from "react-spinners";
 import ModalImage from "react-modal-image";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 
 
@@ -348,7 +348,7 @@ return (
                             Your Phone *
                           </label>
 
-                          <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'ke'}/>
+                          <PhoneInput className='items-center h-10' name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-12  text-sm border-neutral-300 rounded border"}} value={formData.phone} onChange={handleChange} defaultCountry='ke'/>
                           {/* <input
                             type="tel"
                             id="phone"
