@@ -10,8 +10,8 @@ import { ScaleLoader } from "react-spinners";
 import ModalImage from "react-modal-image";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
 
 
 
@@ -54,7 +54,8 @@ export default function BlogPost ({ blogPost }) {
     checkin: '',
     checkout: '',
     visitor_message: '',
-    subject:blogPost.fields.name
+    subject:`${blogPost.fields.description} in ${blogPost.fields.name}`,
+    image: "https:" + blogPost.fields.image.fields.file.url,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -111,7 +112,8 @@ export default function BlogPost ({ blogPost }) {
           checkin: '',
           checkout: '',
           visitor_message: '',
-          subject:blogPost.fields.name
+          subject:`${blogPost.fields.description} in ${blogPost.fields.name}`,
+          image: "https:" + blogPost.fields.image.fields.file.url,
         });
       } else {
         const data = await response.json();
@@ -219,7 +221,7 @@ return (
               height={800} 
               style={{height: "550px", width: "100vw"}}
             />
-            <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-50 flex flex-col justify-center text-white'>
+            <div className='absolute top-0 left-0 w-full h-full bg-neutral-900 opacity-80 flex flex-col justify-center text-white'>
             <div className="lg:w-10/12 mx-auto px-6 w-full ">
             <div className="xl:text-4xl pt-12 md:text-3xl flex flex-col space-y-6 text-2xl text-left">
                 <h1 className="font-semibold capitalize "> {blogPost.fields.name} </h1>
@@ -346,7 +348,7 @@ return (
                             Your Phone *
                           </label>
 
-                          <PhoneInput name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "w-full p-2 pl-12 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"}} value={formData.visitor_phone} onChange={handleChange} country={'ke'}/>
+                          <PhoneInput className='items-center h-10' name="visitor_phone" inputProps={{required: true, autoFocus: true, className: "focus:outline-none focus:border focus:border-[#0067DA] font-normal w-64 h-10 flex items-center pl-12  text-sm border-neutral-300 rounded border"}} value={formData.phone} onChange={handleChange} defaultCountry='ke'/>
 
                         </div>
                         <hr className="border-dotted border-gray-300 my-6" />

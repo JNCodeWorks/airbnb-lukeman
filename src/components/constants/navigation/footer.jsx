@@ -137,7 +137,7 @@ export default function Footer () {
                                             <path d="M15 3a6 6 0 0 1 6 6" />
                                         </svg>
                                 </span>
-                                <Link href={"tel://+254794234163"} className="text-sm leading-6 text-neutral-700">+254 794 234 163</Link>
+                                <Link href={"tel://+254115600233"} className="text-sm leading-6 text-neutral-700">+254 115 600 233 </Link>
                             </div>
                             <div className='flex space-x-3 items-center'>
                                 <span className='text-neutral-700'>
