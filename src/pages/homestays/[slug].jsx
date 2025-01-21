@@ -12,6 +12,8 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -73,59 +75,69 @@ export default function BlogPost ({ blogPost }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-        // Calculate the number of nights
-        const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
-
-        // Calculate the total price
-        const totalPrice = numberOfNights * blogPost.fields.price;
-    
-        // Include total price in the form data
-        formData.total_price = totalPrice;
-
-      // Check if the visitor_message is empty
-  if (formData.visitor_message.trim() === '') {
-    // Set a default message
-    formData.visitor_message = 'No additional message provided.';
-  }
-
+  
+    // Validate check-in and check-out dates
+    if (!formData.checkin || !formData.checkout) {
+      setErrorMessage("Please select valid check-in and check-out dates.");
+      return;
+    }
+  
+    // Calculate the number of nights
+    const numberOfNights = calculateNumberOfNights(formData.checkin, formData.checkout);
+  
+    // Parse the price (if formatted with commas) and calculate the total price
+    const nightlyPrice = parseFloat(blogPost.fields.price.replace(/,/g, ""));
+    const totalPrice = numberOfNights * nightlyPrice;
+  
+    // Safely update the form data with the total price
+    const updatedFormData = {
+      ...formData,
+      total_price: totalPrice,
+      visitor_message: formData.visitor_message.trim() || "No additional message provided.",
+    };
+  
     try {
-      setIsSubmitting(true); //show submitting state
-      const response = await fetch('/api/mail', {
-        method: 'POST',
+      setIsSubmitting(true); // Show submitting state
+  
+      const response = await fetch("/api/mail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(updatedFormData),
       });
-
+  
       if (response.status === 200) {
         setIsSuccess(true);
-        setErrorMessage('');
+        setErrorMessage("");
         setIsSubmitting(false);
+  
+        // Reset the form data
         setFormData({
-          visitor_name: '',
-          visitor_email: '',
-          visitor_phone: '',
-          total_adults: '',
-          total_children: '',
-          checkin: '',
-          checkout: '',
-          visitor_message: '',
-          subject:`${blogPost.fields.description} in ${blogPost.fields.name}`,
+          visitor_name: "",
+          visitor_email: "",
+          visitor_phone: "",
+          total_adults: "",
+          total_children: "",
+          checkin: "",
+          checkout: "",
+          visitor_message: "",
+          subject: `${blogPost.fields.description} in ${blogPost.fields.name}`,
           image: "https:" + blogPost.fields.image.fields.file.url,
+          total_price: "",
         });
       } else {
         const data = await response.json();
-        setErrorMessage('An error occurred while sending the request.');
+        setErrorMessage(data.message || "An error occurred while sending the request.");
         setIsSubmitting(false);
       }
     } catch (error) {
-      console.error('Error:', error);
-      setErrorMessage('An error occurred while sending the request.');
+      console.error("Error:", error);
+      setErrorMessage("An error occurred while sending the request.");
       setIsSubmitting(false);
     }
   };
+  
 
   const handleChange = (e) => {
     if (e.target) {
@@ -141,6 +153,14 @@ export default function BlogPost ({ blogPost }) {
         visitor_phone: e, // e is the phone number value
       });
     }
+  };
+
+  const handleCheckinChange = (date) => {
+    setFormData({ ...formData, checkin: date.toISOString().split("T")[0] });
+  };
+  
+  const handleCheckoutChange = (date) => {
+    setFormData({ ...formData, checkout: date.toISOString().split("T")[0] });
   };
 
   const calculateTotalPrice = () => {
@@ -401,28 +421,22 @@ return (
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkin-date">
                               Check-in Date *
                             </label>
-                            <input
-                              type="date"
-                              id="checkin-date"
-                              name="checkin"
-                              value={formData.checkin} onChange={handleChange}
-                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
-                              required
-                              min={minDate}
+                            <ReactDatePicker
+                              selected={formData.checkin ? new Date(formData.checkin) : null}
+                              onChange={handleCheckinChange}
+                              minDate={new Date()} // Prevent selecting past dates
+                              className="w-72 p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                             />
                           </div>
                           <div className="w-full py-1">
                             <label className="block text-neutral-600 font-semibold text-base mb-1" htmlFor="checkout-date">
                               Check-out Date *
                             </label>
-                            <input
-                              type="date"
-                              id="checkout-date"
-                              value={formData.checkout} onChange={handleChange}
-                              name="checkout"
-                              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
-                              required
-                              min={minDate}
+                            <ReactDatePicker
+                              selected={formData.checkout ? new Date(formData.checkout) : null}
+                              onChange={handleCheckoutChange}
+                              minDate={formData.checkin ? new Date(formData.checkin) : new Date()}
+                              className="w-72 p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-teal-500"
                             />
                           </div>
                         </div>

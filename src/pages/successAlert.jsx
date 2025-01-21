@@ -13,7 +13,7 @@ const SuccessAlert3 = () => {
     </Head>
     <Layout>
       <div className='bg-white'>
-    <div className='lg:w-10/12 mx-auto px-6 pb-28 pt-52'>
+    <div className='lg:w-10/12 mx-auto px-6 pb-28 pt-36'>
         <div className="">
       <div className="bg-white p-6  md:mx-auto">
         <svg viewBox="0 0 24 24" className="text-green-600 w-16 h-16 mx-auto my-6">
