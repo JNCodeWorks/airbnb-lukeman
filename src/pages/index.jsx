@@ -202,7 +202,7 @@ export default function Home({Comments, latestBlogPosts, LatestAirbnb, LatestHom
     />
     <Head>
       
-      <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
+      <link rel="icon" href="/images/Logo/lukemanLogo.png" type="image/png" />     
       <meta name="google-site-verification" content="bXvgTpvmVs9DLNq0HpHpZJh5NxpsD3xU7DgGOD84luU" />
     </Head>
     <Layout>

@@ -50,7 +50,7 @@ export default function Contacts() {
             />
       <Head>
        
-        <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />    
+        <link rel="icon" href="/images/Logo/lukemanLogo.png" type="image/png" />    
       </Head>
       
       <Layout>

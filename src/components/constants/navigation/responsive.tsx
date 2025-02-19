@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from '../../../../public/images/lukeman-logo2.png'
+import Logo from '../../../../public/images/Logo/lukemanLogo.png'
 
 export default function Responsive() {
 
@@ -68,9 +68,9 @@ export default function Responsive() {
       {/* <div className={navbar ? 'navbar active shadow xl:hidden flex justify-between w-full px-8 items-center border-b-2 sm:border-neutral-200' : 'navbar xl:hidden flex justify-between w-full px-8 items-center border-b border-transparent sm:border-neutral-200'}> */}
       {/* <button className="flex text-white hover:text-indigo-200 focus:outline-none focus:text-indigo-200 justify-between  items-center space-x-3"> */}
       <div className='items-center overflow-hidden'>
-                <Link href={'/'} className='flex flex-col ml-14 items-center'>
+                <Link href={'/'} className='flex flex-col ml-6 items-center'>
                 <div className='absolute -mt-[29px]'>
-                    <Image src={Logo} alt='' className='relative' style={{width: "150px", height: "60px"}}/>
+                    <Image src={Logo} alt='' className='relative' style={{width: "100px", height: "60px"}}/>
                 </div>
                 </Link>
 
@@ -102,7 +102,7 @@ export default function Responsive() {
                     // <button className="text-stone-700 rounded py-3 px-8 items-start text-left space-x-6 w-full" key={item.id} >
                     //     <Link href={item.href} className={router.pathname == item.href ? "text-[#07286f] capitalize font-medium" : "hover:text-[#07286f] text-neutral-600 capitalize w-full font-medium"}>{item.name}</Link>
                     // </button>
-                    <Link href={item.href} key={item.id} className="text-left items-start text-[#07286f] rounded py-2.5 px-8 text-left space-x-6 w-full"><button className={router.pathname == item.href ? "text-[#1d92ce] capitalize font-medium" : "hover:text-[#1d92ce] capitalize font-medium"}>{item.name}</button></Link>
+                    <Link href={item.href} key={item.id} className="text-left items-start text-[#07286f] rounded py-2.5 px-8 space-x-6 w-full"><button className={router.pathname == item.href ? "text-[#1d92ce] capitalize font-medium" : "hover:text-[#1d92ce] capitalize font-medium"}>{item.name}</button></Link>
                 ))}
             </div>
     </div>

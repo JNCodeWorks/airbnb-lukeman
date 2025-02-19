@@ -229,7 +229,7 @@ return (
             <Head>
                 {/* <title>{blogPost.fields.name}</title> */}
                 
-                <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" /> 
+                <link rel="icon" href="/images/Logo/lukemanLogo.png" type="image/png" /> 
             </Head>
             <Layout>
             <div className='w-full relative bg-cover bg-center'>

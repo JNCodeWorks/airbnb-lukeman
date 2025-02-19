@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../../../public/images/lukeman-logo2.png'
+import Logo from '../../../../public/images/Logo/lukemanLogo.png'
 
 export default function Footer () {
 
