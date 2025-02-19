@@ -141,7 +141,7 @@ function Comments() {
             />
       <Head>
       
-      <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
+      <link rel="icon" href="/images/Logo/lukemanLogo.png" type="image/png" />     
     </Head>
 <Layout>
 <div className="flex mx-auto items-center justify-center mt-28 pb-28 mb-4 max-w-lg">

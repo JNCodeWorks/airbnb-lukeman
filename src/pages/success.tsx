@@ -9,7 +9,7 @@ export default function Success() {
       <Head>
         <title>Lukeman Airbnb, Homestays & Villas</title>
       
-      <link rel="icon" href="/images/lukeman-logo2.png" type="image/png" />     
+      <link rel="icon" href="/images/Logo/lukemanLogo.png" type="image/png" />     
     </Head>
     <Layout>
       <div className='bg-white'>
